@@ -7,7 +7,7 @@
   "highlights_location_caption": "Бауска",
 
   "amenity_space_label": "Гостевой дом",
-  "amenity_space_caption": "с широкой территорию",
+  "amenity_space_caption": "с широкой территорией",
   "amenity_bed_label": "Ночлег",
   "amenity_bed_caption": "до 12 персон",
   "amenity_kitchen_label": "Kухня",
@@ -17,13 +17,13 @@
   "amenity_cutlery_label": "Кухонные принадлежности",
   "amenity_cutlery_caption": "тарелки, сковорода, чайник",
   "amenity_dinning_facilities_label": "Столы, стулья",
-  "amenity_dinning_facilities_caption": "для использования",
+  "amenity_dinning_facilities_caption": "доступно для использования",
   "amenity_volleyball_label": "Пляжный волейбол",
-  "amenity_volleyball_caption": "для использования",
+  "amenity_volleyball_caption": "доступно для использования",
   "amenity_basketball_label": "Баскетбольная площадка",
-  "amenity_basketball_caption": "для использования",
+  "amenity_basketball_caption": "доступно для использования",
   "amenity_parking_label": "Парковочное место",
-  "amenity_sparking_caption": "обширные",
+  "amenity_sparking_caption": "большой паркинг",
   "amenity_sauna_label": "Баня",
   "amenity_sauna_caption": "баня с комнатой отдыха",
   "amenity_canopy_label": "Навесы",
@@ -32,7 +32,7 @@
   "amenity_bed_sheets_caption": "Белье, полотенца",
 
   "arrival_departue_title": "Заезд / Bыезд",
-  "arrival_departue_description": "Время прибытия с 16:00 и время выезда 11:00 следующего дня. Другие времена могут быть согласованы индивидуально.",
+  "arrival_departue_description": "Время прибытия с 16:00 и время выезда 11:00 следующего дня. Другое время может быть согласовано индивидуально.",
   "reservation_extras_title": "Другие услуги",
   "reservation_extras_description": "Дополнительные услуги и другие запросы должны быть забронированы до прибытия.",
   "reservation_public_holidays_title": "Праздничные дни",
@@ -48,17 +48,17 @@
   "viesu_majas_ire": "Гостевой дом",
   "guesthouse_rental_num_of_persons": "от 10 гостей",
   "guesthouse_rental_price_from": "от 150 €",
-  "holiday_house": "Дом отдыхаа",
+  "holiday_house": "Дом отдыха",
   "holiday_house_max_number_of_persons": "от 2 гостей",
   "guesthouse_rental_alt": "Территория гостевого дома",
   "guesthouse_rental_meta_title": "Гостевой дом | Gravas",
   "guesthouse_rental_meta_description": "Гостевой дом находится в 6-ти км от Бауски. Место отдыха идеально предназначено для празднования дней рождения, свадеб и выпускных вечеров.",
   "guesthouse_highlights_duration_label": "до 30 гостей",
-  "guesthouse_highlights_duration_caption": "Makc. людей",
+  "guesthouse_highlights_duration_caption": "Maкс. людей",
   "guesthouse_highlights_maks_persons_label": "16:00 - 11:00",
   "guesthouse_highlights_maks_persons_caption": "Заезд / выезд",
   "guesthouse_description_title": "О гостевом доме",
-  "guesthouse_description_text": "В предложение включено: 12 койко-мест, объединённый санузел, небольшая кухонка для приготовления пищи, пляжный волейбол, баскетбольная площадка, место для гриля(принадлежности не включено).",
+  "guesthouse_description_text": "В предложение включено: 12 койко-мест, объединённый санузел, небольшая кухонка для приготовления пищи, пляжный волейбол, баскетбольная площадка, место для гриля (принадлежности не включены).",
   "guesthouse_max_number_of_persons": "от 10 человек",
 
   "naktsmitnes": "Ночлег",
@@ -146,5 +146,5 @@
   "sport_activities_price_from": "no 50 €",
 
   "isolation_place": "Место самоизоляции",
-  "isolation_place_max_number_of_persons": "человек"
+  "isolation_place_max_number_of_persons": "1 персона"
 }
