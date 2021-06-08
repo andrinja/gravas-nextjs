@@ -98,12 +98,6 @@
       }
     ],
     "allPrices": [
-		{
-			"icon": "key",
-			"title": "isolation_place",
-			"forPerson": "isolation_place_max_number_of_persons",
-			"totalPrice": "15 €"
-		},
       {
         "icon": "key",
         "title": "holiday_house",
@@ -227,12 +221,6 @@
       }
     ],
     "allPrices": [
-	{
-		"icon": "key",
-		"title": "isolation_place",
-		"forPerson": "isolation_place_max_number_of_persons",
-		"totalPrice": "15 €"
-	},
       {
         "icon": "bed",
         "title": "accommodation",
@@ -409,11 +397,6 @@
         "caption": "amenity_dinning_facilities_caption"
       },
       {
-        "icon": "kitchen.svg",
-        "label": "amenity_kitchen_label",
-        "caption": "amenity_kitchen_caption"
-      },
-      {
         "icon": "volleyball.svg",
         "label": "amenity_volleyball_label",
         "caption": "amenity_volleyball_caption"
@@ -574,7 +557,7 @@
         "icon": "key",
         "title": "wedding_venue_place",
         "forPerson": "wedding_venue_max_number_of_persons",
-        "totalPrice": "530 €"
+        "totalPrice": "390 €"
       },
       {
         "icon": "canopy",
