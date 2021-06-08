@@ -10,15 +10,15 @@ import ArrowDownIcon from "../../components/icons/ArrowDown";
 const FALLBACK_LANGUAGE = "lv";
 
 const LanguageSelect = () => {
+
   return (
     <SelectItems>
       <ArrowDownIcon className="icon" style={{ fontSize: "24px" }} />
       <select
-		name="choose language"
-		defaultValue={i18n.language || FALLBACK_LANGUAGE}
-		onChange={event => {
-			i18n.changeLanguage(event.target.value);
-		}}
+        value={i18n.language}
+        onChange={event => {
+          i18n.changeLanguage(event.target.value);
+        }}
       >
         <option value="lv">Latviešu</option>
         <option value="ru">Pусский</option>
