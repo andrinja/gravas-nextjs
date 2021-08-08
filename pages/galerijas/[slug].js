@@ -1,12 +1,13 @@
 import { useRouter } from "next/router";
 import galleries from "../../static/data/galleries";
-import { withTranslation, Link } from "../../i18n";
+import { withTranslation } from "../../i18n";
 import { useState } from "react";
 import Layout, { Images, Main, Aside, IconItems, Image } from "./style";
 import { useTransition, animated } from "react-spring";
 import CloseIcon from "../../components/icons/Close";
 import NextIcon from "../../components/icons/Next";
 import BackIcon from "../../components/icons/Back";
+import { default as NextImage } from 'next/image'
 
 const Gallery = () => {
   const router = useRouter();
@@ -54,7 +55,7 @@ const Gallery = () => {
             {transitions.map(({ item, props, key }) => (
               <animated.div key={key} style={{ ...props }}>
                 <picture>
-                  <img src={item.path} alt={item.title} type="image/webp" />
+                  <NextImage height={512} width={864} src={item.path} alt={item.title} type="image/webp" />
                 </picture>
               </animated.div>
             ))}
@@ -67,9 +68,11 @@ const Gallery = () => {
         </Main>
         <Aside>
           {gallery.images.map((image, index) => (
-            <picture>
-              <img
-                onClick={e => {
+            <picture key={index}>
+              <NextImage
+              height={80}
+              width={80}
+                onClick={() => {
                   setIndex(index);
                 }}
                 key={index}

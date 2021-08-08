@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import Card from "./style";
 import { withTranslation } from "../../i18n";
 
