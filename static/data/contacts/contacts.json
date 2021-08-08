@@ -15,7 +15,8 @@
   },
   {
     "id": "3",
-    "icon": "pin",
+	"icon": "pin",
+	"href": "https://g.page/gravasatputa?share",
     "contact": "Likverteni, Bauskas novads",
     "buttonText": "find_on_map"
   },

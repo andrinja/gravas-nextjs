@@ -1,19 +1,12 @@
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 //Pages in Next.js skip the definition of the surrounding document's markup
 //extends the Document clas
 export default class MyDocument extends Document {
   render() {
     return (
-      <html lang="lv">
+      <Html lang="lv">
         <Head>
-          <meta
-            name="Pirts rituāli | Kāzu svinības | Viesu māja | GRAVAS"
-            content="Individuāli pirts rituāli. Kāzas lauku stilā pie Bauskas. Viesu mājas īre ar aktīvo atpūtu un naktsmītnēm."
-          ></meta>
-          <meta charSet="utf-8" />
-          <meta name="robots" content="" />
-          <meta name="viewport" content="width=device-width" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -64,7 +57,7 @@ export default class MyDocument extends Document {
           </style>
           <script src="https://js.stripe.com/v3/"></script>
         </body>
-      </html>
+      </Html>
     );
   }
 }

@@ -48,9 +48,6 @@
                href="http://www.gravas.lv/en/"/>
 </url>
 <url>
-  <loc>http://www.gravas.lv/index.php</loc>
-</url>
-<url>
   <loc>http://www.gravas.lv/pirts-rituals.php</loc>
   <xhtml:link 
                rel="alternate"
@@ -66,33 +63,6 @@
                href="http://www.gravas.lv/en/pirts-rituali"/>
 </url>
 <url>
-  <loc>http://www.gravas.lv/lauku-spa.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/naktsmitnes.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/aktivaatputa.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/cenas.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/atsauksmes.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/kontakti.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/index.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/pirts-rituals.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/lauku-spa.php</loc>
-</url>
-<url>
   <loc>http://www.gravas.lv/en/naktsmitnes.php</loc>
   <xhtml:link 
                rel="alternate"
@@ -106,42 +76,6 @@
                rel="alternate"
                hreflang="en"
                href="http://www.gravas.lv/en/lauku-spa.php"/>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/aktivaatputa.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/cenas.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/atsauksmes.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/kontakti.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/index.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/pirts-rituals.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/lauku-spa.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/naktsmitnes.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/aktivaatputa.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/cenas.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/atsauksmes.php</loc>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/kontakti.php</loc>
 </url>
 <url>
   <loc>http://www.gravas.lv/pirts-rituali</loc>

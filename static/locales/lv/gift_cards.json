@@ -1,6 +1,6 @@
 {
   "gift_card_title": "Dāvanu kartes iegāde",
-  "gift_card_description": "Uzdāvini svētkus un atpūtu kopā ar Gravas dāvanu karti.",
+  "gift_card_description": "Uzdāvini veselīgu atpūtu Gravās. Dāvanu kartes derīguma termiņš ir 12 mēneši. ",
   "gift_card_alt": "Gravas dāvanu karte",
   "gift_card_meta_title": "Dāvanu karte | Gravas",
   "gift_card_meta_description": "Dāvanu karte ir elektroniska dāvanu karte. Iegādāties dāvanu karti internetā ir ātrs veids kā atrast dāvanu mīļajiem, draugam, draudzenei vai ģimenei. Pirts rituāla dāvanu karte ir populāra dāvanu karte svētkos.",
@@ -49,6 +49,6 @@
   "gift_card_how_to_purchase": "Soļi kā iegādāties Gravas dāvanu karti:",
   "form_gift_card": "Izvēlieties dāvanu kartes noformējumu: summa vai pakalpojumi konkrētam personu skaitam.",
   "payment_confirmation": "Sazinaties ar mums, lai varam Jums nosūtīt rēķinu.",
-  "receive_gift_card_in_mail": "Pēc rēķina apmaksas, saņemiet dāvanu karti elektroniskā veidā.",
+  "receive_gift_card_in_mail": "Pēc rēķina apmaksas, saņemiet dāvanu karti 1 stundas laikā pa epastu.",
   "write_email": "Iegādāties"
 }

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
+import { motion } from "framer-motion";
 
-const Item = styled.a`
+const Item = styled(motion.a)`
     text-decoration: none;
     color: ${props => props.theme.colors.primary};
     cursor: pointer;
@@ -28,7 +29,7 @@ const Item = styled.a`
             background-color: ${props => props.theme.colors.secondary};
         }
     }
-            
+
     &.active {
         &:before {
             background-color: ${props => props.theme.colors.primary};

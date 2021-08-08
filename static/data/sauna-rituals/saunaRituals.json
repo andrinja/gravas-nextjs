@@ -108,7 +108,7 @@
         "title": "zalu_pirts_rituals",
         "forPerson": "herbal_sauna_per_person",
         "additionalPerson": "herbal_sauna_additional_person",
-        "totalPrice": "63 €"
+        "totalPrice": "65 €"
       },
       {
         "icon": "bed",
@@ -133,7 +133,7 @@
         "icon": "spa",
         "title": "individual_herbal_sauna_ritual",
         "forPerson": "individual_herbal_sauna_per_person",
-        "totalPrice": "68 €"
+        "totalPrice": "70 €"
       }
     ]
   },
@@ -145,7 +145,9 @@
     "img": "/static/sauna-rituals/milestibas-pirts-rituals.jpg?webp?lqip",
     "alt": "couple_sauna_alt",
     "metaTitle": "couple_sauna_metaTitle",
-    "metaDescription": "couple_sauna_metaDescription",
+	"metaDescription": "couple_sauna_metaDescription",
+	"whatIsIncludedTitle": "what_is_included",
+
     "highlights": [
       {
         "icon": "time",
@@ -246,13 +248,13 @@
         "icon": "couple-ritual",
         "title": "milestibas_pirts_rituals",
         "forPerson": "couple_sauna_per_person",
-        "totalPrice": "138 €"
+        "totalPrice": "68 €"
       },
       {
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "36 €"
+        "totalPrice": "18 €"
       },
       {
         "icon": "cutlery",
@@ -277,7 +279,9 @@
     "img": "/static/sauna-rituals/dzimsanas-dienas-pirts-rituals.jpg?webp?lqip",
     "alt": "birthday_sauna_alt",
     "metaTitle": "birthday_sauna_metaTitle",
-    "metaDescription": "birthday_sauna_metaDescription",
+	"metaDescription": "birthday_sauna_metaDescription",
+	"whatIsIncludedTitle": "what_is_included",
+
     "highlights": [
       {
         "icon": "time",
@@ -384,7 +388,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "36 €"
+        "totalPrice": "18 €"
       },
       {
         "icon": "cutlery",
@@ -409,7 +413,8 @@
     "img": "/static/sauna-rituals/ligavas-pirts-rituals-1.jpg?webp?lqip",
     "alt": "bride_sauna_alt",
     "metaTitle": "bride_sauna_metaTitle",
-    "metaDescription": "bride_sauna_metaDescription",
+	"metaDescription": "bride_sauna_metaDescription",
+	"whatIsIncludedTitle": "what_is_included",
     "highlights": [
       {
         "icon": "time",
@@ -505,7 +510,7 @@
         "icon": "bride",
         "title": "ligavas_pirts_rituals",
         "forPerson": "bride_sauna_per_person",
-        "totalPrice": "69 €"
+        "totalPrice": "75 €"
       },
       {
         "icon": "girls-night",
@@ -517,7 +522,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "36 €"
+        "totalPrice": "18 €"
       },
       {
         "icon": "cutlery",
@@ -542,7 +547,9 @@
     "img": "/static/sauna-rituals/rozu-pirts-rituals.jpg?webp?lqip",
     "alt": "rose_sauna_alt",
     "metaTitle": "rose_sauna_metaTitle",
-    "metaDescription": "rose_sauna_metaDescription",
+	"metaDescription": "rose_sauna_metaDescription",
+	"whatIsIncludedTitle": "what_is_included",
+
     "highlights": [
       {
         "icon": "time",
@@ -638,7 +645,7 @@
         "icon": "rose-ritual",
         "title": "rozu_pirts_rituals",
         "forPerson": "rose_sauna_per_person",
-        "totalPrice": "69 €"
+        "totalPrice": "68 €"
       },
       {
         "icon": "rose-ritual",
@@ -650,7 +657,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "36 €"
+        "totalPrice": "18 €"
       },
       {
         "icon": "cutlery",
@@ -675,7 +682,9 @@
     "img": "/static/sauna-rituals/dzintara-rituals.jpg?webp?lqip",
     "alt": "amber_sauna_alt",
     "metaTitle": "amber_sauna_metaTitle",
-    "metaDescription": "amber_sauna_metaDescription",
+	"metaDescription": "amber_sauna_metaDescription",
+	"whatIsIncludedTitle": "what_is_included",
+	
     "highlights": [
       {
         "icon": "time",
@@ -766,7 +775,7 @@
         "icon": "amber",
         "title": "dzintara_pirts_rituals",
         "forPerson": "amber_sauna_per_person",
-        "totalPrice": "69 €"
+        "totalPrice": "68 €"
       },
       {
         "icon": "amber",
@@ -778,7 +787,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "36 €"
+        "totalPrice": "18 €"
       },
       {
         "icon": "cutlery",
@@ -891,7 +900,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "36 €"
+        "totalPrice": "18 €"
       },
       {
         "icon": "cutlery",

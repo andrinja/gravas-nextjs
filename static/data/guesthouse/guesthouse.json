@@ -65,7 +65,7 @@
         "icon": "chairs.svg",
         "label": "amenity_dinning_facilities_label",
         "caption": "amenity_dinning_facilities_caption"
-      },
+	  },
       {
         "icon": "volleyball.svg",
         "label": "amenity_volleyball_label",
@@ -100,9 +100,15 @@
     "allPrices": [
       {
         "icon": "key",
+        "title": "holiday_house",
+        "forPerson": "holiday_house_max_number_of_persons",
+        "totalPrice": "30 €"
+	  },
+	  {
+        "icon": "key",
         "title": "viesu_majas_ire",
         "forPerson": "guesthouse_max_number_of_persons",
-        "totalPrice": "190 €"
+        "totalPrice": "150 €"
       },
       {
         "icon": "sauna",
@@ -225,7 +231,7 @@
         "icon": "key",
         "title": "viesu_majas_ire",
         "forPerson": "guesthouse_max_number_of_persons",
-        "totalPrice": "190 €"
+        "totalPrice": "30 €"
       },
       {
         "icon": "sauna",
@@ -391,11 +397,6 @@
         "caption": "amenity_dinning_facilities_caption"
       },
       {
-        "icon": "kitchen.svg",
-        "label": "amenity_kitchen_label",
-        "caption": "amenity_kitchen_caption"
-      },
-      {
         "icon": "volleyball.svg",
         "label": "amenity_volleyball_label",
         "caption": "amenity_volleyball_caption"
@@ -556,7 +557,7 @@
         "icon": "key",
         "title": "wedding_venue_place",
         "forPerson": "wedding_venue_max_number_of_persons",
-        "totalPrice": "530 €"
+        "totalPrice": "390 €"
       },
       {
         "icon": "canopy",

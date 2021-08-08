@@ -6,7 +6,15 @@ const ServiceCard = ({ id, title, priceTitle, priceFrom, img, t, prefix }) => {
   const slug = title.replace(/\_/g, "-");
   return (
     <Link href={`/${prefix}/${slug}`} prefetch={false}>
-      <Card>
+      <Card
+		whileHover={{
+			scale: 1.05,
+			transition: { duration: 0.3 },
+		}}
+		whileTap={{
+			scale: 0.9,
+			transition: { duration: 0.3 }
+		}}>
         <picture>
           <img src={img} alt={t(title)} type="image/webp" />
         </picture>

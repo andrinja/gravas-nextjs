@@ -19,5 +19,8 @@ module.exports = [
   { from: "/en/aktivaatputa.php", to: "/en/aktiva-atputa" },
   { from: "/en/cenas.php", to: "/en/pirts-rituali" },
   { from: "/en/atsauksmes.php", to: "/en/atsauksmes" },
-  { from: "/en/kontakti.php", to: "/en/kontakti" }
+  { from: "/en/kontakti.php", to: "/en/kontakti" },
+  { from: "/viesu-maja/[slug]", to: "/viesu-maja"},
+  { from: "/pirts-rituali/[slug]", to: "/pirts-rituali"},
+  { from: "/galerijas/[slug]", to: "/galerijas/viesu-majas-ire"},
 ];

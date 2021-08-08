@@ -1,6 +1,7 @@
 // for custom advanced behaviour of Next.js
 
 const withOptimizedImages = require("next-optimized-images");
+const { nextI18NextRewrites } = require('next-i18next/rewrites')
 
 const withOffline = require("next-offline");
 

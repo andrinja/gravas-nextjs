@@ -11,7 +11,11 @@ const Contact = ({ icon, href, contact, buttonText, t }) => {
     <Item>
       <Details>
         <Icon style={{ color: "#1E514B", fontSize: "28px" }} />
-        <a className="contact-detail" href={`${href}${contact}`}>
+		<a
+			className="contact-detail"
+			target="_blank"
+			rel="noopener"
+			href={`${href}${contact}`}>
           {contact}
         </a>
       </Details>
