@@ -35,7 +35,7 @@ const Navbar = ({ t }) => {
     <Nav>
       <div className="logo-items">
         <ActiveLink activeClassName="active" href="/">
-          <img className="gravas-logo" src="../../static/logo.svg" alt="" />
+          <img className="gravas-logo" src="../../static/logo.svg" alt="gravas logo" />
         </ActiveLink>
 
         {isMenuOpen ? (
