@@ -27,9 +27,9 @@ const Footer = ({ t }) => {
         onClick={() => setIsModalOpen(true)}
         type="button"
         buttonStyle="btn--primary--outline"
-        children={t(howToReserveDetails.reserveButtonText)}
-      />
-
+      >
+		{t(howToReserveDetails.reserveButtonText)}
+		</Button>
       <Modal center open={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ModalItems>
           <h2>{t(howToReserveDetails.title)}</h2>

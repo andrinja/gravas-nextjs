@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Card from "./style";
 import { withTranslation } from "../../i18n";
+import Image from 'next/image';
 
-const ServiceCard = ({ id, title, priceTitle, priceFrom, img, t, prefix }) => {
+const ServiceCard = ({title, priceTitle, priceFrom, img, t, prefix }) => {
   const slug = title.replace(/\_/g, "-");
   return (
     <Link href={`/${prefix}/${slug}`} prefetch={false}>
@@ -16,7 +17,7 @@ const ServiceCard = ({ id, title, priceTitle, priceFrom, img, t, prefix }) => {
 			transition: { duration: 0.3 }
 		}}>
         <picture>
-          <img src={img} alt={t(title)} type="image/webp" />
+          <Image width={324} height={230} src={img} alt={t(title)} type="image/webp" />
         </picture>
         <h3 className="title">{t(title)}</h3>
         <div className="detail-items">

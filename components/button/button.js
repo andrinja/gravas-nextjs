@@ -16,7 +16,6 @@ const Button = ({
   onClick,
   buttonStyle,
   buttonColor,
-  hidden,
   ...rest
 }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)
@@ -30,7 +29,6 @@ const Button = ({
       className={`${checkButtonStyle} ${checkButtonColor}`}
       onClick={onClick}
       type={type}
-      aria-label={children}
       {...rest}
     >
       {!!icon && <span className={`icon-${icon}`}></span>}

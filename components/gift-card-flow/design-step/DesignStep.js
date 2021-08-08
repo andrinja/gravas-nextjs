@@ -5,8 +5,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { useQuery } from "@apollo/react-hooks";
 import GET_DESIGNS from "./queries/GetDesigns";
 import { motion } from "framer-motion";
-
-import { Tile as TileContainer, Title } from "./style";
+import { Tile as TileContainer } from "./style";
 import Step from "../step";
 
 const GridContainer = styled(motion.ul)`
@@ -90,7 +89,7 @@ export const Tile = ({ handleSelect, name, imagePath, selected, value }) => {
       onClick={() => handleSelect(value)}
       key={name}
     >
-      <img src={imagePath} />
+      <Image src={imagePath} />
       <div className="name">{name}</div>
     </TileContainer>
   );

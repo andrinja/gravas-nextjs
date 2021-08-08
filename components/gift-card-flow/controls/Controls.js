@@ -26,16 +26,18 @@ const Controls = ({
               disabled={isFirstStep || isLastStep}
               type="button"
               buttonStyle="btn--primary--solid"
-              children={t("back_button")}
-            />
+            >
+			{t("back_button")}
+			</Button>
 
             <Button
               disabled={!activeStep.complete}
               onClick={handleNext}
               type="button"
               buttonStyle="btn--primary--outline"
-              children={t("next_button")}
-            />
+            >
+			{t("next_button")}
+			</Button>
           </React.Fragment>
         )}
       </ControlItems>

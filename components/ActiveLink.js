@@ -1,7 +1,5 @@
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-
-
 import { Link } from '../i18n'
 import React, { Children } from 'react'
 

@@ -24,12 +24,12 @@ const Users = ({ employee, t }) => {
           <p>{t(employee.description)}</p>
           <div>
             <Button
-              onClick={() => setIsModalOpen(true)}
-              type="button"
-              buttonStyle="btn--primary--outline"
-              children={t(employee.contact)}
-            />
-
+            onClick={() => setIsModalOpen(true)}
+            type="button"
+            buttonStyle="btn--primary--outline"
+			>
+              {t(employee.contact)}
+			</Button>
             <Modal
               center
               open={isModalOpen}

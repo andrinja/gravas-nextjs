@@ -1,7 +1,7 @@
 import Link from "next/link";
-
 import Card from "./style";
 import { withTranslation } from "../../i18n";
+import Image from 'next/image'
 
 const ExploreCard = ({ label, img, href, t }) => (
   <Link href={href} prefetch={false}>
@@ -15,7 +15,7 @@ const ExploreCard = ({ label, img, href, t }) => (
 			transition: { duration: 0.3 }
 		}}>
       <picture>
-        <img src={img} alt={t(label)} type="image/webp" />
+        <Image width={100} height={75} src={img} alt={t(label)} type="image/webp" />
       </picture>
       <span className="label">{t(label)}</span>
     </Card>

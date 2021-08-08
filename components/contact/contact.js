@@ -28,8 +28,9 @@ const Contact = ({ icon, href, contact, buttonText, t }) => {
         <Button
           type="button"
           buttonStyle="btn--primary--outline"
-          children={t(buttonText)}
-        ></Button>
+        >
+			{t(buttonText)}
+		</Button>
       </a>
     </Item>
   );

@@ -40,8 +40,9 @@ const Index = ({ t }) => (
           <Button
             type="button"
             buttonStyle="btn--primary--outline"
-            children={t("write_email")}
-          ></Button>
+          >
+			  {t("write_email")}
+		  </Button>
         </a>
         {/*<Button
           onClick={() => Router.push("/davanu-karte/iegadaties")}

@@ -10,10 +10,12 @@ const Card = styled(motion.a)`
   flex-direction: column;
 
   img {
-    width: 100%;
-    height: 230px;
     object-fit: cover;
     border-radius: 0.25rem 0.25rem 0 0;
+
+	@media (max-width: 720px) {
+		width: 517px;
+	}
   }
 
   .title {

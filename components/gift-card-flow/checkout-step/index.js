@@ -100,8 +100,12 @@ class CheckoutStep extends Component {
           disabled={this.state.paying}
           type="button"
           buttonStyle="btn--primary--solid"
-          children={
-            <React.Fragment>
+          style={{
+            marginLeft: "auto",
+            marginRight: 0
+          }}
+        >
+			<React.Fragment>
               <span
                 {...(this.state.paying && { style: { marginRight: "1rem" } })}
               >
@@ -111,12 +115,7 @@ class CheckoutStep extends Component {
                 <CircularProgress size={24} color="white" />
               )}
             </React.Fragment>
-          }
-          style={{
-            marginLeft: "auto",
-            marginRight: 0
-          }}
-        />
+		</Button>
       </Step>
     );
   }

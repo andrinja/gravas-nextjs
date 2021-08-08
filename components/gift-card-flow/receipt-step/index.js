@@ -35,8 +35,9 @@ const ReceiptStep = ({ title, contactEmail, t }) => {
           onClick={() => Router.push("/")}
           type="button"
           buttonStyle="btn--primary--solid"
-          children={t("back_to_home")}
-        />
+        >
+			{t("back_to_home")}
+		</Button>
       </ReceiptBox>
     </Step>
   );

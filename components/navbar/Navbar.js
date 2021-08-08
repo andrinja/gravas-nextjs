@@ -6,6 +6,7 @@ import { withTranslation, i18n } from "../../i18n";
 import MenuIcon from "../../components/icons/Menu";
 import CloseIcon from "../../components/icons/Close";
 import ArrowDownIcon from "../../components/icons/ArrowDown";
+import Image from 'next/image'
 
 const FALLBACK_LANGUAGE = "lv";
 
@@ -35,7 +36,7 @@ const Navbar = ({ t }) => {
     <Nav>
       <div className="logo-items">
         <ActiveLink activeClassName="active" href="/">
-          <img className="gravas-logo" src="../../static/logo.svg" alt="gravas logo" />
+          <Image width={160} height={28} className="gravas-logo" src="/static/logo.svg" alt="gravas logo" />
         </ActiveLink>
 
         {isMenuOpen ? (
