@@ -35,7 +35,7 @@ const Gallery = () => {
     setIndex(previousImageIndex < 0 ? lastImageIndex : previousImageIndex);
   };
   const transitions = useTransition(gallery.images[index], image => image.id, {
-    from: { opacity: 0, position: "absolute" },
+    from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 }
   });
@@ -53,10 +53,8 @@ const Gallery = () => {
               style={{ color: "#000000", fontSize: "28px" }}
             />
             {transitions.map(({ item, props, key }) => (
-              <animated.div key={key} style={{ ...props }}>
-                <picture>
+              <animated.div key={key} style={{ ...props, display: 'flex', alignItems: 'center' }}>
                   <NextImage height={512} width={864} src={item.path} alt={item.title} type="image/webp" />
-                </picture>
               </animated.div>
             ))}
             <NextIcon

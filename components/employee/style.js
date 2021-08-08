@@ -12,7 +12,7 @@ export const EmployeeDetails = styled.div`
   }
   .education {
     display: grid;
-    grid-template-columns: 20% 20% 20%;
+    grid-template-columns: 7rem 20% 20%;
     grid-gap: 1rem;
 
     .image {

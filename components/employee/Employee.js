@@ -6,6 +6,7 @@ import { EmployeeDetails, ModalItems } from "./style";
 import Modal from "react-responsive-modal";
 import PhoneIcon from "../../components/icons/Phone";
 import EmailIcon from "../../components/icons/Mail";
+import Image from "next/image";
 
 const Users = ({ employee, t }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,7 +15,7 @@ const Users = ({ employee, t }) => {
       <h3 className="title">{t(employee.title)}</h3>
       <div className="items">
         <div className="education">
-          <img className="image" src={employee.img} alt={employee.alt} />
+          <Image height={112} width={112} objectFit="cover" className="image" src={employee.img} alt={employee.alt} />
           {employee.educations.map(education => (
             <EmployeeExperience key={education.year} {...education} />
           ))}
