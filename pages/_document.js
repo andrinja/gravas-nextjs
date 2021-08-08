@@ -39,7 +39,7 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/manifest.json" />
         </Head>
 
-        <body aria-hidden="true">
+        <body>
           <Main />
           <NextScript />
           <style global jsx>
