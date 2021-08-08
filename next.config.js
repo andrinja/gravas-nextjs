@@ -4,6 +4,19 @@ const withOptimizedImages = require("next-optimized-images");
 
 const withOffline = require("next-offline");
 
-const nextConfig = {};
+const localeSubpaths = {
+  en: 'en',
+  ru: 'ru',
+}
+
+const nextConfig = {
+  workboxOpts: {
+    swDest: '../public/service-worker.js',
+  },
+  rewrites: async () => nextI18NextRewrites(localeSubpaths),
+  publicRuntimeConfig: {
+    localeSubpaths,
+  },
+};
 
 module.exports = withOffline(withOptimizedImages(nextConfig));
