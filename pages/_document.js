@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
           />
           <link
             rel="mask-icon"
-            href="//staticsafari-pinned-tab.svg"
+            href="/staticsafari-pinned-tab.svg"
             color="#1E514B"
           />
           <meta name="msapplication-TileColor" content="#1E514B" />
@@ -55,7 +55,7 @@ export default class MyDocument extends Document {
               }
             `}
           </style>
-          <script src="https://js.stripe.com/v3/"></script>
+          {/* <script src="https://js.stripe.com/v3/"></script> */}
         </body>
       </Html>
     );
