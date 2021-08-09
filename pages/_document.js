@@ -33,9 +33,9 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#1E514B" />
           <link
             href="https://fonts.googleapis.com/css?family=Raleway:300,500,600,700&display=swap"
-            rel="stylesheet"
+            rel="preload"
           />
-          <link rel="shortcun icon" href="/static/favicon.png" />
+          <link rel="short cut icon" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />
         </Head>
 
