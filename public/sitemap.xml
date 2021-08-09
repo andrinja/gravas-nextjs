@@ -48,36 +48,6 @@
                href="http://www.gravas.lv/en/"/>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituals.php</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali"/>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/naktsmitnes.php</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/lauku-spa.php"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/lauku-spa.php"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/lauku-spa.php"/>
-</url>
-<url>
   <loc>http://www.gravas.lv/pirts-rituali</loc>
   <xhtml:link 
                rel="alternate"
@@ -91,7 +61,21 @@
                rel="alternate"
                hreflang="en"
                href="http://www.gravas.lv/en/pirts-rituali"/>
-  
+</url>
+<url>
+  <loc>https://gravas.lv/viesu-maja/naktsmitnes</loc>
+  <xhtml:link 
+               rel="alternate"
+               hreflang="lv"
+               href="https://gravas.lv/viesu-maja/naktsmitnes"/>
+  <xhtml:link 
+               rel="alternate"
+               hreflang="ru"
+               href="https://gravas.lv/ru/viesu-maja/naktsmitnes"/>
+  <xhtml:link 
+               rel="alternate"
+               hreflang="en"
+               href="https://gravas.lv/en/viesu-maja/naktsmitnes"/>
 </url>
 <url>
   <loc>http://www.gravas.lv/pirts-rituali/zalu-pirts-rituals</loc>
