@@ -9,8 +9,8 @@ import serviceDescriptions from "../static/data/index-page/serviceDescriptions";
 const Index = () => {
   return (
     <Layout
-      title="Gravas atpūta | Gravas"
-      description="Gravas pirts rituāls ir lauku spa diviem, kopā ar draugiem vai ģimenei. Viesu namā ir naktsmītnes, svinību telpa kooperatīviem pasākumiem, kāzām vai citām svinībām līdz 40 personām. Organizējam skolēnu ekskursijas skolniekiem kā peintbols, loka šaušana. Viesu namā ir iespēja izmantot pludmales volejbola un basketbola sporta laukumus kā arī nojumi svinībām."
+      title="Pirts rituāls | Naktsmītnes | Gravas"
+      description="Pirts rituāls ir atpūta ķermenim un prātam vairāku stundu garumā. Naktsmītnes pēc pirts rituāla ir pieejamas ikvienam. Viesu māja piedāvā telpas svinībām, kooperatīviem pasākumiem, kāzām vai atpūtai ar ģimeni un naktsmītnes. Organizējam skolēnu ekskursijas skolniekiem kā peintbols, loka šaušana."
     >
       <ExploreCards cards={cards} />
       <PageHeaderImage
