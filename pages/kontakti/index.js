@@ -10,7 +10,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const ContactsPage = () => {
-	const {t} = useTranslation(TR_NS.CONTACTHEADERS);
+	const {t} = useTranslation(TR_NS.CONTACTS);
   return (
     <Layout
       title={t(contactHeader.metatTitle)}
@@ -29,7 +29,7 @@ const ContactsPage = () => {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale, TR_NS.CONTACTS),
+		...await serverSideTranslations(locale, [TR_NS.CONTACTS, TR_NS.FREQUENT_QUESTIONS, TR_NS.NAVBAR]),
 	},
   })
 

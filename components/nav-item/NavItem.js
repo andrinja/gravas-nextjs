@@ -1,10 +1,11 @@
 import ActiveLink from '../ActiveLink';
 import Item from './style';
 
-const NavItem = ({ href, label }) => (
+const NavItem = ({ href, label, ...rest }) => (
 	<ActiveLink
 		href={href}
-		activeClassName="active">
+		activeClassName="active"
+		{...rest}>
 		<Item
 		className="item"
 		whileHover={{

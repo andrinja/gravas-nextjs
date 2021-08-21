@@ -3,7 +3,6 @@ import PageHeaderImage from "../../components/page-header-image/PageHeaderImage"
 import PageHeader from "../../components/page-header/PageHeader";
 import giftCardHeader from "../../static/data/index-page/giftcardHeader";
 import Button from "../../components/button/button";
-import {ListItems, ButtonItems} from "../../components/gift-card-flow/main/style.js";
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
@@ -25,17 +24,22 @@ const Index = () => {
         description={t(giftCardHeader.description)}
       />
       <h4>{t("gift_card_how_to_purchase")}</h4>
-      <ListItems>
+	  <ul style={{
+		  margin: '1rem 1.5rem'
+	  }}>
         <li>{t("form_gift_card")}</li>
         <li>{t("payment_confirmation")}</li>
         <li>{t("receive_gift_card_in_mail")}</li>
-      </ListItems>
-      <ButtonItems>
+      </ul>
+      <div>
         <a
           className="buttonLink"
           target="_blank"
           rel="norefferer noreferrer"
-          href={`mailto:`}
+		  href={`mailto:`}
+		  style={{
+			  textDecoration: 'none'
+		  }}
         >
           <Button
             type="button"
@@ -50,7 +54,7 @@ const Index = () => {
           buttonStyle="btn--primary--solid"
           children={t(giftCardHeader.buyGiftCard)}
         />*/}
-      </ButtonItems>
+      </div>
     </div>
   </Layout>
 	)

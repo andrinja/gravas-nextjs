@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ActiveLink from "../ActiveLink";
+import Link from 'next/link'
 import NavItem from "../nav-item/NavItem";
 import { Nav, NavItems, Divider, SelectItems } from "./style";
 import { useTranslation } from 'next-i18next';
@@ -7,23 +7,27 @@ import MenuIcon from "../../components/icons/Menu";
 import CloseIcon from "../../components/icons/Close";
 import ArrowDownIcon from "../../components/icons/ArrowDown";
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 const LanguageSelect = () => {
 	const { i18n } = useTranslation()
-
-	console.log({ i18n})
+	const router = useRouter()
 
   return (
     <SelectItems>
       <ArrowDownIcon className="icon" style={{ fontSize: "24px" }} />
       <select
-        onChange={async event => {
-			console.log((await i18n.changeLanguage(event.target.value))())
+	  value={i18n.language}
+        onChange={event => {
+			console.log(router)
+			router.push(router.asPath, undefined, {
+				locale: event.target.value
+			})
         }}
       >
-        <option value="lv_LV">Latviešu</option>
-        <option value="ru_RU">Pусский</option>
-        <option value="en_US">English</option>
+        <option value="lv">Latviešu</option>
+        <option value="ru">Pусский</option>
+        <option value="en">English</option>
       </select>
     </SelectItems>
   );
@@ -36,9 +40,11 @@ const { t } = useTranslation('navbar');
   return (
     <Nav>
       <div className="logo-items">
-        <ActiveLink activeClassName="active" href="/">
-          <Image width={160} height={28} className="gravas-logo" src="/static/logo.svg" alt="gravas logo" />
-        </ActiveLink>
+        <Link href="/">
+			<a>
+			<Image width={160} height={28} className="gravas-logo" src="/static/logo.svg" alt="gravas logo" />
+			</a>
+        </Link>
 
         {isMenuOpen ? (
           <CloseIcon

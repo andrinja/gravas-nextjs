@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import tabData from "../../static/data/contacts/faq";
 import { TabItem, TabContent, FaqItem, Question } from "./style";
 import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../../constants/translationNamespace';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: "#1E514B"
