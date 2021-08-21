@@ -4,7 +4,8 @@ import PageHeader from "../../components/page-header/PageHeader";
 import ReviewDescriptions from "../../static/data/reviews/reviews";
 import Review from "../../components/review/Review";
 import { TR_NS } from '../../constants/translationNamespace';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import getServerSideTranslations from '../../utils/getServerSideTranslations';
+
 
 const ReviewsPage = () => {
 
@@ -28,7 +29,7 @@ const ReviewsPage = () => {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(
+		...await getServerSideTranslations(
 			locale,
 			[TR_NS.NAVBAR]
 		),

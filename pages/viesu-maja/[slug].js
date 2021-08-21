@@ -9,7 +9,7 @@ import GuesthouseAmenities from "../../components/amenities/GuesthouseAmenities"
 import GuesthouseExtraDetails from "../../components/extra-details/GuesthouseExtraDetails";
 import GuesthousePriceTags from "../../components/pricesTags/GuesthousePriceTags";
 import Footer from "../../components/footer/footer";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import getServerSideTranslations from '../../utils/getServerSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
 import { useTranslation } from 'next-i18next';
 import { getPaths } from '../../utils/getPaths';
@@ -63,7 +63,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale, [TR_NS.NAVBAR, TR_NS.GUESTHOUSE, TR_NS.HOW_TO_RESERVE]),
+		...await getServerSideTranslations(locale, [TR_NS.NAVBAR, TR_NS.GUESTHOUSE, TR_NS.HOW_TO_RESERVE]),
 	},
 })
 

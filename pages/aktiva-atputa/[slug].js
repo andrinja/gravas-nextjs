@@ -11,7 +11,7 @@ import sportActivities from "../../static/data/sport-activities/sportActivities"
 import Footer from "../../components/footer/footer";
 import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../../constants/translationNamespace';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import getServerSideTranslations from '../../utils/getServerSideTranslations';
 import { getPaths } from '../../utils/getPaths';
 
 const SportActivityPage = () => {
@@ -58,7 +58,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale, [TR_NS.NAVBAR, TR_NS.SPORT_ACTIVITIES]),
+		...await getServerSideTranslations(locale, [TR_NS.NAVBAR, TR_NS.SPORT_ACTIVITIES]),
 	},
 })
 

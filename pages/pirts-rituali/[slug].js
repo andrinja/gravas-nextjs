@@ -11,7 +11,7 @@ import RitualPriceTags from "../../components/pricesTags/RitualPriceTags";
 import Footer from "../../components/footer/footer";
 import EmployeeDetails from "../../static/data/employees/employees";
 import saunaRituals from "../../static/data/sauna-rituals/saunaRituals";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import getServerSideTranslations from '../../utils/getServerSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
 import { useTranslation } from 'next-i18next';
 import { getPaths } from '../../utils/getPaths';
@@ -66,7 +66,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale, translationNamespaces),
+		...await getServerSideTranslations(locale, translationNamespaces),
 	},
 })
 

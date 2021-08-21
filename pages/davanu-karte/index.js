@@ -4,7 +4,7 @@ import PageHeader from "../../components/page-header/PageHeader";
 import giftCardHeader from "../../static/data/index-page/giftcardHeader";
 import Button from "../../components/button/button";
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import getServerSideTranslations from '../../utils/getServerSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const Index = () => {
@@ -62,7 +62,7 @@ const Index = () => {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale),
+		...await getServerSideTranslations(locale),
 	},
 })
 

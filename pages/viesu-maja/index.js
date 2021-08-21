@@ -4,8 +4,7 @@ import PageHeader from "../../components/page-header/PageHeader";
 import GuesthouseDescription from "../../static/data/guesthouse/guesthouse";
 import GeneralDescription from "../../static/data/index-page/guesthouseHeader";
 import { TR_NS } from '../../constants/translationNamespace';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Cards from '../../components/service-cards/style';
+import getServerSideTranslations from '../../utils/getServerSideTranslations';import Cards from '../../components/service-cards/style';
 import { ServiceCard } from '../../components/service-card/ServiceCard';
 import { useTranslation } from 'next-i18next';
 
@@ -40,7 +39,7 @@ const GuestHouseServicesPage = () => {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale, [TR_NS.GUESTHOUSE_HEADER, TR_NS.GUESTHOUSE, TR_NS.NAVBAR]),
+		...await getServerSideTranslations(locale, [TR_NS.GUESTHOUSE_HEADER, TR_NS.GUESTHOUSE, TR_NS.NAVBAR]),
 	},
   })
 

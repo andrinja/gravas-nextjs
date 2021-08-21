@@ -7,7 +7,7 @@ import contactHeader from "../../static/data/contacts/contactHeaders";
 import FaqHeader from "./style";
 import { TR_NS } from '../../constants/translationNamespace';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import getServerSideTranslations from '../../utils/getServerSideTranslations';
 
 const ContactsPage = () => {
 	const {t} = useTranslation(TR_NS.CONTACTS);
@@ -29,7 +29,7 @@ const ContactsPage = () => {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale, [TR_NS.CONTACTS, TR_NS.FREQUENT_QUESTIONS, TR_NS.NAVBAR]),
+		...await getServerSideTranslations(locale, [TR_NS.CONTACTS, TR_NS.FREQUENT_QUESTIONS, TR_NS.NAVBAR]),
 	},
   })
 
