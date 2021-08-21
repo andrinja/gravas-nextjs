@@ -48,7 +48,8 @@
     "react-top-loading-bar": "^1.2.0",
     "redux": "^4.0.4",
     "stripe": "^7.13.0",
-    "uniqid": "^5.2.0"
+	"uniqid": "^5.2.0",
+	"react-spring": "^8.0.27"
   },
   "scripts": {
     "dev": "next",
