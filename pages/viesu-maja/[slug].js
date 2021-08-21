@@ -4,15 +4,19 @@ import PageHeaderImage from "../../components/page-header-image/PageHeaderImage"
 import ServiceHeader from "../../components/service-header/ServiceHeader";
 import GuesthouseHighlightCards from "../../components/highlight-cards/GuesthouseHighlightCards";
 import guestHouseServices from "../../static/data/guesthouse/guesthouse";
-import { GuesthouseDescriptions } from "../../components/page-descriptions/PageDescriptions";
-import { withTranslation } from "../../i18n";
+import { Descriptions } from "../../components/page-descriptions/PageDescriptions";
 import GuesthouseAmenities from "../../components/amenities/GuesthouseAmenities";
 import GuesthouseExtraDetails from "../../components/extra-details/GuesthouseExtraDetails";
 import GuesthousePriceTags from "../../components/pricesTags/GuesthousePriceTags";
 import Footer from "../../components/footer/footer";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { TR_NS } from '../../constants/translationNamespace';
+import { useTranslation } from 'next-i18next';
+import { getPaths } from '../../utils/getPaths';
 
-const GuesthousePage = ({ t }) => {
+const GuesthousePage = () => {
   const router = useRouter();
+  const { t } = useTranslation(TR_NS.GUESTHOUSE)
   const { slug } = router.query;
   const title = slug.replace(/\-/g, "_");
   const guesthouseService = guestHouseServices.find(
@@ -30,7 +34,7 @@ const GuesthousePage = ({ t }) => {
       />
       <ServiceHeader title={t(guesthouseService.title)} />
       <GuesthouseHighlightCards highlights={guesthouseService.highlights} />
-      <GuesthouseDescriptions descriptions={guesthouseService.descriptions} />
+      <Descriptions descriptions={guesthouseService.descriptions} translationNamespace={TR_NS.GUESTHOUSE} />
       <GuesthouseAmenities
         amenities={guesthouseService.amenities}
         title={guesthouseService.whatIsIncludedTitle}
@@ -48,8 +52,20 @@ const GuesthousePage = ({ t }) => {
   );
 };
 
-GuesthousePage.getInitialProps = async () => ({
-  namespacesRequired: ["guesthouse"]
-});
+export async function getStaticPaths() {
 
-export default withTranslation("guesthouse")(GuesthousePage);
+	return {
+	   paths: getPaths(guestHouseServices, 'viesu-maja'),
+	  fallback: false,
+	}
+  }
+
+
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(locale, [TR_NS.NAVBAR, TR_NS.GUESTHOUSE, TR_NS.HOW_TO_RESERVE]),
+	},
+})
+
+
+export default GuesthousePage;

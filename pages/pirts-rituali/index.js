@@ -1,13 +1,18 @@
 import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import PageHeader from "../../components/page-header/PageHeader";
-import ServiceCards from "../../components/service-cards/ServiceCards";
-
 import SaunaRitualsDescription from "../../static/data/sauna-rituals/saunaRituals";
 import SaunaRitualsHeaderText from "../../static/data/index-page/saunaRitualsHeader";
-import { withTranslation } from "../../i18n";
+import Cards from '../../components/service-cards/style';
+import { TR_NS } from '../../constants/translationNamespace';
+import { ServiceCard } from '../../components/service-card/ServiceCard';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-const SaunaRitualsPage = ({ t }) => {
+const translationNamespaces = [TR_NS.SAUNA_RITUALS, TR_NS.SAUNA_RITUALS_HEADER, TR_NS.NAVBAR]
+
+const SaunaRitualsPage = () => {
+	const { t } = useTranslation(TR_NS.SAUNA_RITUALS_HEADER)
   return (
     <Layout
       title={t(SaunaRitualsHeaderText.metaTitle)}
@@ -21,16 +26,23 @@ const SaunaRitualsPage = ({ t }) => {
         title={t(SaunaRitualsHeaderText.title)}
         description={t(SaunaRitualsHeaderText.description)}
       />
-      <ServiceCards
-        serviceCards={SaunaRitualsDescription}
-        prefix={`pirts-rituali`}
-      />
+	<Cards>
+		{SaunaRitualsDescription.map(serviceCard => (
+			<ServiceCard
+				key={serviceCard.id}
+				prefix="pirts-rituali"
+				{...serviceCard}
+				translationNamespace={TR_NS.SAUNA_RITUALS}/>
+		))}
+	</Cards>
     </Layout>
   );
 };
 
-SaunaRitualsPage.getInitialProps = async () => ({
-  namespacesRequired: ["sauna_rituals_header"]
-});
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(locale, translationNamespaces),
+	},
+})
 
-export default withTranslation("sauna_rituals_header")(SaunaRitualsPage);
+export default SaunaRitualsPage;

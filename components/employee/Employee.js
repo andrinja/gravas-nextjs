@@ -1,15 +1,17 @@
 import { useState } from "react";
 import EmployeeExperience from "../employee-experience/EmployeeExperience";
-import { withTranslation } from "../../i18n";
 import Button from "../button/button";
 import { EmployeeDetails, ModalItems } from "./style";
 import Modal from "react-responsive-modal";
 import PhoneIcon from "../../components/icons/Phone";
 import EmailIcon from "../../components/icons/Mail";
 import Image from "next/image";
+import { TR_NS } from '../../constants/translationNamespace';
+import { useTranslation } from 'next-i18next';
 
-const Users = ({ employee, t }) => {
+const Users = ({ employee}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const {t} = useTranslation(TR_NS.EMPLOYEES);
   return (
     <EmployeeDetails>
       <h3 className="title">{t(employee.title)}</h3>
@@ -60,4 +62,4 @@ const Users = ({ employee, t }) => {
   );
 };
 
-export default withTranslation("employees")(Users);
+export default Users;

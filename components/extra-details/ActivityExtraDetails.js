@@ -1,7 +1,9 @@
 import Items from './style';
 import ActivityExtraDetail from '../../components/extra-detail/ActivityExtraDetail'
-import { withTranslation } from '../../i18n'
-const ActivityExtraDetails = ({details, title, t}) => {
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
+const ActivityExtraDetails = ({details, title}) => {
+	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
     return (
         <Items>
             <h3 className="title">{t(title)}</h3>
@@ -9,9 +11,9 @@ const ActivityExtraDetails = ({details, title, t}) => {
                 {details.map(detail => (
                     <ActivityExtraDetail key={detail.title} {...detail}/>
                 ))}
-            </div>   
-        </Items>    
+            </div>
+        </Items>
     )
 }
 
-export default  withTranslation('sport_activities')(ActivityExtraDetails)
+export default  ActivityExtraDetails

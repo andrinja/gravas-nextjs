@@ -1,13 +1,15 @@
 import { useRouter } from "next/router";
 import galleries from "../../static/data/galleries";
-import { withTranslation } from "../../i18n";
-import { useState } from "react";
+import { useState } from 'react'
 import Layout, { Images, Main, Aside, IconItems, Image } from "./style";
 import { useTransition, animated } from "react-spring";
 import CloseIcon from "../../components/icons/Close";
 import NextIcon from "../../components/icons/Next";
 import BackIcon from "../../components/icons/Back";
 import { default as NextImage } from 'next/image'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { TR_NS } from '../../constants/translationNamespace';
+import { getPaths } from '../../utils/getPaths';
 
 const Gallery = () => {
   const router = useRouter();
@@ -85,8 +87,19 @@ const Gallery = () => {
     </Layout>
   );
 };
-Gallery.getInitialProps = async () => ({
-  namespacesRequired: ["gallery"]
-});
 
-export default withTranslation("gallery")(Gallery);
+export async function getStaticPaths() {
+
+	return {
+	   paths: getPaths(galleries, 'galerijas', 'slug'),
+	  fallback: false,
+	}
+  }
+
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(locale, [TR_NS.GALLERY]),
+	},
+})
+
+export default Gallery;

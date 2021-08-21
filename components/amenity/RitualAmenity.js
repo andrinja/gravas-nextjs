@@ -1,11 +1,13 @@
-import { withTranslation } from "../../i18n";
 import Card from "./style";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
+import { TR_NS } from '../../constants/translationNamespace';
+import { useTranslation } from 'next-i18next';
 
-const RitualAmenity = ({ icon, label, caption, t }) => {
+const RitualAmenity = ({ icon, label, caption}) => {
   const iconName = toCapitalCase(icon);
   const Icon = dynamic(() => import(`../icons/${iconName}`));
+  const {t} = useTranslation(TR_NS.SAUNA_RITUALS);
   return (
     <Card>
       <Icon style={{ color: "#002823", fontSize: "32px" }} />
@@ -14,4 +16,4 @@ const RitualAmenity = ({ icon, label, caption, t }) => {
     </Card>
   );
 };
-export default withTranslation("sauna_rituals")(RitualAmenity);
+export default RitualAmenity;

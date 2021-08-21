@@ -1,7 +1,9 @@
 import Item from './style';
-import { withTranslation } from '../../i18n'
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const ActivityExtraDetail = ({title, details, t}) => {
+const ActivityExtraDetail = ({title, details}) => {
+	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
     return (
         <Item>
             <div className="detail">
@@ -13,4 +15,4 @@ const ActivityExtraDetail = ({title, details, t}) => {
     )
 }
 
-export default withTranslation('sport_activities')(ActivityExtraDetail);
+export default ActivityExtraDetail;

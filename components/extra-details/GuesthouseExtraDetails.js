@@ -1,7 +1,9 @@
 import Items from './style';
 import GuesthouseExtraDetail from '../../components/extra-detail/GuesthouseExtraDetail'
-import { withTranslation } from '../../i18n'
-const GuesthouseExtraDetails = ({details, title, t}) => {
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
+const GuesthouseExtraDetails = ({details, title}) => {
+	const { t } = useTranslation(TR_NS.GUESTHOUSE)
     return (
         <Items>
             <h3 className="title">{t(title)}</h3>
@@ -9,9 +11,9 @@ const GuesthouseExtraDetails = ({details, title, t}) => {
                 {details.map(detail => (
                     <GuesthouseExtraDetail key={detail.title} {...detail}/>
                 ))}
-            </div>   
-        </Items>    
+            </div>
+        </Items>
     )
 }
 
-export default  withTranslation('guesthouse')(GuesthouseExtraDetails)
+export default  GuesthouseExtraDetails

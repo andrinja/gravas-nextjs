@@ -4,10 +4,13 @@ import ContactsText from "../../static/data/contacts/contacts";
 import Contacts from "../../components/contacts/contacts";
 import FAQ from "../../components/frequent-questions";
 import contactHeader from "../../static/data/contacts/contactHeaders";
-import { withTranslation } from "../../i18n";
 import FaqHeader from "./style";
+import { TR_NS } from '../../constants/translationNamespace';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const ContactsPage = ({ t }) => {
+const ContactsPage = () => {
+	const {t} = useTranslation(TR_NS.CONTACTHEADERS);
   return (
     <Layout
       title={t(contactHeader.metatTitle)}
@@ -24,4 +27,10 @@ const ContactsPage = ({ t }) => {
   );
 };
 
-export default withTranslation("contactHeaders")(ContactsPage);
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(locale, TR_NS.CONTACTS),
+	},
+  })
+
+export default ContactsPage;

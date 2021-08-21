@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
-import { withTranslation } from "../../i18n";
 import { withApollo } from "../../lib/apollo";
 import { Elements, StripeProvider } from "react-stripe-elements";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -25,6 +24,11 @@ import Controls from "../../components/gift-card-flow/controls/Controls";
 //Consts
 import STEPS from "../../constants/steps";
 import emailRegex from "../../constants/emailRegex";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
+
+const {t} = useTranslation(TR_NS.GIFT_CARDS);
 
 const Headline = styled.h1`
   margin: 1rem 0;
@@ -34,7 +38,7 @@ const Headline = styled.h1`
   color: ${p => p.theme.colors.primaryDark};
 `;
 
-const PurchasePage = ({ t }) => {
+const PurchasePage = () => {
   //UI STATE
   const [snackbarText, setSnackbarText] = useState("");
   const [stepper, setStepper] = useState(STEPS);
@@ -226,8 +230,10 @@ const PurchasePage = ({ t }) => {
   );
 };
 
-PurchasePage.getInitialProps = () => ({
-  namespacesRequired: ["gift_cards"]
-});
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(locale),
+	},
+})
 
-export default withApollo(withTranslation("gift_cards")(PurchasePage));
+export default withApollo(PurchasePage);

@@ -1,7 +1,9 @@
 import ServiceDescriptions from "./style";
-import { withTranslation } from "../../i18n";
+// import { withTranslation } from "../../i18n";
+import { useTranslation } from 'next-i18next';
 
-const PageDescriptions = ({ descriptions, t }) => {
+export const Descriptions = ({ descriptions, translationNamespace}) => {
+	const { t } = useTranslation(translationNamespace);
   return (
     <ServiceDescriptions>
       {descriptions.map(description => (
@@ -12,17 +14,4 @@ const PageDescriptions = ({ descriptions, t }) => {
       ))}
     </ServiceDescriptions>
   );
-};
-
-export const IndexDescriptions = withTranslation("service_descriptions")(
-  PageDescriptions
-);
-export const RitualDescriptions = withTranslation("sauna_rituals")(
-  PageDescriptions
-);
-export const GuesthouseDescriptions = withTranslation("guesthouse")(
-  PageDescriptions
-);
-export const SportActivityDescriptions = withTranslation("sport_activities")(
-  PageDescriptions
-);
+}

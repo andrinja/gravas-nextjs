@@ -1,7 +1,8 @@
 import Item from "./style";
-import { withTranslation } from "../../i18n";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
 const GuesthousePriceTag = ({
   icon,
@@ -9,9 +10,9 @@ const GuesthousePriceTag = ({
   forPerson,
   additionalPerson,
   totalPrice,
-  t
 }) => {
   const iconName = toCapitalCase(icon);
+  const { t} = useTranslation(TR_NS.GUESTHOUSE)
   const Icon = dynamic(() => import(`../icons/${iconName}`));
   return (
     <Item>
@@ -24,4 +25,4 @@ const GuesthousePriceTag = ({
   );
 };
 
-export default withTranslation("guesthouse")(GuesthousePriceTag);
+export default GuesthousePriceTag;

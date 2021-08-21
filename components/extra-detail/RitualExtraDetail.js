@@ -1,7 +1,9 @@
 import Item from './style';
-import { withTranslation } from '../../i18n'
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const RitualExtraDetail = ({title, details, t}) => {
+const RitualExtraDetail = ({title, details}) => {
+	const {t} = useTranslation(TR_NS.SAUNA_RITUALS);
     return (
         <Item>
             <div className="detail">
@@ -13,4 +15,4 @@ const RitualExtraDetail = ({title, details, t}) => {
     )
 }
 
-export default withTranslation('sauna_rituals')(RitualExtraDetail);
+export default RitualExtraDetail;

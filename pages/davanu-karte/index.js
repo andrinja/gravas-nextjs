@@ -1,20 +1,20 @@
 import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import PageHeader from "../../components/page-header/PageHeader";
-import { withTranslation, Link } from "../../i18n";
 import giftCardHeader from "../../static/data/index-page/giftcardHeader";
 import Button from "../../components/button/button";
-import Router from "next/router";
-import {
-  ListItems,
-  ButtonItems
-} from "../../components/gift-card-flow/main/style.js";
+import {ListItems, ButtonItems} from "../../components/gift-card-flow/main/style.js";
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const Index = ({ t }) => (
-  <Layout
-    title={t(giftCardHeader.metaTitle)}
-    description={t(giftCardHeader.metaDescription)}
-  >
+const Index = () => {
+	const {t} = useTranslation(TR_NS.GIFT_CARDS);
+	return (
+	<Layout
+		title={t(giftCardHeader.metaTitle)}
+		description={t(giftCardHeader.metaDescription)}
+	>
     <PageHeaderImage
       imgsrc="/static/gift-card/gift-card-header.jpg?webp?lqip"
       alt={t(giftCardHeader.alt)}
@@ -34,15 +34,15 @@ const Index = ({ t }) => (
         <a
           className="buttonLink"
           target="_blank"
-          rel="noopener"
+          rel="norefferer noreferrer"
           href={`mailto:`}
         >
           <Button
             type="button"
             buttonStyle="btn--primary--outline"
           >
-			  {t("write_email")}
-		  </Button>
+			{t("write_email")}
+		</Button>
         </a>
         {/*<Button
           onClick={() => Router.push("/davanu-karte/iegadaties")}
@@ -53,10 +53,13 @@ const Index = ({ t }) => (
       </ButtonItems>
     </div>
   </Layout>
-);
+	)
+}
 
-Index.getInitialProps = async () => ({
-  namespacesRequired: ["gift_cards"]
-});
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(locale),
+	},
+})
 
-export default withTranslation("gift_cards")(Index);
+export default Index;

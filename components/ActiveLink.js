@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { Link } from '../i18n'
 import React, { Children } from 'react'
+import { Link } from './link'
 
 const ActiveLink = ({ children, activeClassName, ...props }) => {
   const { pathname } = useRouter()
   const child = Children.only(children)
-
   const className =
     pathname === props.href
       ? `${child.props.className} ${activeClassName}`

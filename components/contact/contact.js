@@ -1,12 +1,14 @@
 import Button from "../button/button";
 import { Item, Details } from "./style";
-import { withTranslation } from "../../i18n";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const Contact = ({ icon, href, contact, buttonText, t }) => {
+const Contact = ({ icon, href, contact, buttonText}) => {
   const iconName = toCapitalCase(icon);
   const Icon = dynamic(() => import(`../icons/${iconName}`));
+  const {t} = useTranslation(TR_NS.CONTACTS);
   return (
     <Item>
       <Details>
@@ -36,4 +38,4 @@ const Contact = ({ icon, href, contact, buttonText, t }) => {
   );
 };
 
-export default withTranslation("contacts")(Contact);
+export default Contact;

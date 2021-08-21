@@ -1,9 +1,11 @@
 import Card from "./style";
-import { withTranslation } from "../../i18n";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
+import { TR_NS } from '../../constants/translationNamespace';
+import { useTranslation } from 'next-i18next';
 
-const HighlightCard = ({ icon, label, caption, t }) => {
+const HighlightCard = ({ icon, label, caption}) => {
+  const {t} = useTranslation(TR_NS.GUESTHOUSE)
   const iconName = toCapitalCase(icon);
   const Icon = dynamic(() => import(`../icons/${iconName}`));
   return (
@@ -14,4 +16,4 @@ const HighlightCard = ({ icon, label, caption, t }) => {
     </Card>
   );
 };
-export default withTranslation("guesthouse")(HighlightCard);
+export default HighlightCard;

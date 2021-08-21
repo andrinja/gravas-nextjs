@@ -3,23 +3,31 @@ import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import ServiceHeader from "../../components/service-header/ServiceHeader";
 import RitualHighlightCards from "../../components/highlight-cards/RitualHighlightCards";
-import { RitualDescriptions } from "../../components/page-descriptions/PageDescriptions";
+import { Descriptions } from "../../components/page-descriptions/PageDescriptions";
 import RitualAmenities from "../../components/amenities/RitualAmenities";
 import Employee from "../../components/employee/Employee";
 import RitualExtraDetails from "../../components/extra-details/RitualExtraDetails";
 import RitualPriceTags from "../../components/pricesTags/RitualPriceTags";
 import Footer from "../../components/footer/footer";
-
 import EmployeeDetails from "../../static/data/employees/employees";
 import saunaRituals from "../../static/data/sauna-rituals/saunaRituals";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { TR_NS } from '../../constants/translationNamespace';
+import { useTranslation } from 'next-i18next';
+import { getPaths } from '../../utils/getPaths';
 
-import { withTranslation } from "../../i18n";
+const translationNamespaces = [TR_NS.SAUNA_RITUALS, TR_NS.SAUNA_RITUALS_HEADER, TR_NS.NAVBAR, TR_NS.EMPLOYEES, TR_NS.HOW_TO_RESERVE]
+const SaunaRitualPage = () => {
 
-const SaunaRitualPage = ({ t }) => {
+  const {t} = useTranslation(TR_NS.SAUNA_RITUALS);
   const router = useRouter();
   const { slug } = router.query;
-  const title = slug.replace(/\-/g, "_");
+  const title = slug?.replace(/\-/g, "_");
   const saunaRitual = saunaRituals.find(ritual => ritual.title === title);
+
+  if (!saunaRitual) {
+	  return null;
+  }
 
   return (
     <Layout
@@ -29,7 +37,7 @@ const SaunaRitualPage = ({ t }) => {
       <PageHeaderImage imgsrc={saunaRitual.img} alt={t(saunaRitual.alt)} />
       <ServiceHeader title={t(saunaRitual.title)} />
       <RitualHighlightCards highlights={saunaRitual.highlights} />
-      <RitualDescriptions descriptions={saunaRitual.descriptions} />
+      <Descriptions descriptions={saunaRitual.descriptions} translationNamespace="sauna_rituals" />
       <RitualAmenities
         amenities={saunaRitual.amenities}
         title={saunaRitual.whatIsIncludedTitle}
@@ -47,8 +55,19 @@ const SaunaRitualPage = ({ t }) => {
     </Layout>
   );
 };
-SaunaRitualPage.getInitialProps = async () => ({
-  namespacesRequired: ["sauna_rituals"]
-});
 
-export default withTranslation("sauna_rituals")(SaunaRitualPage);
+export async function getStaticPaths() {
+
+	return {
+	   paths: getPaths(saunaRituals, 'pirts-rituali'),
+	  fallback: false,
+	}
+  }
+
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(locale, translationNamespaces),
+	},
+})
+
+export default SaunaRitualPage;

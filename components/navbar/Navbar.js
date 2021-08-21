@@ -2,34 +2,35 @@ import { useState } from "react";
 import ActiveLink from "../ActiveLink";
 import NavItem from "../nav-item/NavItem";
 import { Nav, NavItems, Divider, SelectItems } from "./style";
-import { withTranslation, i18n } from "../../i18n";
+import { useTranslation } from 'next-i18next';
 import MenuIcon from "../../components/icons/Menu";
 import CloseIcon from "../../components/icons/Close";
 import ArrowDownIcon from "../../components/icons/ArrowDown";
 import Image from 'next/image'
 
-const FALLBACK_LANGUAGE = "lv";
-
 const LanguageSelect = () => {
+	const { i18n } = useTranslation()
+
+	console.log({ i18n})
 
   return (
     <SelectItems>
       <ArrowDownIcon className="icon" style={{ fontSize: "24px" }} />
       <select
-        value={i18n.language}
-        onChange={event => {
-          i18n.changeLanguage(event.target.value);
+        onChange={async event => {
+			console.log((await i18n.changeLanguage(event.target.value))())
         }}
       >
-        <option value="lv">Latviešu</option>
-        <option value="ru">Pусский</option>
-        <option value="en">English</option>
+        <option value="lv_LV">Latviešu</option>
+        <option value="ru_RU">Pусский</option>
+        <option value="en_US">English</option>
       </select>
     </SelectItems>
   );
 };
 
-const Navbar = ({ t }) => {
+export default function Navbar() {
+const { t } = useTranslation('navbar');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -77,6 +78,4 @@ const Navbar = ({ t }) => {
       </NavItems>
     </Nav>
   );
-};
-
-export default withTranslation("navbar")(Navbar);
+}

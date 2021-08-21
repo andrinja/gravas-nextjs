@@ -4,14 +4,15 @@ import Button from "../button/button";
 import { BottomItems, ModalItems } from "./style";
 import Modal from "react-responsive-modal";
 import howToReserveDetails from "../../static/data/contacts/howToReserve";
-import { withTranslation } from "../../i18n";
 import PhoneIcon from "../../components/icons/Phone";
 import EmailIcon from "../../components/icons/Mail";
 import GiftCardIcon from "../../components/icons/GiftCard";
+import { TR_NS } from '../../constants/translationNamespace';
+import { useTranslation } from 'next-i18next';
 
-const Footer = ({ t }) => {
+const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+	const {t} = useTranslation(TR_NS.HOW_TO_RESERVE);
   return (
     <BottomItems>
       <Button
@@ -52,4 +53,4 @@ const Footer = ({ t }) => {
   );
 };
 
-export default withTranslation("how_to_reserve")(Footer);
+export default Footer;

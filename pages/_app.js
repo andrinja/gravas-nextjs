@@ -2,9 +2,7 @@
 import React from "react";
 import App from "next/app";
 import Head from 'next/head';
-import { appWithTranslation } from "../i18n";
-
-'hello'
+import { appWithTranslation } from 'next-i18next';
 
 //uses the App component to initialize pages
 class MyApp extends App {

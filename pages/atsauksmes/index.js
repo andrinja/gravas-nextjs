@@ -3,8 +3,11 @@ import PageHeaderImage from "../../components/page-header-image/PageHeaderImage"
 import PageHeader from "../../components/page-header/PageHeader";
 import ReviewDescriptions from "../../static/data/reviews/reviews";
 import Review from "../../components/review/Review";
+import { TR_NS } from '../../constants/translationNamespace';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const ReviewsPage = () => {
+
   return (
     <Layout
       title="Atsauksmes | Gravas"
@@ -23,8 +26,13 @@ const ReviewsPage = () => {
   );
 };
 
-ReviewsPage.getInitialProps = async () => ({
-  namespacesRequired: ["reviews"]
-});
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(
+			locale,
+			[TR_NS.NAVBAR]
+		),
+	},
+})
 
 export default ReviewsPage;

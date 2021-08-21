@@ -1,22 +1,12 @@
-// for custom advanced behaviour of Next.js
-
 const withOptimizedImages = require("next-optimized-images");
-const { nextI18NextRewrites } = require('next-i18next/rewrites')
+const { i18n } = require('./next-i18next.config');
 
 const withOffline = require("next-offline");
 
-const localeSubpaths = {
-  en: 'en',
-  ru: 'ru',
-}
-
 const nextConfig = {
-  workboxOpts: {
+	i18n,
+	workboxOpts: {
     swDest: '../public/service-worker.js',
-  },
-  rewrites: async () => nextI18NextRewrites(localeSubpaths),
-  publicRuntimeConfig: {
-    localeSubpaths,
   },
 };
 

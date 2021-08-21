@@ -1,8 +1,10 @@
 import ActivityPriceTag from '../priceTag/ActivityPriceTag';
-import { withTranslation } from '../../i18n'
 import Items from './style'
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const ActivityPriceTags = ({prices, t, title}) => {
+const ActivityPriceTags = ({prices, title}) => {
+	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
     return (
         <Items>
             <h3 className="title">{t(title)}</h3>
@@ -10,10 +12,9 @@ const ActivityPriceTags = ({prices, t, title}) => {
                 {prices.map(price => (
                     <ActivityPriceTag key={price.title} {...price}/>
                 ))}
-            </div> 
+            </div>
         </Items>
     )
-        
 }
 
-export default  withTranslation('sport_activities')(ActivityPriceTags);
+export default  ActivityPriceTags;

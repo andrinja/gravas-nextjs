@@ -1,13 +1,16 @@
 import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import PageHeader from "../../components/page-header/PageHeader";
-import ServiceCards from "../../components/service-cards/ServiceCards";
-
 import SportActivitiesHeaderText from "../../static/data/index-page/sportActivitiesHeader";
 import SportsActivitiesDescription from "../../static/data/sport-activities/sportActivities";
-import { withTranslation } from "../../i18n";
+import Cards from '../../components/service-cards/style';
+import { ServiceCard } from '../../components/service-card/ServiceCard';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { TR_NS } from '../../constants/translationNamespace'
+import { useTranslation } from 'next-i18next';
 
-const SportActivitiesPage = ({ t }) => {
+const SportActivitiesPage = () => {
+	const { t } = useTranslation(TR_NS.SPORTS_ACTIVITIES_HEADER);
   return (
     <Layout
       title={t(SportActivitiesHeaderText.metaTitle)}
@@ -21,16 +24,27 @@ const SportActivitiesPage = ({ t }) => {
         title={t(SportActivitiesHeaderText.title)}
         description={t(SportActivitiesHeaderText.description)}
       />
-      <ServiceCards
-        serviceCards={SportsActivitiesDescription}
-        prefix={`aktiva-atputa`}
-      />
+		<Cards>
+		{SportsActivitiesDescription.map(serviceCard => (
+			<ServiceCard
+				key={serviceCard.id}
+				translationNamespace={TR_NS.SPORT_ACTIVITIES}
+				prefix="aktiva-atputa"
+				{...serviceCard}
+			/>
+		))}
+		</Cards>
     </Layout>
   );
 };
 
-SportActivitiesPage.getInitialProps = async () => ({
-  namespacesRequired: ["sport_activities_header"]
-});
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(
+			locale,
+			[TR_NS.SPORT_ACTIVITIES_HEADER, TR_NS.SPORT_ACTIVITIES, TR_NS.NAVBAR, TR_NS.SPORTS_ACTIVITIES_HEADER]
+		),
+	},
+})
 
-export default withTranslation("sport_activities_header")(SportActivitiesPage);
+export default SportActivitiesPage;

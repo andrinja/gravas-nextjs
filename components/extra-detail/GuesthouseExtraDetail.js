@@ -1,7 +1,10 @@
 import Item from './style';
-import { withTranslation } from '../../i18n'
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const GuesthouseExtraDetail = ({title, details, t}) => {
+const GuesthouseExtraDetail = ({title, details}) => {
+
+	const { t } = useTranslation(TR_NS.GUESTHOUSE)
     return (
         <Item>
             <div className="detail">
@@ -13,4 +16,4 @@ const GuesthouseExtraDetail = ({title, details, t}) => {
     )
 }
 
-export default withTranslation('guesthouse')(GuesthouseExtraDetail);
+export default GuesthouseExtraDetail;

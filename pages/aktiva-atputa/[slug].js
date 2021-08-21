@@ -3,15 +3,19 @@ import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import ServiceHeader from "../../components/service-header/ServiceHeader";
 import ActivityHighlightCards from "../../components/highlight-cards/ActivityHighlightCards";
-import { SportActivityDescriptions } from "../../components/page-descriptions/PageDescriptions";
+import { Descriptions } from "../../components/page-descriptions/PageDescriptions";
 import ActivityAmenities from "../../components/amenities/ActivityAmenities";
 import ActivityExtraDetails from "../../components/extra-details/ActivityExtraDetails";
 import ActivityPriceTags from "../../components/pricesTags/ActivityPriceTags";
 import sportActivities from "../../static/data/sport-activities/sportActivities";
 import Footer from "../../components/footer/footer";
-import { withTranslation } from "../../i18n";
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { getPaths } from '../../utils/getPaths';
 
-const SportActivityPage = ({ t }) => {
+const SportActivityPage = () => {
+	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
   const router = useRouter();
   const { slug } = router.query;
   const title = slug.replace(/-/g, "_");
@@ -27,7 +31,7 @@ const SportActivityPage = ({ t }) => {
       <PageHeaderImage imgsrc={activity.img} alt={t(activity.alt)} />
       <ServiceHeader title={t(activity.title)} />
       <ActivityHighlightCards highlights={activity.highlights} />
-      <SportActivityDescriptions descriptions={activity.descriptions} />
+      <Descriptions descriptions={activity.descriptions} translationNamespace={TR_NS.SPORT_ACTIVITIES} />
       <ActivityAmenities
         amenities={activity.amenities}
         title={activity.whatIsIncludedTitle}
@@ -45,8 +49,18 @@ const SportActivityPage = ({ t }) => {
   );
 };
 
-SportActivityPage.getInitialProps = async () => ({
-  namespacesRequired: ["sport_activities"]
-});
+export async function getStaticPaths() {
+	return {
+	   paths: getPaths(sportActivities, 'aktiva-atputa'),
+	  fallback: false,
+	}
+  }
 
-export default withTranslation("sport_activities")(SportActivityPage);
+export const getStaticProps = async ({ locale }) => ({
+	props: {
+		...await serverSideTranslations(locale, [TR_NS.NAVBAR, TR_NS.SPORT_ACTIVITIES]),
+	},
+})
+
+
+export default SportActivityPage;

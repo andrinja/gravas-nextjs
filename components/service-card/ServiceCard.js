@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Card from "./style";
-import { withTranslation } from "../../i18n";
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
-const ServiceCard = ({title, priceTitle, priceFrom, img, t, prefix }) => {
+export const ServiceCard = ({title, priceTitle, priceFrom, img, translationNamespace, prefix }) => {
   const slug = title.replace(/\_/g, "-");
+
+  const { t } = useTranslation(translationNamespace)
   return (
     <Link href={`/${prefix}/${slug}`} prefetch={false}>
       <Card
@@ -29,8 +31,3 @@ const ServiceCard = ({title, priceTitle, priceFrom, img, t, prefix }) => {
   );
 };
 
-export const RitualServiceCard = withTranslation("sauna_rituals")(ServiceCard);
-export const GuestHouseServiceCard = withTranslation("guesthouse")(ServiceCard);
-export const SportActivitiesCard = withTranslation("sport_activities")(
-  ServiceCard
-);

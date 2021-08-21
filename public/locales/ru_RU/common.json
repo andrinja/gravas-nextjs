@@ -1,0 +1,12 @@
+{
+    "what_is_included": "Kas iekļauts",
+    "consider": "Ņemt vērā",
+    "prices": "Cenas",
+    
+    "take_with_you": "Paņem līdzi",
+    "take_with_you_description": "Jāņem līdzi savu dvieli",
+    "cancelation": "Atcelšanas noteikumi",
+    "cancelation_description": "Ja rezervācija tiek kavēta vairāk par stundu, pirtniecei ir tiesības atcelt rezervāciju.",
+    "customer_requirement": "Klienta prasība",
+    "customer_requirement_description": "Ja ir kādi uztura ierobežojumi, lūgums par to informēt rezervācijas laikā. Ja ir kādi veselības ierobežojumi, kas jāņem vērā pirtī, lūgums par to iepriekš informēt pirnieci."
+}

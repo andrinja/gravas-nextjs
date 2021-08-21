@@ -1,12 +1,13 @@
 import Layout from "../components/Layout";
 import PageHeaderImage from "../components/page-header-image/PageHeaderImage";
 import ExploreCards from "../components/explore-cards/ExploreCards";
-import { IndexDescriptions } from "../components/page-descriptions/PageDescriptions";
-
+import { Descriptions } from "../components/page-descriptions/PageDescriptions";
 import cards from "../static/data/index-page/exploreCards";
 import serviceDescriptions from "../static/data/index-page/serviceDescriptions";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { TR_NS } from '../constants/translationNamespace';
 
-const Index = () => {
+export default function Index() {
   return (
     <Layout
       title="Pirts rituāls | Naktsmītnes | Gravas"
@@ -17,13 +18,18 @@ const Index = () => {
         imgsrc="/static/home/gravas-atputa-bauska.jpg?webp?lqip"
         alt="Atpūta laukos pie dabas Bauska"
       />
-      <IndexDescriptions descriptions={serviceDescriptions} />
+      <Descriptions descriptions={serviceDescriptions} translationNamespace={TR_NS.SERVICE_DESCRIPTIONS} />
     </Layout>
   );
-};
+}
 
-Index.getInitialProps = async () => ({
-  namespacesRequired: ["explore_cards", "service_descriptions"]
-});
-
-export default Index;
+export async function getServerSideProps({locale}) {
+	return {
+		props: {
+			...(await serverSideTranslations(
+				locale,
+				[TR_NS.EXPLORE_CARDS, TR_NS.SERVICE_DESCRIPTIONS, TR_NS.NAVBAR]
+			))
+		},
+	}
+}

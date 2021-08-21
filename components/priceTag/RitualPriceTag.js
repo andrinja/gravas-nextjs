@@ -1,16 +1,17 @@
 import Item from "./style";
-import { withTranslation } from "../../i18n";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
 const RitualPriceTag = ({
   icon,
   title,
   forPerson,
   additionalPerson,
-  totalPrice,
-  t
+  totalPrice
 }) => {
+	const { t} = useTranslation(TR_NS.SAUNA_RITUALS)
   const iconName = toCapitalCase(icon);
   const Icon = dynamic(() => import(`../icons/${iconName}`));
   return (
@@ -24,4 +25,4 @@ const RitualPriceTag = ({
   );
 };
 
-export default withTranslation("sauna_rituals")(RitualPriceTag);
+export default RitualPriceTag;

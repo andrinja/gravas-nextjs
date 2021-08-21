@@ -1,7 +1,6 @@
 import React from 'react'
-import { withTranslation } from '../i18n'
 
-function Error({ statusCode }) {
+export default function Error({ statusCode }) {
   return (
     <p>
       {statusCode
@@ -23,5 +22,3 @@ Error.getInitialProps = async ({ res, err }) => {
     statusCode,
   }
 }
-
-export default withTranslation('common')(Error)

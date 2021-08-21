@@ -1,7 +1,9 @@
-import { withTranslation } from '../../i18n';
 import Experience from './style';
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const EmployeeExperience = ({year, event, t}) => {
+const EmployeeExperience = ({year, event}) => {
+	const {t} = useTranslation(TR_NS.EMPLOYEES)
     return (
             <Experience>
                 <h3 className="year">{t(year)}</h3>
@@ -10,5 +12,4 @@ const EmployeeExperience = ({year, event, t}) => {
         )
 }
 
-export default withTranslation('employees')(EmployeeExperience);
-    
+export default EmployeeExperience;

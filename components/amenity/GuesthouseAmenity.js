@@ -1,10 +1,12 @@
-import { withTranslation } from "../../i18n";
 import Card from "./style";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const GuesthouseAmenity = ({ icon, label, caption, t }) => {
+const GuesthouseAmenity = ({ icon, label, caption }) => {
   const iconName = toCapitalCase(icon);
+  const { t} = useTranslation(TR_NS.GUESTHOUSE)
   const Icon = dynamic(() => import(`../icons/${iconName}`));
 
   return (
@@ -15,4 +17,4 @@ const GuesthouseAmenity = ({ icon, label, caption, t }) => {
     </Card>
   );
 };
-export default withTranslation("guesthouse")(GuesthouseAmenity);
+export default GuesthouseAmenity;

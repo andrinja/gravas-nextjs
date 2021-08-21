@@ -1,8 +1,10 @@
 import RitualPriceTag from '../priceTag/RitualPriceTag';
-import { withTranslation } from '../../i18n'
 import Items from './style'
+import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
-const RitualPriceTags = ({prices, t, title}) => {
+const RitualPriceTags = ({prices, title}) => {
+	const { t } = useTranslation(TR_NS.SAUNA_RITUALS)
     return (
         <Items>
             <h3 className="title">{t(title)}</h3>
@@ -13,7 +15,6 @@ const RitualPriceTags = ({prices, t, title}) => {
             </div> 
         </Items>
     )
-        
 }
 
-export default  withTranslation('sauna_rituals')(RitualPriceTags);
+export default RitualPriceTags;
