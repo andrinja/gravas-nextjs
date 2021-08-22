@@ -8,7 +8,7 @@ export const ServiceCard = ({title, priceTitle, priceFrom, img, translationNames
 
   const { t } = useTranslation(translationNamespace)
   return (
-    <Link href={`/${prefix}/${slug}`} prefetch={false}>
+    <Link href={`/${prefix}/${slug}`} prefetch={false} passHref>
       <Card
 		whileHover={{
 			scale: 1.05,

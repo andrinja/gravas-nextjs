@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { withTranslation } from "../../../../i18n";
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
@@ -6,6 +6,7 @@ import Add from "@material-ui/icons/Add";
 import Remove from "@material-ui/icons/Remove";
 import styled from "@emotion/styled";
 import Button from "../../../button/button";
+import Image from "next/image";
 
 export const InputCard = styled.div`
   display: flex;
@@ -58,7 +59,7 @@ const AddProduct = ({ t, product, handleAddProduct }) => {
 
   useEffect(() => {
     handlePriceChange();
-  }, [persons]);
+  }, [persons, handlePriceChange]);
 
   const handlePersonsInput = desiredPersonsCount => {
     if (desiredPersonsCount >= 1) {
@@ -74,7 +75,7 @@ const AddProduct = ({ t, product, handleAddProduct }) => {
     }
   };
 
-  const handlePriceChange = () => {
+  const handlePriceChange = useCallback(() => {
     switch (product.price_type.name) {
       case "absolute":
         setPrice(
@@ -85,7 +86,7 @@ const AddProduct = ({ t, product, handleAddProduct }) => {
         setPrice(product.prices[0].amount * persons);
         break;
     }
-  };
+  }, [setPrice, product, persons]);
 
   return (
     <form
@@ -98,9 +99,10 @@ const AddProduct = ({ t, product, handleAddProduct }) => {
       }}
     >
       <InputCard>
-        <img
+        <Image
           className="image"
           src={`/static/gift-card/products/${product.name}.jpg`}
+          alt=""
         />
         <h3>{t(product.name)}</h3>
         <IconButton

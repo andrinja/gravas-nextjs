@@ -3,6 +3,7 @@ import { withTranslation } from "../../../i18n";
 import styled from "@emotion/styled";
 import Button from "../../../components/button/button";
 import Router from "next/router";
+import Image from "next/image";
 
 const ReceiptBox = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const ReceiptStep = ({ title, contactEmail, t }) => {
   return (
     <Step title={title}>
       <ReceiptBox>
-        <img src="/static/receipt-icon.png" alt="" />
+        <Image src="/static/receipt-icon.png" alt="" />
         <h3>{t("thank_you_for_purchase")}</h3>
         <p id="gift_card_sent_to_email">
           {t("gift_card_sent_to_email", { contactEmail })}

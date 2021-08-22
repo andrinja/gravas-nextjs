@@ -4,7 +4,7 @@ import galleries from "../../static/data/galleries";
 
 import { Header, HeaderImage } from "./style";
 
-export default ({ imgsrc, alt, title, caption }) => {
+const PageHeaderImage = ({ imgsrc, alt, title, caption }) => {
   const router = useRouter();
   const { slug } = router.query;
   const hasGallery = galleries.find(gallery => gallery.slug === slug);
@@ -30,3 +30,5 @@ export default ({ imgsrc, alt, title, caption }) => {
     </Header>
   );
 };
+
+export default PageHeaderImage

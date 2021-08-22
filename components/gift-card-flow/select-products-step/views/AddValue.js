@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { Add, Remove } from "@material-ui/icons";
 import { InputCard, AddProductControls } from "./AddProduct";
 import Button from "../../../button/button";
+import Image from "next/image";
 
 const AddValue = ({ handleAddProduct, t }) => {
   const [value, setValue] = useState(5);
@@ -34,7 +35,7 @@ const AddValue = ({ handleAddProduct, t }) => {
     !loading && (
       <div>
         <InputCard>
-          <img className="image" src={`/static/gift-card/products/value.jpg`} />
+          <Image className="image" src={`/static/gift-card/products/value.jpg`} alt=""/>
           <h3>{t("enter_value")}</h3>
           <IconButton size="small" onClick={() => handleChangeValue(-5)}>
             <Remove />
