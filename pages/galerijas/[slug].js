@@ -7,7 +7,7 @@ import CloseIcon from "../../components/icons/Close";
 import NextIcon from "../../components/icons/Next";
 import BackIcon from "../../components/icons/Back";
 import { default as NextImage } from 'next/image'
-import getServerSideTranslations from '../../utils/getServerSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
 import { getPaths } from '../../utils/getPaths';
 
@@ -98,7 +98,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await getServerSideTranslations(locale, [TR_NS.GALLERY]),
+		...await serverSideTranslations(locale, [TR_NS.GALLERY]),
 	},
 })
 

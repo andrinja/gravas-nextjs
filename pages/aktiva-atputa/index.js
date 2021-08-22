@@ -5,7 +5,7 @@ import SportActivitiesHeaderText from "../../static/data/index-page/sportActivit
 import SportsActivitiesDescription from "../../static/data/sport-activities/sportActivities";
 import Cards from '../../components/service-cards/style';
 import { ServiceCard } from '../../components/service-card/ServiceCard';
-import getServerSideTranslations from '../../utils/getServerSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace'
 import { useTranslation } from 'next-i18next';
 
@@ -40,7 +40,7 @@ const SportActivitiesPage = () => {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await getServerSideTranslations(
+		...await serverSideTranslations(
 			locale,
 			[TR_NS.SPORT_ACTIVITIES_HEADER, TR_NS.SPORT_ACTIVITIES, TR_NS.NAVBAR, TR_NS.SPORTS_ACTIVITIES_HEADER]
 		),

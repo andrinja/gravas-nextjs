@@ -6,7 +6,7 @@ import SaunaRitualsHeaderText from "../../static/data/index-page/saunaRitualsHea
 import Cards from '../../components/service-cards/style';
 import { TR_NS } from '../../constants/translationNamespace';
 import { ServiceCard } from '../../components/service-card/ServiceCard';
-import getServerSideTranslations from '../../utils/getServerSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 const translationNamespaces = [TR_NS.SAUNA_RITUALS, TR_NS.SAUNA_RITUALS_HEADER, TR_NS.NAVBAR]
@@ -41,7 +41,7 @@ const SaunaRitualsPage = () => {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await getServerSideTranslations(locale, translationNamespaces),
+		...await serverSideTranslations(locale, translationNamespaces),
 	},
 })
 

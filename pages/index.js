@@ -4,8 +4,7 @@ import ExploreCards from "../components/explore-cards/ExploreCards";
 import { Descriptions } from "../components/page-descriptions/PageDescriptions";
 import cards from "../static/data/index-page/exploreCards";
 import serviceDescriptions from "../static/data/index-page/serviceDescriptions";
-import getServerSideTranslations from '../utils/getServerSideTranslations';
-
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { TR_NS } from '../constants/translationNamespace';
 
 export default function Index() {
@@ -27,9 +26,9 @@ export default function Index() {
 export async function getServerSideProps({locale}) {
 	return {
 		props: {
-			...(await getServerSideTranslations(
+			...(await serverSideTranslations(
 				locale,
-				[TR_NS.EXPLORE_CARDS, TR_NS.SERVICE_DESCRIPTIONS, TR_NS.NAVBAR],
+				[TR_NS.EXPLORE_CARDS, TR_NS.SERVICE_DESCRIPTIONS, TR_NS.NAVBAR]
 			))
 		},
 	}
