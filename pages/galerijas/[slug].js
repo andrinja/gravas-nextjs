@@ -49,7 +49,7 @@ const Gallery = () => {
       </IconItems>
       <Images>
         <Main>
-          <Image>
+          <Image alt="">
             <BackIcon
               onClick={handleBack}
               style={{ color: "#000000", fontSize: "28px" }}
