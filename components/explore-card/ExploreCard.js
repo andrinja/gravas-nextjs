@@ -21,6 +21,6 @@ export default function ExploreCard ({ label, img, href}) {
 			</picture>
 			<span className="label">{t(label)}</span>
 		</Card>
-	  </Link>
+		</Link>
 	)
 }

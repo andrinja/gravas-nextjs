@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const ActivityAmenity = ({ icon, label, caption}) => {
-  const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES);
+  const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES);
   const iconName = toCapitalCase(icon);
   const Icon = dynamic(() => import(`../icons/${iconName}`));
   return (

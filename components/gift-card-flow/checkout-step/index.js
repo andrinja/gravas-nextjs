@@ -15,7 +15,7 @@ class CheckoutStep extends Component {
     super(props);
     this.submit = this.submit.bind(this);
   }
-  state = {
+ 	state = {
     errorMessage: "",
     paying: false
   };

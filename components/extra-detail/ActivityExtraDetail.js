@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const ActivityExtraDetail = ({title, details}) => {
-	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
+	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
     return (
         <Item>
             <div className="detail">

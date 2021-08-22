@@ -8,7 +8,7 @@ import Router from "next/router";
 import NProgress from "nprogress";
 import { initGA, logPageView } from "../utils/analytics";
 
-Router.onRouteChangeStart = url => {
+Router.onRouteChangeStart = () => {
   NProgress.start();
 };
 Router.onRouteChangeComplete = () => NProgress.done();

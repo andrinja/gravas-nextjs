@@ -1,5 +1,5 @@
 import Step from "../step";
-import { withTranslation, Link } from "../../../i18n";
+import { withTranslation } from "../../../i18n";
 import styled from "@emotion/styled";
 import Button from "../../../components/button/button";
 import Router from "next/router";

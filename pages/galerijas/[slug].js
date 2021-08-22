@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import galleries from "../../static/data/galleries";
-import { useState } from 'react'
+import { useState } from 'react'
 import Layout, { Images, Main, Aside, IconItems, Image } from "./style";
 import { useTransition, animated } from "react-spring";
 import CloseIcon from "../../components/icons/Close";
 import NextIcon from "../../components/icons/Next";
 import BackIcon from "../../components/icons/Back";
-import { default as NextImage } from 'next/image'
+import { default as NextImage } from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
 import { getPaths } from '../../utils/getPaths';
@@ -91,8 +91,8 @@ const Gallery = () => {
 export async function getStaticPaths() {
 
 	return {
-	   paths: getPaths(galleries, 'galerijas', 'slug'),
-	  fallback: false,
+		paths: getPaths(galleries, 'galerijas', 'slug'),
+		fallback: false,
 	}
   }
 

@@ -22,11 +22,11 @@ const SaunaRitualPage = () => {
   const {t} = useTranslation(TR_NS.SAUNA_RITUALS);
   const router = useRouter();
   const { slug } = router.query;
-  const title = slug?.replace(/\-/g, "_");
+  const title = slug.replace(/-/g, "_");
   const saunaRitual = saunaRituals.find(ritual => ritual.title === title);
 
   if (!saunaRitual) {
-	  return null;
+		return null;
   }
 
   return (
@@ -59,8 +59,8 @@ const SaunaRitualPage = () => {
 export async function getStaticPaths() {
 
 	return {
-	   paths: getPaths(saunaRituals, 'pirts-rituali'),
-	  fallback: false,
+		paths: getPaths(saunaRituals, 'pirts-rituali'),
+		fallback: false,
 	}
   }
 

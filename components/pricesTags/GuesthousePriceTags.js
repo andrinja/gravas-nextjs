@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const GuesthousePriceTags = ({prices, title}) => {
-	const { t } = useTranslation(TR_NS.GUESTHOUSE)
+	const { t } = useTranslation(TR_NS.GUESTHOUSE)
     return (
         <Items>
             <h3 className="title">{t(title)}</h3>

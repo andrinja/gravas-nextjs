@@ -7,12 +7,12 @@ const ActivityAmenities = ({ amenities, title }) => {
 	const { t } = useTranslation(TR_NS.SPORTS_ACTIVITIES)
 	return (
 		<Items>
-		  <h3 className="title">{t(title)}</h3>
-		  <div className="amenities">
+			<h3 className="title">{t(title)}</h3>
+			<div className="amenities">
 			{amenities.map(amenity => (
-			  <ActivityAmenity key={amenity.label} {...amenity} />
+				<ActivityAmenity key={amenity.label} {...amenity} />
 			))}
-		  </div>
+			</div>
 		</Items>
 	  )
 };

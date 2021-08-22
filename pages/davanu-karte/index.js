@@ -24,22 +24,22 @@ const Index = () => {
         description={t(giftCardHeader.description)}
       />
       <h4>{t("gift_card_how_to_purchase")}</h4>
-	  <ul style={{
-		  margin: '1rem 1.5rem'
-	  }}>
+		<ul style={{
+			margin: '1rem 1.5rem'
+		}}>
         <li>{t("form_gift_card")}</li>
         <li>{t("payment_confirmation")}</li>
         <li>{t("receive_gift_card_in_mail")}</li>
       </ul>
       <div>
         <a
-          className="buttonLink"
-          target="_blank"
-          rel="norefferer noreferrer"
-		  href={`mailto:`}
-		  style={{
-			  textDecoration: 'none'
-		  }}
+			className="buttonLink"
+			target="_blank"
+			rel="norefferer noreferrer"
+			href={`mailto:`}
+			style={{
+				textDecoration: 'none'
+			}}
         >
           <Button
             type="button"

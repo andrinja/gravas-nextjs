@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
 export const ServiceCard = ({title, priceTitle, priceFrom, img, translationNamespace, prefix }) => {
-  const slug = title.replace(/\_/g, "-");
+  const slug = title.replace(/_/g, "-");
 
   const { t } = useTranslation(translationNamespace)
   return (

@@ -16,9 +16,9 @@ import { getPaths } from '../../utils/getPaths';
 
 const GuesthousePage = () => {
   const router = useRouter();
-  const { t } = useTranslation(TR_NS.GUESTHOUSE)
+  const { t } = useTranslation(TR_NS.GUESTHOUSE)
   const { slug } = router.query;
-  const title = slug.replace(/\-/g, "_");
+  const title = slug.replace(/-/g, "_");
   const guesthouseService = guestHouseServices.find(
     guesthouse => guesthouse.title === title
   );
@@ -55,8 +55,8 @@ const GuesthousePage = () => {
 export async function getStaticPaths() {
 
 	return {
-	   paths: getPaths(guestHouseServices, 'viesu-maja'),
-	  fallback: false,
+		paths: getPaths(guestHouseServices, 'viesu-maja'),
+		fallback: false,
 	}
   }
 

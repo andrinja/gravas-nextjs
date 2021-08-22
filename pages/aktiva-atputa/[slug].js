@@ -15,7 +15,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getPaths } from '../../utils/getPaths';
 
 const SportActivityPage = () => {
-	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
+	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
   const router = useRouter();
   const { slug } = router.query;
   const title = slug.replace(/-/g, "_");
@@ -51,8 +51,8 @@ const SportActivityPage = () => {
 
 export async function getStaticPaths() {
 	return {
-	   paths: getPaths(sportActivities, 'aktiva-atputa'),
-	  fallback: false,
+		paths: getPaths(sportActivities, 'aktiva-atputa'),
+		fallback: false,
 	}
   }
 
