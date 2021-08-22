@@ -52,6 +52,7 @@
     "uniqid": "^5.2.0"
   },
   "scripts": {
+    "lint": "next lint",
     "dev": "next",
     "build": "next build",
     "start": "next start",
@@ -64,6 +65,7 @@
     "@svgr/cli": "^5.1.0",
     "cypress": "^3.8.2",
     "eslint": "^7.32.0",
+    "eslint-config-next": "11.1.0",
     "husky": "^4.2.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1"
