@@ -19,7 +19,6 @@ const LanguageSelect = () => {
       <select
 		value={i18n.language}
         onChange={event => {
-			console.log(router)
 			router.push(router.asPath, undefined, {
 				locale: event.target.value
 			})
