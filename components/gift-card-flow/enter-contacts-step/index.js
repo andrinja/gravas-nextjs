@@ -27,7 +27,7 @@ const EnterContactsStep = ({ t, title, setContacts, contacts }) => {
       phone,
       email
     });
-  }, [name, phone, email]);
+  }, [name, phone, email, setContacts]);
 
   return (
     <Step title={title}>
