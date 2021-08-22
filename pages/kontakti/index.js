@@ -20,7 +20,7 @@ const ContactsPage = () => {
         title={t(contactHeader.headerTitle)}
         description={t(contactHeader.headerDescription)}
       />
-      <Contacts contacts={ContactsText} />
+      <Contacts contactsText={ContactsText} />
       <FaqHeader>{t(contactHeader.frequentQuestionsTitle)}</FaqHeader>
       <FAQ />
     </Layout>

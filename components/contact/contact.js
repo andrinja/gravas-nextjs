@@ -16,7 +16,7 @@ const Contact = ({ icon, href, contact, buttonText}) => {
 		<a
 			className="contact-detail"
 			target="_blank"
-			rel="noopener"
+			rel="noreferrer"
 			href={`${href}${contact}`}>
           {contact}
         </a>
@@ -24,7 +24,7 @@ const Contact = ({ icon, href, contact, buttonText}) => {
       <a
         className="buttonLink"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         href={`${href}${contact}`}
       >
         <Button
