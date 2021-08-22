@@ -1,10 +1,12 @@
 import ExploreCard from '../explore-card/ExploreCard'
 import CardItems from './style'
 
-export default ({ cards }) => (
+const Cards = ({ cards }) => (
     <CardItems>
         {cards.map( card => (
             <ExploreCard key={card.id} {...card}/>
         ))}
     </CardItems>
 )
+
+export default Cards;
