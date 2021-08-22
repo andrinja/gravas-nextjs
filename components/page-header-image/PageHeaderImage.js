@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { Link } from '../../components/link'
+import { Link } from '../../components/link'
 import galleries from "../../static/data/galleries";
 
 import { Header, HeaderImage } from "./style";

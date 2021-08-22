@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const ActivityPriceTags = ({prices, title}) => {
-	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
+	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES)
     return (
         <Items>
             <h3 className="title">{t(title)}</h3>
@@ -17,4 +17,4 @@ const ActivityPriceTags = ({prices, title}) => {
     )
 }
 
-export default  ActivityPriceTags;
+export default ActivityPriceTags;

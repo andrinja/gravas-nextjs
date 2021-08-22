@@ -52,7 +52,7 @@ export const AddProductControls = styled.div`
   }
 `;
 
-const AddProduct = ({ t, product, type, handleAddProduct }) => {
+const AddProduct = ({ t, product, handleAddProduct }) => {
   const [persons, setPersons] = useState(1);
   const [price, setPrice] = useState();
 

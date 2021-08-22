@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const RitualPriceTags = ({prices, title}) => {
-	const { t } = useTranslation(TR_NS.SAUNA_RITUALS)
+	const { t } = useTranslation(TR_NS.SAUNA_RITUALS)
     return (
         <Items>
             <h3 className="title">{t(title)}</h3>
@@ -12,7 +12,7 @@ const RitualPriceTags = ({prices, title}) => {
                 {prices.map(price => (
                     <RitualPriceTag key={price.title} {...price}/>
                 ))}
-            </div> 
+            </div>
         </Items>
     )
 }

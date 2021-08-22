@@ -10,14 +10,14 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 const LanguageSelect = () => {
-	const { i18n } = useTranslation()
+	const { i18n } = useTranslation()
 	const router = useRouter()
 
   return (
     <SelectItems>
       <ArrowDownIcon className="icon" style={{ fontSize: "24px" }} />
       <select
-	  value={i18n.language}
+		value={i18n.language}
         onChange={event => {
 			console.log(router)
 			router.push(router.asPath, undefined, {

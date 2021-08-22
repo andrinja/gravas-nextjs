@@ -14,6 +14,6 @@ const ActivityAmenities = ({ amenities, title }) => {
 			))}
 			</div>
 		</Items>
-	  )
+	)
 };
 export default ActivityAmenities;

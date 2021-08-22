@@ -70,7 +70,7 @@ const DesignStep = ({ t, handleThemeSelect }) => {
   );
 };
 
-export const Tile = ({ handleSelect, name, imagePath, selected, value }) => {
+export const Tile = ({ handleSelect, name, selected, value }) => {
   const animatedTile = {
     visible: {
       opacity: 1
@@ -89,7 +89,7 @@ export const Tile = ({ handleSelect, name, imagePath, selected, value }) => {
       onClick={() => handleSelect(value)}
       key={name}
     >
-      <Image src={imagePath} />
+      {/* <Image src={imagePath} /> */}
       <div className="name">{name}</div>
     </TileContainer>
   );

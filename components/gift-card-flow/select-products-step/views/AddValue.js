@@ -11,6 +11,7 @@ import Button from "../../../button/button";
 const AddValue = ({ handleAddProduct, t }) => {
   const [value, setValue] = useState(5);
 
+  // eslint-disable-next-line no-unused-vars
   const { loading, error, data } = useQuery(GET_PRODUCT_BY_NAME, {
     variables: {
       name: "value"
@@ -24,6 +25,10 @@ const AddValue = ({ handleAddProduct, t }) => {
       setValue(value + modifier > 0 ? value + modifier : 0);
     }
   };
+
+  const handleChangeValue = () => {
+		console.log('hello')
+  }
 
   return (
     !loading && (
@@ -60,7 +65,7 @@ const AddValue = ({ handleAddProduct, t }) => {
           </Button>
         </AddProductControls>
       </div>
-    )
+	)
   );
 };
 
