@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import { motion } from "framer-motion";
 
-const Card = styled(motion.a)`
+export const Card = styled(motion.a)`
     box-shadow: 0px .2rem .8rem rgba(0, 0, 0, 0.10);
     border-radius: .25rem;
     cursor: pointer;
     display: flex;
+	text-decoration: none;
+	color: ${props => props.theme.fontColors.primary};
 
     img {
         width: 100px;
@@ -19,5 +21,4 @@ const Card = styled(motion.a)`
         align-items: center;
         padding: 1rem;
     }
-`
-export default Card;
+`;
