@@ -48,12 +48,6 @@ const Index = () => {
 			{t("write_email")}
 		</Button>
         </a>
-        {/*<Button
-          onClick={() => Router.push("/davanu-karte/iegadaties")}
-          type="button"
-          buttonStyle="btn--primary--solid"
-          children={t(giftCardHeader.buyGiftCard)}
-        />*/}
       </div>
     </div>
   </Layout>
