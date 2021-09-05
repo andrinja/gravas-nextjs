@@ -31,17 +31,18 @@ const Layout = ({ children, title, description }) => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
         />
-        <meta property="title" content={title || ""}></meta>
-        <meta name="description" content={description} />
+        <meta property="title" content={title || ""}/>
+        <meta name="description" content={description}/>
         <meta
           name="keywords"
           content="pirts rituals, naktsmitnes, aktiva atputa, pirts rituali, kazu svinibas, svinibu telpas, viesu majas ire"
         />
-        <meta name="url" content="https://www.gravas.lv/"></meta>
+        <meta name="url" content="https://www.gravas.lv/"/>
         <meta
           property="image"
           content="https://www.gravas.lv/static/home/gravas-atputa-bauska.jpg?webp?lqip"
-        ></meta>
+        />
+		<meta name="google-site-verification" content="VERIFICATION_ID" />
       </Head>
       <Navbar />
       <Container>{children}</Container>
