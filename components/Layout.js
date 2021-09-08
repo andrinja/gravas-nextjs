@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import Navbar from "./navbar/Navbar";
+import MainFooter from "./main-footer/MainFooter";
 import { ThemeProvider } from "emotion-theming";
 import theme from "./theme";
 import Container from "./container/style";
@@ -45,9 +46,12 @@ const Layout = ({ children, title, description }) => {
 		<meta name="google-site-verification" content="VERIFICATION_ID" />
       </Head>
       <Navbar />
-      <Container>{children}</Container>
+      <Container>
+		  {children}
+	  </Container>
+	  <MainFooter/>
     </ThemeProvider>
-  );
-};
+  )
+}
 
 export default Layout;

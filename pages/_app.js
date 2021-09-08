@@ -30,7 +30,7 @@ class MyApp extends App {
 				<meta name="viewport" content="width=device-width" />
 				<meta name="google-site-verification" content="FZcWhbzt4eDfLszahYRguIoAxD3eGvc4mYYplruNtk8"/>
 				</Head>
-			<Component {...pageProps} />;
+			<Component {...pageProps} />
 		</>
 	)
   }
