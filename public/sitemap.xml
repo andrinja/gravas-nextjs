@@ -1,965 +1,316 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+	http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
 <url>
-  <loc>http://www.gravas.lv/</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/"/>
+	<loc>https://www.gravas.lv/</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
+</url>
+
+<url>
+	<loc>https://www.gravas.lv/viesu-maja/naktsmitnes</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/"/>
+	<loc>https://www.gravas.lv/pirts-rituali/zalu-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/"/>
+	<loc>https://www.gravas.lv/pirts-rituali/milestibas-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituali</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali"/>
+<loc>https://www.gravas.lv/pirts-rituali/dzimsanas-dienas-pirts-rituals</loc>
+<lastmod>2021-09-11</lastmod>
+<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://gravas.lv/viesu-maja/naktsmitnes</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="https://gravas.lv/viesu-maja/naktsmitnes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="https://gravas.lv/ru/viesu-maja/naktsmitnes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="https://gravas.lv/en/viesu-maja/naktsmitnes"/>
+	<loc>https://www.gravas.lv/pirts-rituali/ligavas-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituali/zalu-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/zalu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/zalu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/zalu-pirts-rituals"/>
+	<loc>https://www.gravas.lv/pirts-rituali/rozu-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituali/milestibas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/milestibas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/milestibas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/milestibas-pirts-rituals"/>
+	<loc>https://www.gravas.lv/pirts-rituali/dzintara-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituali/dzimsanas-dienas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
+	<loc>https://www.gravas.lv/pirts-rituali/meitenu-spa-vakars</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituali/ligavas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/ligavas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/ligavas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/ligavas-pirts-rituals"/>
+  <loc>https://www.gravas.lv/en/pirts-rituali</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituali/rozu-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/rozu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/rozu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/rozu-pirts-rituals"/>
+  <loc>https://www.gravas.lv/en/pirts-rituali/zalu-pirts-rituals</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituali/dzintara-pirts-rituals</loc>
-   <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/dzintara-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/dzintara-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/dzintara-pirts-rituals"/>
+  <loc>https://www.gravas.lv/en/pirts-rituali/milestibas-pirts-rituals</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/pirts-rituali/meitenu-spa-vakars</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/meitenu-spa-vakars"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/meitenu-spa-vakars"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/meitenu-spa-vakars"/>
+	<loc>https://www.gravas.lv/en/pirts-rituali/dzimsanas-dienas-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/pirts-rituali</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali"/>
+	<loc>https://www.gravas.lv/en/pirts-rituali/ligavas-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/pirts-rituali/zalu-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/zalu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/zalu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/zalu-pirts-rituals"/>
+  <loc>https://www.gravas.lv/en/pirts-rituali/rozu-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/pirts-rituali/milestibas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/milestibas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/milestibas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/milestibas-pirts-rituals"/>
+	<loc>https://www.gravas.lv/en/pirts-rituali/dzintara-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/pirts-rituali/dzimsanas-dienas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
+	<loc>https://www.gravas.lv/en/pirts-rituali/meitenu-spa-vakars</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/pirts-rituali/ligavas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/ligavas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/ligavas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/ligavas-pirts-rituals"/>
+  <loc>https://www.gravas.lv/ru/pirts-rituali</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/pirts-rituali/rozu-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/rozu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/rozu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/rozu-pirts-rituals"/>
+	<loc>https://www.gravas.lv/ru/pirts-rituali/zalu-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/pirts-rituali/dzintara-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/dzintara-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/dzintara-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/dzintara-pirts-rituals"/>
+  <loc>https://www.gravas.lv/ru/pirts-rituali/milestibas-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/pirts-rituali/meitenu-spa-vakars</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/meitenu-spa-vakars"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/meitenu-spa-vakars"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/meitenu-spa-vakars"/>
+  <loc>https://www.gravas.lv/ru/pirts-rituali/dzimsanas-dienas-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/pirts-rituali</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali"/>
+  <loc>https://www.gravas.lv/ru/pirts-rituali/ligavas-pirts-rituals</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/pirts-rituali/zalu-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/zalu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/zalu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/zalu-pirts-rituals"/>
+  <loc>https://www.gravas.lv/ru/pirts-rituali/rozu-pirts-rituals</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/pirts-rituali/milestibas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/milestibas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/milestibas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/milestibas-pirts-rituals"/>
+  <loc>https://www.gravas.lv/ru/pirts-rituali/dzintara-pirts-rituals</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://www.gravas.lv/ru/pirts-rituali/meitenu-spa-vakars</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/pirts-rituali/dzimsanas-dienas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/dzimsanas-dienas-pirts-rituals"/>
+	<loc>https://www.gravas.lv/viesu-maja</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/pirts-rituali/ligavas-pirts-rituals</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/ligavas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/ligavas-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/ligavas-pirts-rituals"/>
+  <loc>https://www.gravas.lv/viesu-maja/viesu-majas-ire</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/pirts-rituali/rozu-pirts-rituals</loc>
-    <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/rozu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/rozu-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/rozu-pirts-rituals"/>
+  <loc>https://www.gravas.lv/viesu-maja/naktsmitnes</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/pirts-rituali/dzintara-pirts-rituals</loc>
-    <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/dzintara-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/dzintara-pirts-rituals"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/dzintara-pirts-rituals"/>
+  <loc>https://www.gravas.lv/viesu-maja/iekurinata-pirts</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/pirts-rituali/meitenu-spa-vakars</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/pirts-rituali/meitenu-spa-vakars"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/pirts-rituali/meitenu-spa-vakars"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/pirts-rituali/meitenu-spa-vakars"/>
+  <loc>https://www.gravas.lv/viesu-maja/kazu-svinibu-vieta</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/viesu-maja</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja"/>
+	<loc>https://www.gravas.lv/en/viesu-maja</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/viesu-maja/viesu-majas-ire</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/viesu-majas-ire"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/viesu-majas-ire"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/viesu-majas-ire"/>
+  <loc>https://www.gravas.lv/en/viesu-maja/viesu-majas-ire</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/viesu-maja/naktsmitnes</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/naktsmitnes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/naktsmitnes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/naktsmitnes"/>
+  <loc>https://www.gravas.lv/en/viesu-maja/naktsmitnes</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/viesu-maja/iekurinata-pirts</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/iekurinata-pirts"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/iekurinata-pirts"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/iekurinata-pirts"/>
+  <loc>https://www.gravas.lv/en/viesu-maja/iekurinata-pirts</loc>
+	<lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/viesu-maja/kazu-svinibu-vieta</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/kazu-svinibu-vieta"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/kazu-svinibu-vieta"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/kazu-svinibu-vieta"/>
+  <loc>https://www.gravas.lv/en/viesu-maja/kazu-svinibu-vieta</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/viesu-maja</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja"/>
+  <loc>https://www.gravas.lv/ru/viesu-maja</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/viesu-maja/viesu-majas-ire</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/viesu-majas-ire"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/viesu-majas-ire"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/viesu-majas-ire"/>
+  <loc>https://www.gravas.lv/ru/viesu-maja/viesu-majas-ire</loc>
+   <lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/viesu-maja/naktsmitnes</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/naktsmitnes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/naktsmitnes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/naktsmitnes"/>
+  <loc>https://www.gravas.lv/ru/viesu-maja/naktsmitnes</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/viesu-maja/iekurinata-pirts</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/iekurinata-pirts"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/iekurinata-pirts"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/iekurinata-pirts"/>
+  <loc>https://www.gravas.lv/ru/viesu-maja/iekurinata-pirts</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/viesu-maja/kazu-svinibu-vieta</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/kazu-svinibu-vieta"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/kazu-svinibu-vieta"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/kazu-svinibu-vieta"/>
+  <loc>https://www.gravas.lv/ru/viesu-maja/kazu-svinibu-vieta</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/viesu-maja</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja"/>
+  <loc>https://www.gravas.lv/aktiva-atputa</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/viesu-maja/viesu-majas-ire</loc>
-    <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/viesu-majas-ire"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/viesu-majas-ire"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/viesu-majas-ire"/>
+  <loc>https://www.gravas.lv/aktiva-atputa/peintbols</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/viesu-maja/naktsmitnes</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/naktsmitnes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/naktsmitnes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/naktsmitnes"/>
+  <loc>https://www.gravas.lv/aktiva-atputa/loka-sausana</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/viesu-maja/iekurinata-pirts</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/iekurinata-pirts"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/iekurinata-pirts"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/iekurinata-pirts"/>
+  <loc>https://www.gravas.lv/aktiva-atputa/skolenu-ekskursijas</loc>
+ 	<lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/viesu-maja/kazu-svinibu-vieta</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/viesu-maja/kazu-svinibu-vieta"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/viesu-maja/kazu-svinibu-vieta"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/viesu-maja/kazu-svinibu-vieta"/>
+  <loc>https://www.gravas.lv/en/aktiva-atputa</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/aktiva-atputa</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa"/>
+  <loc>https://www.gravas.lv/en/aktiva-atputa/peintbols</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/aktiva-atputa/peintbols</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/peintbols"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/peintbols"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/peintbols"/>
+  <loc>https://www.gravas.lv/en/aktiva-atputa/loka-sausana</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/aktiva-atputa/loka-sausana</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/loka-sausana"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/loka-sausana"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/loka-sausana"/>
+  <loc>https://www.gravas.lv/en/aktiva-atputa/skolenu-ekskursijas</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/aktiva-atputa/skolenu-ekskursijas</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/skolenu-ekskursijas"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/skolenu-ekskursijas"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/skolenu-ekskursijas"/>
+  <loc>https://www.gravas.lv/ru/aktiva-atputa</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/aktiva-atputa</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa"/>
+  <loc>https://www.gravas.lv/ru/aktiva-atputa/peintbols</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/aktiva-atputa/peintbols</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/peintbols"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/peintbols"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/peintbols"/>
+  <loc>https://www.gravas.lv/ru/aktiva-atputa/loka-sausana</loc>
+ <lastmod>2021-09-11</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/aktiva-atputa/loka-sausana</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/loka-sausana"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/loka-sausana"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/loka-sausana"/>
+  <loc>https://www.gravas.lv/ru/aktiva-atputa/skolenu-ekskursijas</loc>
+ <lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/aktiva-atputa/skolenu-ekskursijas</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/skolenu-ekskursijas"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/skolenu-ekskursijas"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/skolenu-ekskursijas"/>
+  <loc>https://www.gravas.lv/davanu-karte</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.9</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/aktiva-atputa</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa"/>
+  <loc>https://www.gravas.lv/en/davanu-karte</loc>
+ <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/aktiva-atputa/peintbols</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/peintbols"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/peintbols"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/peintbols"/>
+  <loc>https://www.gravas.lv/ru/davanu-karte</loc>
+ <lastmod>2021-09-11</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/aktiva-atputa/loka-sausana</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/loka-sausana"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/loka-sausana"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/loka-sausana"/>
+  <loc>https://www.gravas.lv/atsauksmes</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.7</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/aktiva-atputa/skolenu-ekskursijas</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/aktiva-atputa/skolenu-ekskursijas"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/aktiva-atputa/skolenu-ekskursijas"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/aktiva-atputa/skolenu-ekskursijas"/>
+  <loc>https://www.gravas.lv/en/atsauksmes</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/davanu-karte</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/davanu-karte"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/davanu-karte"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/davanu-karte"/>
+  <loc>https://www.gravas.lv/ru/atsauksmes</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.7</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/en/davanu-karte</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/davanu-karte"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/davanu-karte"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/davanu-karte"/>
+  <loc>https://www.gravas.lv/kontakti</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/ru/davanu-karte</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/davanu-karte"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/davanu-karte"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/davanu-karte"/>
+  <loc>https://www.gravas.lv/en/kontakti</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 <url>
-  <loc>http://www.gravas.lv/atsauksmes</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/atsauksmes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/atsauksmes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/atsauksmes"/>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/atsauksmes</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/atsauksmes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/atsauksmes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/atsauksmes"/>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/atsauksmes</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/atsauksmes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="http://www.gravas.lv/ru/atsauksmes"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="http://www.gravas.lv/en/atsauksmes"/>
-</url>
-<url>
-  <loc>http://www.gravas.lv/kontakti</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/kontakti"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="htthttp://www.gravas.lv/ru/kontakti"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="htthttp://www.gravas.lv/en/kontakti"/>
-</url>
-<url>
-  <loc>http://www.gravas.lv/en/kontakti</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/kontakti"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="htthttp://www.gravas.lv/ru/kontakti"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="htthttp://www.gravas.lv/en/kontakti"/>
-</url>
-<url>
-  <loc>http://www.gravas.lv/ru/kontakti</loc>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="lv"
-               href="http://www.gravas.lv/kontakti"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="ru"
-               href="htthttp://www.gravas.lv/ru/kontakti"/>
-  <xhtml:link 
-               rel="alternate"
-               hreflang="en"
-               href="htthttp://www.gravas.lv/en/kontakti"/>
+  <loc>https://www.gravas.lv/ru/kontakti</loc>
+  <lastmod>2021-09-11</lastmod>
+	<priority>0.5</priority>
 </url>
 </urlset>
