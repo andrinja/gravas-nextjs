@@ -28,7 +28,7 @@
 
   "accommodation": "Accommodation",
   "accommodation_per_person": "1 person",
-  "accommodation_additional_person": "farm breakfest 4 € per person",
+  "accommodation_additional_person": "farm breakfest 5 € per person",
 
   "breakfest": "Breakfest",
   "breakfest_per_person": "per person",
@@ -50,7 +50,7 @@
 
   "zalu_pirts_rituals": "Herbal sauna ritual",
   "herbal_sauna_num_of_persons": "1 person",
-  "herbal_sauna_price_from": "from 65 €",
+  "herbal_sauna_price_from": "from 68 €",
   "herbal_sauna_alt": "Herbal sauna ritual atmosphere",
   "herbal_sauna_metaTitle": "Herbal sauna ritual | Gravas",
   "herbal_sauna_metaDescription": "Herbal sauna ritual is latvian sauna with latvian sauna traditions. Sauna duration is couple hours. Herbal sauna ritual is located in countryside close to Bauska in Latvia. Herbal sauna ritual consists of spa procedures as body scrub, whisk massage with sauna whisks, honey mask, sauna herbal tea drinking and goat cheese tasting.",
@@ -65,7 +65,7 @@
 
   "milestibas_pirts_rituals": "Couple sauna ritual",
   "couple_sauna_num_of_persons": "1 person",
-  "couple_sauna_price_from": "from 68 €",
+  "couple_sauna_price_from": "from 70 €",
   "couple_sauna_alt": "Couple sauna ritual for couple",
   "couple_sauna_metaTitle": "Couple sauna ritual | Gravas",
   "couple_sauna_metaDescription": "Couple sauna ritual is latvian sauna with latvian sauna traditions. Couple sauna ritual is located in countryside close to Bauska in Latvia. Herbal sauna ritual consists of spa procedures as body scrub, whisk massage with sauna whisks, honey mask, sauna herbal tea drinking and goat cheese tasting.  Wedding anniversary or celebration is a great gift for couples.",
@@ -111,7 +111,7 @@
 
   "rozu_pirts_rituals": "Rose sauna ritual",
   "rose_sauna_num_of_persons": "1 person",
-  "rose_sauna_price_from": "from 68 €",
+  "rose_sauna_price_from": "from 70 €",
   "rose_sauna_alt": "Rose sauna ritual with girlfriends",
   "rose_sauna_metaTitle": "Rose sauna ritual | Gravas",
   "rose_sauna_metaDescription": "Roses, rose oil are used during rose sauna ritual. Rose sauna ritual is latvian sauna traditions. Sauna ir relaxation with friends, sisters or mother",
@@ -127,7 +127,7 @@
 
   "dzintara_pirts_rituals": "Amber sauna ritual",
   "amber_sauna_num_of_persons": "1 person",
-  "amber_sauna_price_from": "from 68 €",
+  "amber_sauna_price_from": "from 70 €",
   "amber_sauna_alt": "Amber sauna ritual for harmony",
   "amber_sauna_metaTitle": "Amber sauna ritual | Gravas",
   "amber_sauna_metaDescription": "Amber sauna ritual is latvian sauna with latvian sauna traditions. Sauna duration is couple hours. Amber sauna ritual is located in countryside close to Bauska in Latvia. Amber sauna ritual consists of spa procedures as body scrub, amber masage, whisk massage with sauna whisks, honey mask, sauna herbal tea drinking and goat cheese tasting.",
@@ -141,7 +141,7 @@
 
   "meitenu_spa_vakars": "Girls spa evening",
   "girls_spa_num_of_persons": "2 persons",
-  "girls_spa_price_from": "from 45 €",
+  "girls_spa_price_from": "from 50 €",
   "girls_spa_alt": "Friend spa evening in sauna",
   "girls_spa_metaTitle": "Girl spa evening | Gravas",
   "girls_spa_metaDescription": "Girl spa evening with girlfriends. Girls choose sauna, body scrub, honey mask. Latvian sauna is located near Bauska",

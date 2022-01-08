@@ -113,7 +113,7 @@
       {
         "icon": "sauna",
         "title": "sauna_rental",
-        "totalPrice": "45 €"
+        "totalPrice": "50 €"
       },
       {
         "icon": "bed",
@@ -236,7 +236,7 @@
       {
         "icon": "sauna",
         "title": "sauna_rental",
-        "totalPrice": "45 €"
+        "totalPrice": "50 €"
       },
 
       {
@@ -333,7 +333,7 @@
         "icon": "sauna",
         "title": "sauna_rental",
         "forPerson": "sauna_rental_max_number_of_persons",
-        "totalPrice": "45 €"
+        "totalPrice": "50 €"
       },
       {
         "icon": "bed",
@@ -449,7 +449,7 @@
       {
         "icon": "sauna",
         "title": "sauna_rental",
-        "totalPrice": "45 €"
+        "totalPrice": "50 €"
       }
     ]
   },

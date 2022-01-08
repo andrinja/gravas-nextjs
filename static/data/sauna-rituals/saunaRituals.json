@@ -108,7 +108,7 @@
         "title": "zalu_pirts_rituals",
         "forPerson": "herbal_sauna_per_person",
         "additionalPerson": "herbal_sauna_additional_person",
-        "totalPrice": "65 €"
+        "totalPrice": "68 €"
       },
       {
         "icon": "bed",
@@ -120,7 +120,7 @@
         "icon": "cutlery",
         "title": "breakfest",
         "forPerson": "breakfest_per_person",
-        "totalPrice": "4 €"
+        "totalPrice": "5 €"
       },
       {
         "icon": "massage",
@@ -133,7 +133,7 @@
         "icon": "spa",
         "title": "individual_herbal_sauna_ritual",
         "forPerson": "individual_herbal_sauna_per_person",
-        "totalPrice": "70 €"
+        "totalPrice": "75 €"
       }
     ]
   },
@@ -248,7 +248,7 @@
         "icon": "couple-ritual",
         "title": "milestibas_pirts_rituals",
         "forPerson": "couple_sauna_per_person",
-        "totalPrice": "68 €"
+        "totalPrice": "70 €"
       },
       {
         "icon": "bed",
@@ -260,7 +260,7 @@
         "icon": "cutlery",
         "title": "breakfest",
         "forPerson": "breakfest_per_person",
-        "totalPrice": "4 €"
+        "totalPrice": "5 €"
       },
       {
         "icon": "massage",
@@ -394,7 +394,7 @@
         "icon": "cutlery",
         "title": "breakfest",
         "forPerson": "breakfest_per_person",
-        "totalPrice": "4 €"
+        "totalPrice": "5 €"
       },
       {
         "icon": "massage",
@@ -528,7 +528,7 @@
         "icon": "cutlery",
         "title": "breakfest",
         "forPerson": "breakfest_per_person",
-        "totalPrice": "4 €"
+        "totalPrice": "5 €"
       },
       {
         "icon": "massage",
@@ -645,7 +645,7 @@
         "icon": "rose-ritual",
         "title": "rozu_pirts_rituals",
         "forPerson": "rose_sauna_per_person",
-        "totalPrice": "68 €"
+        "totalPrice": "70 €"
       },
       {
         "icon": "rose-ritual",
@@ -663,7 +663,7 @@
         "icon": "cutlery",
         "title": "breakfest",
         "forPerson": "breakfest_per_person",
-        "totalPrice": "4 €"
+        "totalPrice": "5 €"
       },
       {
         "icon": "massage",
@@ -775,7 +775,7 @@
         "icon": "amber",
         "title": "dzintara_pirts_rituals",
         "forPerson": "amber_sauna_per_person",
-        "totalPrice": "68 €"
+        "totalPrice": "70 €"
       },
       {
         "icon": "amber",
@@ -793,7 +793,7 @@
         "icon": "cutlery",
         "title": "breakfest",
         "forPerson": "breakfest_per_person",
-        "totalPrice": "4 €"
+        "totalPrice": "5 €"
       },
       {
         "icon": "massage",
@@ -888,7 +888,7 @@
         "icon": "facial-treatment",
         "title": "meitenu_spa_vakars",
         "forPerson": "girls_spa_per_person",
-        "totalPrice": "45 €"
+        "totalPrice": "50 €"
       },
       {
         "icon": "facial-treatment",
@@ -906,7 +906,7 @@
         "icon": "cutlery",
         "title": "breakfest",
         "forPerson": "breakfest_per_person",
-        "totalPrice": "4 €"
+        "totalPrice": "5 €"
       },
       {
         "icon": "massage",
