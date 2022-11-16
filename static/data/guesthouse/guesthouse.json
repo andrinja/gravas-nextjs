@@ -102,13 +102,13 @@
         "icon": "key",
         "title": "holiday_house",
         "forPerson": "holiday_house_max_number_of_persons",
-        "totalPrice": "30 €"
+        "totalPrice": "40 €"
 	  },
 	  {
         "icon": "key",
         "title": "viesu_majas_ire",
         "forPerson": "guesthouse_max_number_of_persons",
-        "totalPrice": "150 €"
+        "totalPrice": "160 €"
       },
       {
         "icon": "sauna",
@@ -119,7 +119,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "15 €"
+        "totalPrice": "16 €"
       },
       {
         "icon": "bonfire",
@@ -225,13 +225,13 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "15 €"
+        "totalPrice": "16 €"
       },
       {
         "icon": "key",
         "title": "viesu_majas_ire",
         "forPerson": "guesthouse_max_number_of_persons",
-        "totalPrice": "30 €"
+        "totalPrice": "40 €"
       },
       {
         "icon": "sauna",
@@ -339,7 +339,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "15 €"
+        "totalPrice": "16 €"
       },
       {
         "icon": "bonfire",
@@ -438,7 +438,7 @@
         "icon": "time",
         "title": "celebration_place_extra_hour",
         "forPerson": "celebration_place_extra_details",
-        "totalPrice": "15 €"
+        "totalPrice": "16 €"
       },
       {
         "icon": "bonfire",

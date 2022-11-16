@@ -108,7 +108,7 @@
         "title": "zalu_pirts_rituals",
         "forPerson": "herbal_sauna_per_person",
         "additionalPerson": "herbal_sauna_additional_person",
-        "totalPrice": "68 €"
+        "totalPrice": "70 €"
       },
       {
         "icon": "bed",
@@ -133,7 +133,7 @@
         "icon": "spa",
         "title": "individual_herbal_sauna_ritual",
         "forPerson": "individual_herbal_sauna_per_person",
-        "totalPrice": "75 €"
+        "totalPrice": "80 €"
       }
     ]
   },
@@ -248,7 +248,7 @@
         "icon": "couple-ritual",
         "title": "milestibas_pirts_rituals",
         "forPerson": "couple_sauna_per_person",
-        "totalPrice": "70 €"
+        "totalPrice": "80 €"
       },
       {
         "icon": "bed",
@@ -382,7 +382,7 @@
         "icon": "birthday-ritual",
         "title": "dzimsanas_dienas_pirts_rituals",
         "forPerson": "birthday_sauna_per_person",
-        "totalPrice": "75 €"
+        "totalPrice": "80 €"
       },
       {
         "icon": "bed",
@@ -510,7 +510,7 @@
         "icon": "bride",
         "title": "ligavas_pirts_rituals",
         "forPerson": "bride_sauna_per_person",
-        "totalPrice": "75 €"
+        "totalPrice": "80 €"
       },
       {
         "icon": "girls-night",
@@ -645,7 +645,7 @@
         "icon": "rose-ritual",
         "title": "rozu_pirts_rituals",
         "forPerson": "rose_sauna_per_person",
-        "totalPrice": "70 €"
+        "totalPrice": "80 €"
       },
       {
         "icon": "rose-ritual",
@@ -775,7 +775,7 @@
         "icon": "amber",
         "title": "dzintara_pirts_rituals",
         "forPerson": "amber_sauna_per_person",
-        "totalPrice": "70 €"
+        "totalPrice": "80 €"
       },
       {
         "icon": "amber",
