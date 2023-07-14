@@ -90,17 +90,17 @@
       {
         "icon": "paintball-paint",
         "title": "paintball_balls_500",
-        "totalPrice": "17 €"
+        "totalPrice": "19 €"
       },
       {
         "icon": "paintball-balls",
         "title": "paintball_balls_1000",
-        "totalPrice": "32 €"
+        "totalPrice": "36 €"
       },
       {
         "icon": "box",
         "title": "paintball_balls_2000",
-        "totalPrice": "54 €"
+        "totalPrice": "57 €"
       }
     ]
   },
@@ -263,7 +263,7 @@
       {
         "icon": "paintball-paint",
         "title": "school_trips_extra_balls",
-        "totalPrice": "1.5 €"
+        "totalPrice": "2 €"
       },
       {
         "icon": "archery",
