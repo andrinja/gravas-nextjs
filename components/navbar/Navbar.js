@@ -40,9 +40,7 @@ const { t } = useTranslation('navbar');
     <Nav>
       <div className="logo-items">
         <Link href="/">
-			<a>
 			<Image width={160} height={28} className="gravas-logo" src="/static/logo.svg" alt="gravas logo" />
-			</a>
         </Link>
 
         {isMenuOpen ? (

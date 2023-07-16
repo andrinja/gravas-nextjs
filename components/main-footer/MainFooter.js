@@ -8,10 +8,8 @@ import Link from 'next/link'
  const MainFooter = () => {
 	return (
 		<Footer container justifyContent="space-between" alignItems="center">
-		<Link href="/sitemap.xml">
-			<a style={{textDecoration: 'none', color: theme.fontColors.secondary}}>
-				© 2020 Gravas
-			</a>
+		<Link href="/sitemap.xml" style={{textDecoration: 'none', color: theme.fontColors.secondary}}>
+		© 2020 Gravas
 		</Link>
 		<Grid item style={{ display: 'flex', flexDirection: 'column'}}>
 				<h5 style={{ paddingBottom: '8px', color: theme.fontColors.disabled}}>Sadarbības partneri</h5>
@@ -43,18 +41,14 @@ import Link from 'next/link'
 				target="_blank"
 				rel="noreferrer"
 				style={{marginRight: '8px'}}>
-				<a>
 					<InstagramIcon fontSize={'large'} color={'primary'}/>
-				</a>
 			</Link>
 			<Link
 				href="https://www.facebook.com/gravasatputa"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<a>
 					<FacebookIcon fontSize={'large'} color={'primary'}/>
-				</a>
 			</Link>
 		</Grid>
 		</Footer>

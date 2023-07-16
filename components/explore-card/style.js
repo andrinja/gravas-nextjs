@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from "framer-motion";
 
-export const Card = styled(motion.a)`
+export const Card = styled(motion.div)`
     box-shadow: 0px .2rem .8rem rgba(0, 0, 0, 0.10);
     border-radius: .25rem;
     cursor: pointer;

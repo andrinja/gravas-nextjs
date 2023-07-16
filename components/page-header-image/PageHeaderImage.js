@@ -23,8 +23,7 @@ const PageHeaderImage = ({ imgsrc, alt, title, caption }) => {
       {title && <h1>{title}</h1>}
       {caption && <p>{caption}</p>}
       {hasGallery && (
-        <Link href={`/galerijas/${slug}`} prefetch={false}>
-          <a className="gallery-link">Galerija</a>
+        <Link className="gallery-link" href={`/galerijas/${slug}`} prefetch={false}>Galerija
         </Link>
       )}
     </Header>

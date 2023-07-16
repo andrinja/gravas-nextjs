@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { motion } from "framer-motion";
 
-const Item = styled(motion.a)`
+const Item = styled(motion.div)`
     text-decoration: none;
     color: ${props => props.theme.colors.primary};
     cursor: pointer;
