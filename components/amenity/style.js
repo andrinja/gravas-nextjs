@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 const Card = styled.div`
-  width: 100%;
   border: 1px solid ${props => props.theme.fontColors.divider};
   border-radius: 8px;
   height: 11rem;
