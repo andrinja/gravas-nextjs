@@ -1,7 +1,7 @@
-
 import React from "react";
 import App from "next/app";
 import Head from 'next/head';
+import { Global, css } from "@emotion/core";
 import { appWithTranslation } from 'next-i18next';
 
 //uses the App component to initialize pages
@@ -21,6 +21,13 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
 		<>
+			<Global
+				styles={css`
+					a {
+						text-decoration: none !important;
+					}
+				`}
+			/>
 			<Head>
 				<meta
 				name="Pirts rituāli | Kāzu svinības | Viesu māja | GRAVAS"

@@ -8,14 +8,22 @@ const Card = styled(motion.div)`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  picture {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    line-height: 0;
+  }
 
   img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 0.25rem 0.25rem 0 0;
-
-	@media (max-width: 720px) {
-		width: 517px;
-	}
+    display: block;
   }
 
   .title {
