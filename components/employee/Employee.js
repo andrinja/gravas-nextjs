@@ -14,17 +14,21 @@ const Users = ({ employee}) => {
   const {t} = useTranslation(TR_NS.EMPLOYEES);
   return (
     <EmployeeDetails>
-      <h3 className="title">{t(employee.title)}</h3>
-      <div className="items">
-        <div className="education">
-          <Image height={112} width={112} objectFit="cover" className="image" src={employee.img} alt={employee.alt} />
-          {employee.educations.map(education => (
-            <EmployeeExperience key={education.year} {...education} />
-          ))}
+      <div className="left-column">
+        <h2 className="role-title">{t(employee.title)}</h2>
+      </div>
+      <div className="right-column">
+        <div className="image-and-timeline">
+          <div className="image-wrapper">
+            <Image height={112} width={112} objectFit="cover" className="image" src={employee.img} alt={employee.alt} />
+          </div>
+          <div className="timeline">
+            {employee.educations.map(education => (
+              <EmployeeExperience key={education.year} {...education} />
+            ))}
+          </div>
         </div>
-        <div className="about">
-          <h2>{t(employee.name)}</h2>
-          <p>{t(employee.description)}</p>
+        <p className="description">{t(employee.description)}</p>
           <div>
             <Button
             onClick={() => setIsModalOpen(true)}
@@ -49,14 +53,13 @@ const Users = ({ employee}) => {
                 </div>
                 <div className="contacts">
                   <EmailIcon style={{ color: "#1E514B", fontSize: "36px" }} />
-                  <a className="contact-detail" href="email:info@gravas.lv">
+                  <a className="contact-detail" href="mailto:info@gravas.lv">
                     info@gravas.lv
                   </a>
                 </div>
               </ModalItems>
             </Modal>
           </div>
-        </div>
       </div>
     </EmployeeDetails>
   );

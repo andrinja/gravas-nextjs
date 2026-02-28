@@ -23,7 +23,7 @@ const theme = {
   fontColors: {
     primary: "#333333",
     secondary: "#4F4F4F",
-    disabled: "#828282",
+    disabled: "#6B6B6B",
     divider: "#BDBDBD"
   },
   fonts: {

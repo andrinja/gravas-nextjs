@@ -44,15 +44,25 @@ const { t } = useTranslation('navbar');
         </Link>
 
         {isMenuOpen ? (
-          <CloseIcon
+          <button
+            type="button"
             onClick={() => setIsMenuOpen(false)}
             className="icon-close icon"
-          />
+            aria-label={t("close_menu")}
+            style={{ background: 'none', border: 'none', padding: 8, cursor: 'pointer', minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
+          >
+            <CloseIcon aria-hidden style={{ fontSize: "28px" }} />
+          </button>
         ) : (
-          <MenuIcon
+          <button
+            type="button"
             onClick={() => setIsMenuOpen(true)}
             className="icon-menu icon"
-          />
+            aria-label={t("open_menu")}
+            style={{ background: 'none', border: 'none', padding: 8, cursor: 'pointer', minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
+          >
+            <MenuIcon aria-hidden style={{ fontSize: "28px" }} />
+          </button>
         )}
       </div>
       <NavItems isOpen={isMenuOpen}>

@@ -1,5 +1,1 @@
-{
-  "title": "make_reservation",
-  "text": "information_to_provide",
-  "reserveButtonText": "how_to_reserve_title"
-}
+{"title":"make_reservation","text":"information_to_provide","reserveButtonText":"how_to_reserve_title","giftCardButtonLabel":"gift_card_button_label"}

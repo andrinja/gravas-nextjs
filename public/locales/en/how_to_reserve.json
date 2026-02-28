@@ -1,5 +1,6 @@
 {
   "make_reservation": "Make reservation",
   "information_to_provide": "Please inform us about your desired reservation date, services and number of persons.",
-  "how_to_reserve_title": "How to reserve?"
+  "how_to_reserve_title": "How to reserve?",
+  "gift_card_button_label": "Open gift card page"
 }

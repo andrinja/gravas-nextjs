@@ -1,8 +1,10 @@
 {
-    "pirts_rituali": "Pirts rituāli",
-    "viesu_maja": "Viesu māja",
-    "aktiva_atputa": "Aktīvā atpūta",
-    "davanu_karte": "Dāvanu kartes",
-    "atsauksmes": "Atsauksmes",
-    "kontakti": "Kontakti"
+  "pirts_rituali": "Pirts rituāli",
+  "viesu_maja": "Viesu māja",
+  "aktiva_atputa": "Aktīvā atpūta",
+  "davanu_karte": "Dāvanu kartes",
+  "atsauksmes": "Atsauksmes",
+  "kontakti": "Kontakti",
+  "open_menu": "Atvērt izvēlni",
+  "close_menu": "Aizvērt izvēlni"
 }

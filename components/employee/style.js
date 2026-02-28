@@ -4,16 +4,35 @@ export const EmployeeDetails = styled.div`
   display: grid;
   grid-template-columns: 25% 75%;
   margin: 1rem 0;
-  .title {
-    padding-bottom: 2rem;
+  gap: 0;
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-column {
+    display: grid;
+    grid-gap: 1rem;
+  }
+
+  .role-title {
     font-size: ${props => props.theme.fonts.headline5};
     font-weight: ${props => props.theme.fontWeight.bold};
     color: ${props => props.theme.fontColors.primary};
+    margin: 0;
   }
-  .education {
-    display: grid;
-    grid-template-columns: 7rem 20% 20%;
-    grid-gap: 1rem;
+
+  .image-and-timeline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .image-wrapper {
+    flex-shrink: 0;
 
     .image {
       width: 7rem;
@@ -22,24 +41,37 @@ export const EmployeeDetails = styled.div`
       object-fit: cover;
     }
   }
-  .about {
-    display: grid;
-    grid-gap: 1rem;
-    padding: 2rem 0;
+
+  .timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .description {
+    margin: 0;
   }
 
   @media (max-width: 720px) {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: center;
 
-    .education {
-      grid-template-columns: none;
+    .left-column {
+      align-items: center;
       text-align: center;
+    }
 
-      .image {
-        margin: 0 auto;
-      }
+    .role-title {
+      margin-bottom: 1.5rem;
+    }
+
+    .image-and-timeline {
+      justify-content: center;
+    }
+
+    .image-wrapper .image {
+      margin: 0 auto;
     }
   }
 `;

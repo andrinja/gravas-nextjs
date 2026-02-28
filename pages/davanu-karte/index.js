@@ -23,7 +23,7 @@ const Index = () => {
         title={t(giftCardHeader.title)}
         description={t(giftCardHeader.description)}
       />
-      <h4>{t("gift_card_how_to_purchase")}</h4>
+      <h3>{t("gift_card_how_to_purchase")}</h3>
 		<ul style={{
 			margin: '1rem 1.5rem'
 		}}>
@@ -34,12 +34,9 @@ const Index = () => {
       <div>
         <a
 			className="buttonLink"
-			target="_blank"
-			rel="norefferer noreferrer"
-			href={`mailto:`}
-			style={{
-				textDecoration: 'none'
-			}}
+			href="mailto:info@gravas.lv"
+			rel="noopener noreferrer"
+			style={{ textDecoration: 'none' }}
         >
           <Button
             type="button"

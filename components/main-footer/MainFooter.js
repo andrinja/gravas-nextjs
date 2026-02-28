@@ -40,15 +40,18 @@ import Link from 'next/link'
 				href="https://www.instagram.com/gravasbauska/"
 				target="_blank"
 				rel="noreferrer"
-				style={{marginRight: '8px'}}>
-					<InstagramIcon fontSize={'large'} color={'primary'}/>
+				aria-label="Instagram - Gravas Bauska"
+				style={{marginRight: '8px', minWidth: 44, minHeight: 44, display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
+					<InstagramIcon fontSize={'large'} color={'primary'} aria-hidden />
 			</Link>
 			<Link
 				href="https://www.facebook.com/gravasatputa"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="Facebook - Gravas atpūta"
+				style={{minWidth: 44, minHeight: 44, display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}
 			>
-					<FacebookIcon fontSize={'large'} color={'primary'}/>
+					<FacebookIcon fontSize={'large'} color={'primary'} aria-hidden />
 			</Link>
 		</Grid>
 		</Footer>

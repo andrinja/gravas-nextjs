@@ -23,10 +23,14 @@ export const Nav = styled.nav`
     .icon {
       display: none;
       cursor: pointer;
+      align-items: center;
+      justify-content: center;
 
       @media ${breakpoints.md} {
         display: flex;
         margin-left: auto;
+        min-width: 44px;
+        min-height: 44px;
 
         &.icon-menu {
           font-size: 28px;

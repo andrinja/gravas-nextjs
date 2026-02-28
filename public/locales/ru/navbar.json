@@ -1,8 +1,10 @@
 {
-    "pirts_rituali": "Банные ритуалы",
-    "viesu_maja": "Гостевой дом",
-    "aktiva_atputa": "Активный отдых",
-    "davanu_karte": "Подарочные карты",
-    "atsauksmes": "Oтзывы",
-    "kontakti": "Kонтакты"
+  "pirts_rituali": "Банные ритуалы",
+  "viesu_maja": "Гостевой дом",
+  "aktiva_atputa": "Активный отдых",
+  "davanu_karte": "Подарочные карты",
+  "atsauksmes": "Oтзывы",
+  "kontakti": "Kонтакты",
+  "open_menu": "Открыть меню",
+  "close_menu": "Закрыть меню"
 }

@@ -40,11 +40,24 @@ const FAQ = () => {
       <TabContent>
         {tabData.map((item, index) => (
           <TabItem key={index} active={activeTab === index}>
-            {item.questions.map(({ label, answer }) => (
+            {item.questions.map(({ label, answer }, qIndex) => (
               <FaqItem key={label}>
                 <Question active={answer === activeQuestion}>
-                  <h3 onClick={() => setActiveQuestion(answer)}>{t(label)}</h3>
-                  <p className="answer">{t(answer)}</p>
+                  <h3>
+                    <button
+                      type="button"
+                      onClick={() => setActiveQuestion(answer)}
+                      aria-expanded={answer === activeQuestion}
+                      aria-controls={`faq-answer-${index}-${qIndex}`}
+                      id={`faq-question-${index}-${qIndex}`}
+                      style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', cursor: 'pointer', width: '100%', textAlign: 'left', minHeight: 44 }}
+                    >
+                      {t(label)}
+                    </button>
+                  </h3>
+                  <p className="answer" id={`faq-answer-${index}-${qIndex}`} role="region" aria-labelledby={`faq-question-${index}-${qIndex}`}>
+                    {t(answer)}
+                  </p>
                 </Question>
               </FaqItem>
             ))}

@@ -20,8 +20,9 @@ const Footer = () => {
         type="button"
         buttonStyle="btn--secondary--solid"
         buttonColor="btn--primary"
+        aria-label={t(howToReserveDetails.giftCardButtonLabel)}
       >
-        <GiftCardIcon style={{ fontSize: "28px" }}></GiftCardIcon>
+        <GiftCardIcon style={{ fontSize: "28px" }} aria-hidden />
       </Button>
 
       <Button
@@ -43,7 +44,7 @@ const Footer = () => {
           </div>
           <div className="contacts">
             <EmailIcon style={{ color: "#1E514B", fontSize: "36px" }} />
-            <a className="contact-detail" href="email:info@gravas.lv">
+            <a className="contact-detail" href="mailto:info@gravas.lv">
               info@gravas.lv
             </a>
           </div>
