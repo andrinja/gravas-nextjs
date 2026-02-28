@@ -43,6 +43,7 @@
   "scripts": {
     "lint": "next lint",
     "dev": "next",
+    "prebuild": "npx browserslist@latest --update-db",
     "build": "next build",
     "start": "next start",
     "hasura": "cd hasura && docker-compose up -d",
