@@ -85,22 +85,22 @@
         "icon": "paintball",
         "title": "starting_set",
         "forPerson": "paintball_per_person",
-        "totalPrice": "7 €"
+        "totalPrice": "9 €"
       },
       {
         "icon": "paintball-paint",
         "title": "paintball_balls_500",
-        "totalPrice": "19 €"
+        "totalPrice": "22 €"
       },
       {
         "icon": "paintball-balls",
         "title": "paintball_balls_1000",
-        "totalPrice": "36 €"
+        "totalPrice": "40 €"
       },
       {
         "icon": "box",
         "title": "paintball_balls_2000",
-        "totalPrice": "57 €"
+        "totalPrice": "60 €"
       }
     ]
   },
@@ -166,13 +166,13 @@
         "icon": "archery",
         "title": "archery_per_minutes",
         "forPerson": "archery_per_person",
-        "totalPrice": "2 €"
+        "totalPrice": "3 €"
       },
       {
         "icon": "bow",
         "title": "archery_per_hour",
         "forPerson": "archery_per_person",
-        "totalPrice": "8 €"
+        "totalPrice": "10 €"
       }
     ]
   },
@@ -258,7 +258,7 @@
         "icon": "paintball",
         "title": "starting_set",
         "forPerson": "paintball_per_person",
-        "totalPrice": "7 €"
+        "totalPrice": "9 €"
       },
       {
         "icon": "paintball-paint",
@@ -269,7 +269,7 @@
         "icon": "archery",
         "title": "loka_sausana",
         "forPerson": "archery_per_minutes",
-        "totalPrice": "2 €"
+        "totalPrice": "3 €"
       },
       {
         "icon": "bonfire",

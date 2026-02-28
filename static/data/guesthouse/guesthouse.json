@@ -102,24 +102,24 @@
         "icon": "key",
         "title": "holiday_house",
         "forPerson": "holiday_house_max_number_of_persons",
-        "totalPrice": "40 €"
+        "totalPrice": "50 €"
 	  },
 	  {
         "icon": "key",
         "title": "viesu_majas_ire",
         "forPerson": "guesthouse_max_number_of_persons",
-        "totalPrice": "160 €"
+        "totalPrice": "200 €"
       },
       {
         "icon": "sauna",
         "title": "sauna_rental",
-        "totalPrice": "50 €"
+        "totalPrice": "55 €"
       },
       {
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "16 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "bonfire",
@@ -225,18 +225,18 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "16 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "key",
         "title": "viesu_majas_ire",
         "forPerson": "guesthouse_max_number_of_persons",
-        "totalPrice": "40 €"
+        "totalPrice": "50 €"
       },
       {
         "icon": "sauna",
         "title": "sauna_rental",
-        "totalPrice": "50 €"
+        "totalPrice": "55 €"
       },
 
       {
@@ -333,13 +333,13 @@
         "icon": "sauna",
         "title": "sauna_rental",
         "forPerson": "sauna_rental_max_number_of_persons",
-        "totalPrice": "50 €"
+        "totalPrice": "55 €"
       },
       {
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "16 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "bonfire",
@@ -438,7 +438,7 @@
         "icon": "time",
         "title": "celebration_place_extra_hour",
         "forPerson": "celebration_place_extra_details",
-        "totalPrice": "16 €"
+        "totalPrice": "10 €"
       },
       {
         "icon": "bonfire",
@@ -449,7 +449,7 @@
       {
         "icon": "sauna",
         "title": "sauna_rental",
-        "totalPrice": "50 €"
+        "totalPrice": "55 €"
       }
     ]
   },

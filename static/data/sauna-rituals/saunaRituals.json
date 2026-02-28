@@ -108,13 +108,13 @@
         "title": "zalu_pirts_rituals",
         "forPerson": "herbal_sauna_per_person",
         "additionalPerson": "herbal_sauna_additional_person",
-        "totalPrice": "70 €"
+        "totalPrice": "80 €"
       },
       {
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "18 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "cutlery",
@@ -127,13 +127,13 @@
         "title": "body_massage",
         "forPerson": "body_massage_per_person",
         "additionalPerson": "body_massage_back_massage",
-        "totalPrice": "20 €"
+        "totalPrice": "25 €"
       },
       {
         "icon": "spa",
         "title": "individual_herbal_sauna_ritual",
         "forPerson": "individual_herbal_sauna_per_person",
-        "totalPrice": "80 €"
+        "totalPrice": "90 €"
       }
     ]
   },
@@ -248,13 +248,13 @@
         "icon": "couple-ritual",
         "title": "milestibas_pirts_rituals",
         "forPerson": "couple_sauna_per_person",
-        "totalPrice": "80 €"
+        "totalPrice": "90 €"
       },
       {
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "18 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "cutlery",
@@ -267,7 +267,7 @@
         "title": "body_massage",
         "forPerson": "body_massage_per_person",
         "additionalPerson": "body_massage_back_massage",
-        "totalPrice": "20 €"
+        "totalPrice": "25 €"
       }
     ]
   },
@@ -382,13 +382,13 @@
         "icon": "birthday-ritual",
         "title": "dzimsanas_dienas_pirts_rituals",
         "forPerson": "birthday_sauna_per_person",
-        "totalPrice": "80 €"
+        "totalPrice": "90 €"
       },
       {
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "18 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "cutlery",
@@ -401,7 +401,7 @@
         "title": "body_massage",
         "forPerson": "body_massage_per_person",
         "additionalPerson": "body_massage_back_massage",
-        "totalPrice": "20 €"
+        "totalPrice": "25 €"
       }
     ]
   },
@@ -510,19 +510,19 @@
         "icon": "bride",
         "title": "ligavas_pirts_rituals",
         "forPerson": "bride_sauna_per_person",
-        "totalPrice": "80 €"
+        "totalPrice": "90 €"
       },
       {
         "icon": "girls-night",
         "title": "bride_sisters",
         "forPerson": "bride_sisters_per_person",
-        "totalPrice": "10 €"
+        "totalPrice": "15 €"
       },
       {
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "18 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "cutlery",
@@ -535,7 +535,7 @@
         "title": "body_massage",
         "forPerson": "body_massage_per_person",
         "additionalPerson": "body_massage_back_massage",
-        "totalPrice": "20 €"
+        "totalPrice": "25 €"
       }
     ]
   },
@@ -645,7 +645,7 @@
         "icon": "rose-ritual",
         "title": "rozu_pirts_rituals",
         "forPerson": "rose_sauna_per_person",
-        "totalPrice": "80 €"
+        "totalPrice": "90 €"
       },
       {
         "icon": "rose-ritual",
@@ -657,7 +657,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "18 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "cutlery",
@@ -670,7 +670,7 @@
         "title": "body_massage",
         "forPerson": "body_massage_per_person",
         "additionalPerson": "body_massage_back_massage",
-        "totalPrice": "20 €"
+        "totalPrice": "25 €"
       }
     ]
   },
@@ -775,7 +775,7 @@
         "icon": "amber",
         "title": "dzintara_pirts_rituals",
         "forPerson": "amber_sauna_per_person",
-        "totalPrice": "80 €"
+        "totalPrice": "90 €"
       },
       {
         "icon": "amber",
@@ -787,7 +787,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "18 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "cutlery",
@@ -800,7 +800,7 @@
         "title": "body_massage",
         "forPerson": "body_massage_per_person",
         "additionalPerson": "body_massage_back_massage",
-        "totalPrice": "20 €"
+        "totalPrice": "25 €"
       }
     ]
   },
@@ -900,7 +900,7 @@
         "icon": "bed",
         "title": "accommodation",
         "forPerson": "accommodation_per_person",
-        "totalPrice": "18 €"
+        "totalPrice": "20 €"
       },
       {
         "icon": "cutlery",
@@ -913,7 +913,7 @@
         "title": "body_massage",
         "forPerson": "body_massage_per_person",
         "additionalPerson": "body_massage_back_massage",
-        "totalPrice": "20 €"
+        "totalPrice": "25 €"
       }
     ]
   }
