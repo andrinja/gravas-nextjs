@@ -4,7 +4,10 @@ import galleries from "../../static/data/galleries";
 
 import { Header, HeaderImage } from "./style";
 
-const PageHeaderImage = ({ imgsrc, alt, title, caption }) => {
+// title/caption are optional and no caller currently passes either, so both
+// conditional blocks below are dead today. Defaults are what make them
+// optional to TypeScript for the .tsx callers.
+const PageHeaderImage = ({ imgsrc, alt, title = null, caption = null }) => {
   const router = useRouter();
   const { slug } = router.query;
   const hasGallery = galleries.find(gallery => gallery.slug === slug);
