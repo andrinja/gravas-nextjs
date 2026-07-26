@@ -29,11 +29,10 @@ class MyApp extends App {
 				`}
 			/>
 			<Head>
-				<meta
-				name="Pirts rituāli | Kāzu svinības | Viesu māja | GRAVAS"
-				content="Individuāli pirts rituāli. Kāzas lauku stilā pie Bauskas. Viesu mājas īre ar aktīvo atpūtu un naktsmītnēm."/>
+				{/* The page title used to be repeated here as a <meta name="...">
+				    attribute, which is not a thing. Titles are emitted by
+				    components/seo/Seo.tsx. */}
 				<meta charSet="utf-8" />
-				<meta name="robots" content="" />
 				<meta name="viewport" content="width=device-width" />
 				<meta name="google-site-verification" content="FZcWhbzt4eDfLszahYRguIoAxD3eGvc4mYYplruNtk8"/>
 				</Head>

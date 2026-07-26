@@ -5,8 +5,10 @@ import { colors } from "../components/theme";
 //extends the Document clas
 export default class MyDocument extends Document {
   render() {
+    // Every locale used to advertise lang="lv".
+    const locale = this.props.__NEXT_DATA__?.locale || "lv";
     return (
-      <Html lang="lv">
+      <Html lang={locale}>
         <Head>
           <link
             rel="apple-touch-icon"
@@ -27,7 +29,7 @@ export default class MyDocument extends Document {
           />
           <link
             rel="mask-icon"
-            href="/staticsafari-pinned-tab.svg"
+            href="/static/safari-pinned-tab.svg"
             color={colors.primary}
           />
           <meta name="msapplication-TileColor" content={colors.primary} />
@@ -36,7 +38,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Raleway:300,500,600,700&display=swap"
             rel="preload"
           />
-          <link rel="short cut icon" href="/static/favicon.png" />
+          <link rel="shortcut icon" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />
         </Head>
 

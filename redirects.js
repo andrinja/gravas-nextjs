@@ -1,26 +1,29 @@
+/**
+ * Legacy .php URLs from the pre-Next site.
+ *
+ * Wired into next.config.js. They were not, for years — this file existed and
+ * was imported by nothing, so every one of these 404'd.
+ *
+ * Only the unprefixed paths are listed. Next's i18n redirect handling matches
+ * each `source` under every locale and preserves the locale in the
+ * destination, so /pirts-rituals.php, /en/pirts-rituals.php and
+ * /ru/pirts-rituals.php are all covered by the single entry below. The old
+ * table spelled out the /en and /ru variants by hand; with `locale: false` set
+ * to make those literal prefixes match, the seven unprefixed rules stopped
+ * matching entirely, because Next compares against the internally
+ * locale-prefixed path. Letting Next own the prefixing covers all three.
+ *
+ * Three entries with a literal "[slug]" in `from` (/viesu-maja/[slug],
+ * /pirts-rituali/[slug], /galerijas/[slug]) have been deleted rather than
+ * translated to ":slug". As path-to-regexp patterns they would have matched
+ * every detail page and sent all of them to their index.
+ */
 module.exports = [
-  { from: "/pirts-rituals.php", to: "/pirts-rituali" },
-  { from: "/lauku-spa.php", to: "/pirts-rituali/meitenu-spa-vakars" },
-  { from: "/naktsmitnes.php", to: "/viesu-maja" },
-  { from: "/aktivaatputa.php", to: "/aktiva-atputa" },
-  { from: "/cenas.php", to: "/pirts-rituali" },
-  { from: "/atsauksmes.php", to: "/atsauksmes" },
-  { from: "/kontakti.php", to: "/kontakti" },
-  { from: "/ru/pirts-rituals.php", to: "/ru/pirts-rituali" },
-  { from: "/ru/lauku-spa.php", to: "/ru/pirts-rituali/meitenu-spa-vakars" },
-  { from: "/ru/naktsmitnes.php", to: "/ru/viesu-maja" },
-  { from: "/ru/aktivaatputa.php", to: "/ru/aktiva-atputa" },
-  { from: "/ru/cenas.php", to: "/ru/pirts-rituali" },
-  { from: "/ru/atsauksmes.php", to: "/ru/atsauksmes" },
-  { from: "/ru/kontakti.php", to: "/ru/kontakti" },
-  { from: "/en/pirts-rituals.php", to: "/en/pirts-rituali" },
-  { from: "/en/lauku-spa.php", to: "en/pirts-rituali/meitenu-spa-vakars" },
-  { from: "/en/naktsmitnes.php", to: "/en/viesu-maja" },
-  { from: "/en/aktivaatputa.php", to: "/en/aktiva-atputa" },
-  { from: "/en/cenas.php", to: "/en/pirts-rituali" },
-  { from: "/en/atsauksmes.php", to: "/en/atsauksmes" },
-  { from: "/en/kontakti.php", to: "/en/kontakti" },
-  { from: "/viesu-maja/[slug]", to: "/viesu-maja"},
-  { from: "/pirts-rituali/[slug]", to: "/pirts-rituali"},
-  { from: "/galerijas/[slug]", to: "/galerijas/viesu-majas-ire"},
+	{ from: '/pirts-rituals.php', to: '/pirts-rituali' },
+	{ from: '/lauku-spa.php', to: '/pirts-rituali/meitenu-spa-vakars' },
+	{ from: '/naktsmitnes.php', to: '/viesu-maja' },
+	{ from: '/aktivaatputa.php', to: '/aktiva-atputa' },
+	{ from: '/cenas.php', to: '/pirts-rituali' },
+	{ from: '/atsauksmes.php', to: '/atsauksmes' },
+	{ from: '/kontakti.php', to: '/kontakti' },
 ];
