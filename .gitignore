@@ -7,3 +7,8 @@ gift-card-pdf/qr/*
 !gift-card-pdf/qr/.gitkeep
 !gift-card-pdf/output/.gitkeep
 .env
+
+# yarn.lock is the authoritative lockfile — Vercel builds from it.
+# Never commit a second lockfile; a mixed tree is how local drifted from prod.
+package-lock.json
+yarn-error.log
