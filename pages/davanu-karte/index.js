@@ -53,7 +53,7 @@ const Index = () => {
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale),
+		...await serverSideTranslations(locale, [TR_NS.GIFT_CARDS, TR_NS.NAVBAR]),
 	},
 })
 

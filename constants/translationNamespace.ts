@@ -15,6 +15,8 @@
 export const TR_NS = {
 	COMMON: 'common',
 	NAVBAR: 'navbar',
+	/** Page chrome (titles, hero alt text) for the home and reviews pages. */
+	PAGES: 'pages',
 
 	SAUNA_RITUALS: 'sauna_rituals',
 	SAUNA_RITUALS_HEADER: 'sauna_rituals_header',

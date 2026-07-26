@@ -1,8 +1,7 @@
 {
-  "title": "Kontakti",
-  "metatTitle": "Kontakti | Gravas",
-  "metaDescription": "Sazināties ar Gravas atpūtas vietu. Rezervāciju varat veikt pa epastu vai telefonu. Iepriekšēja  pakalpojumu rezervācija nepieciešama. Rezervē pirts rituālu, kāzas, viesu māju, naktsmītnes.",
-  "headerTitle": "Kontakti",
-  "headerDescription": "Atpūta kopā ar ģimeni, draugiem un kolēģiem.",
-  "frequentQuestionsTitle": "Biežāk uzdotie jautājumi"
+  "metaTitle": "contacts_meta_title",
+  "metaDescription": "contacts_meta_description",
+  "headerTitle": "contacts_header_title",
+  "headerDescription": "contacts_header_description",
+  "frequentQuestionsTitle": "frequent_questions_title"
 }

@@ -4,23 +4,28 @@ import PageHeader from "../../components/page-header/PageHeader";
 import ReviewDescriptions from "../../static/data/reviews/reviews";
 import Review from "../../components/review/Review";
 import { TR_NS } from '../../constants/translationNamespace';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const ReviewsPage = () => {
+  const { t } = useTranslation(TR_NS.PAGES);
 
   return (
     <Layout
-      title="Atsauksmes | Gravas"
-      description="Gravas pirts rituāla atsauksmes no klientiem."
+      title={t('reviews_meta_title')}
+      description={t('reviews_meta_description')}
     >
       <PageHeaderImage
         imgsrc="/static/guesthouse/viesu-majas-atsauksmes.jpg?webp?lqip"
-        alt="Gravas pļavā pie rata. Kāzu fotostūra idejas"
+        alt={t('reviews_hero_alt')}
       />
       <PageHeader
-        title="Viesu atsauksmes"
-        description="Kopš 2011. gada esam ieviesuši viesu grāmatu pirts rituāla viesiem. Katra atsauksme mums ļauj apskatīties uz savu ieguldīto darbu no cita skatupunta kā arī iedvesmo attīstīties uz priekšu."
+        title={t('reviews_header_title')}
+        description={t('reviews_header_description')}
       />
+      {/* The reviews themselves are guest testimonials in the language they
+          were written in, and stay untranslated on purpose. Only the page
+          chrome above is localisable. */}
       <Review reviews={ReviewDescriptions} />
     </Layout>
   );
@@ -30,7 +35,7 @@ export const getStaticProps = async ({ locale }) => ({
 	props: {
 		...await serverSideTranslations(
 			locale,
-			[TR_NS.NAVBAR]
+			[TR_NS.NAVBAR, TR_NS.PAGES]
 		),
 	},
 })

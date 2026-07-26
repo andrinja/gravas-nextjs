@@ -2,9 +2,10 @@ import Link from "next/link";
 import {Card} from "./style";
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next';
+import { TR_NS } from '../../constants/translationNamespace';
 
 export default function ExploreCard ({ label, img, href}) {
-	const { t } = useTranslation('explore_cards');
+	const { t } = useTranslation(TR_NS.EXPLORE_CARDS);
 	return (
 		<Link href={href} prefetch={false} passHref>
 		<Card

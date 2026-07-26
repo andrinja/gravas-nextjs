@@ -5,18 +5,20 @@ import { Descriptions } from "../components/page-descriptions/PageDescriptions";
 import cards from "../static/data/index-page/exploreCards";
 import serviceDescriptions from "../static/data/index-page/serviceDescriptions";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../constants/translationNamespace';
 
 export default function Index() {
+  const { t } = useTranslation(TR_NS.PAGES);
   return (
     <Layout
-      title="Pirts rituāls | Naktsmītnes | Gravas"
-      description="Pirts rituāls ir atpūta ķermenim un prātam vairāku stundu garumā. Naktsmītnes pēc pirts rituāla ir pieejamas ikvienam. Viesu māja piedāvā telpas svinībām, kooperatīviem pasākumiem, kāzām vai atpūtai ar ģimeni un naktsmītnes. Organizējam skolēnu ekskursijas skolniekiem kā peintbols, loka šaušana."
+      title={t('home_meta_title')}
+      description={t('home_meta_description')}
     >
       <ExploreCards cards={cards} />
       <PageHeaderImage
         imgsrc="/static/home/gravas-atputa-bauska.jpg?webp?lqip"
-        alt="Atpūta laukos pie dabas Bauska"
+        alt={t('home_hero_alt')}
       />
       <Descriptions descriptions={serviceDescriptions} translationNamespace={TR_NS.SERVICE_DESCRIPTIONS} />
     </Layout>
@@ -28,7 +30,7 @@ export async function getServerSideProps({locale}) {
 		props: {
 			...(await serverSideTranslations(
 				locale,
-				[TR_NS.EXPLORE_CARDS, TR_NS.SERVICE_DESCRIPTIONS, TR_NS.NAVBAR]
+				[TR_NS.EXPLORE_CARDS, TR_NS.SERVICE_DESCRIPTIONS, TR_NS.NAVBAR, TR_NS.PAGES]
 			))
 		},
 	}

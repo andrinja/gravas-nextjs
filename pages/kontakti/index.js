@@ -13,7 +13,7 @@ const ContactsPage = () => {
 	const {t} = useTranslation(TR_NS.CONTACTS);
   return (
     <Layout
-      title={t(contactHeader.metatTitle)}
+      title={t(contactHeader.metaTitle)}
       description={t(contactHeader.metaDescription)}
     >
       <PageHeader
