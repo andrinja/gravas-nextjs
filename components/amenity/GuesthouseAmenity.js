@@ -1,4 +1,5 @@
 import Card from "./style";
+import { colors } from "../theme";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
 import { useTranslation } from 'next-i18next';
@@ -11,7 +12,7 @@ const GuesthouseAmenity = ({ icon, label, caption }) => {
 
   return (
     <Card>
-      <Icon style={{ color: "#002823", fontSize: "32px" }} />
+      <Icon style={{ color: colors.primaryDark, fontSize: "32px" }} />
       <h4 className="label">{t(label)}</h4>
       <p className="caption">{t(caption)}</p>
     </Card>

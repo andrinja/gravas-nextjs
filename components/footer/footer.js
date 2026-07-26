@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { colors } from "../theme";
 import Router from "next/router";
 import Button from "../button/button";
 import { BottomItems, ModalItems } from "./style";
@@ -37,13 +38,13 @@ const Footer = () => {
           <h2>{t(howToReserveDetails.title)}</h2>
           <p>{t(howToReserveDetails.text)}</p>
           <div className="contacts">
-            <PhoneIcon style={{ color: "#1E514B", fontSize: "36px" }} />
+            <PhoneIcon style={{ color: colors.primary, fontSize: "36px" }} />
             <a className="contact-detail" href="tel:+37126647133">
               +371 26647133
             </a>
           </div>
           <div className="contacts">
-            <EmailIcon style={{ color: "#1E514B", fontSize: "36px" }} />
+            <EmailIcon style={{ color: colors.primary, fontSize: "36px" }} />
             <a className="contact-detail" href="mailto:info@gravas.lv">
               info@gravas.lv
             </a>

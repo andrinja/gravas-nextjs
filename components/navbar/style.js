@@ -1,9 +1,6 @@
 import styled from "@emotion/styled";
+import { media } from "../theme";
 
-const breakpoints = {
-  md: "(max-width: 1240px)",
-  sm: "(max-width: 720px)"
-};
 export const Nav = styled.nav`
   display: flex;
   width: 100%;
@@ -26,7 +23,7 @@ export const Nav = styled.nav`
       align-items: center;
       justify-content: center;
 
-      @media ${breakpoints.md} {
+      @media ${media.md} {
         display: flex;
         margin-left: auto;
         min-width: 44px;
@@ -44,12 +41,12 @@ export const Nav = styled.nav`
       margin-right: auto;
     }
 
-    @media ${breakpoints.md} {
+    @media ${media.md} {
       width: 100%;
     }
   }
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     height: auto;
     flex-direction: column;
     align-items: center;
@@ -77,7 +74,7 @@ export const SelectItems = styled.div`
     padding-right: 0.5rem;
     color: ${props => props.theme.fontColors.disabled};
   }
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     margin-bottom: 1rem;
   }
 `;
@@ -87,7 +84,7 @@ export const NavItems = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     display: ${p => (p.isOpen ? "flex" : "none")};
     width: 100%;
     flex-direction: column;
@@ -102,7 +99,7 @@ export const NavItems = styled.div`
 
 export const Divider = styled.div`
   display: none;
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     display: flex;
     width: 100%;
     border: 0.5px solid ${props => props.theme.fontColors.divider};

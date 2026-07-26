@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { media } from "../theme";
 
 const Items = styled.div`
   display: grid;
@@ -17,7 +18,7 @@ const Items = styled.div`
     grid-gap: 1rem;
   }
 
-  @media (max-width: 720px) {
+  @media ${media.sm} {
     display: flex;
     flex-direction: column;
     align-items: center;

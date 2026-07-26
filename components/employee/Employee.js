@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { colors } from "../theme";
 import EmployeeExperience from "../employee-experience/EmployeeExperience";
 import Button from "../button/button";
 import { EmployeeDetails, ModalItems } from "./style";
@@ -46,13 +47,13 @@ const Users = ({ employee}) => {
                 <h2>{t(employee.getInTouchTitle)}</h2>
                 <p>{t(employee.getInTouchDescription)}</p>
                 <div className="contacts">
-                  <PhoneIcon style={{ color: "#1E514B", fontSize: "36px" }} />
+                  <PhoneIcon style={{ color: colors.primary, fontSize: "36px" }} />
                   <a className="contact-detail" href="tel:+37126647133">
                     +371 26647133
                   </a>
                 </div>
                 <div className="contacts">
-                  <EmailIcon style={{ color: "#1E514B", fontSize: "36px" }} />
+                  <EmailIcon style={{ color: colors.primary, fontSize: "36px" }} />
                   <a className="contact-detail" href="mailto:info@gravas.lv">
                     info@gravas.lv
                   </a>

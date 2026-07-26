@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { media } from '../theme';
 const Items = styled.div`
     display: grid;
     grid-template-columns:  25% 75%;
@@ -11,7 +12,7 @@ const Items = styled.div`
         padding-bottom: 1rem;
     }
 
-    @media (max-width: 720px) {
+    @media ${media.sm} {
             display: flex;
             flex-direction: column;
             align-items: center;

@@ -6,14 +6,18 @@ import tabData from "../../static/data/contacts/faq";
 import { TabItem, TabContent, FaqItem, Question } from "./style";
 import { useTranslation } from 'next-i18next';
 import { TR_NS } from '../../constants/translationNamespace';
+import { colors } from "../theme";
 
-const theme = createTheme({
+// MUI v4 keeps its own palette, so the Tabs below need a second ThemeProvider.
+// It is fed from components/theme.js rather than re-declaring the brand colours,
+// which is what it used to do — the two copies could drift independently.
+const muiTheme = createTheme({
   palette: {
     primary: {
-      main: "#1E514B"
+      main: colors.primary
     },
     secondary: {
-      main: "#F9E18B"
+      main: colors.secondary
     }
   }
 });
@@ -29,7 +33,7 @@ const FAQ = () => {
 
   return (
     <React.Fragment>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={muiTheme}>
         <Tabs value={activeTab} textColor="primary" onChange={handleChange}>
           {tabData.map(item => (
             <Tab key={item.title} label={t(item.title)} />

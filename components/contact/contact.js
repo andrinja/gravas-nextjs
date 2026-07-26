@@ -1,4 +1,5 @@
 import Button from "../button/button";
+import { colors } from "../theme";
 import { Item, Details } from "./style";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
@@ -12,7 +13,7 @@ const Contact = ({ icon, href, contact, buttonText}) => {
   return (
     <Item>
       <Details>
-        <Icon style={{ color: "#1E514B", fontSize: "28px" }} />
+        <Icon style={{ color: colors.primary, fontSize: "28px" }} />
 		<a
 			className="contact-detail"
 			target="_blank"

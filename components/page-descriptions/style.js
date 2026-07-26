@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { media } from '../theme';
 
 const ServiceDescriptions = styled.div`
     margin: 2rem 0;
@@ -18,7 +19,7 @@ const ServiceDescriptions = styled.div`
             color: ${props => props.theme.fontColors.secondary}
         }
 
-        @media (max-width: 720px) {
+        @media ${media.sm} {
             display: flex;
             flex-direction: column;
             align-items: center;

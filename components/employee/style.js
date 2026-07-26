@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { media } from "../theme";
 
 export const EmployeeDetails = styled.div`
   display: grid;
@@ -53,7 +54,7 @@ export const EmployeeDetails = styled.div`
     margin: 0;
   }
 
-  @media (max-width: 720px) {
+  @media ${media.sm} {
     grid-template-columns: 1fr;
     align-items: center;
 

@@ -1,8 +1,5 @@
-const breakpoints = {
-  md: "(max-width: 1240px)"
-};
-
 import styled from "@emotion/styled";
+import { media } from "../theme";
 
 const Layout = styled.div`
   width: calc(100vw - 5rem);
@@ -10,7 +7,7 @@ const Layout = styled.div`
   height: calc(100vh - 3rem);
   margin: 0 auto;
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     width: 100vw;
   }
 `;
@@ -24,7 +21,7 @@ export const IconItems = styled.div`
     cursor: pointer;
   }
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     position: relative;
     z-index: 2;
     margin: 0.5rem 1rem;
@@ -38,7 +35,7 @@ export const Images = styled.div`
   grid-template-columns: 85% 15%;
   align-content: space-evenly;
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     grid-template-columns: 100%;
   }
 `;
@@ -78,7 +75,7 @@ export const Image = styled.div`
     object-fit: contain;
     border-radius: 0.25rem;
   }
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     width: 100vw;
     img {
       width: 100%;
@@ -113,7 +110,7 @@ export const Aside = styled.aside`
     border-radius: 0.25rem;
   }
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     grid-template-columns: repeat(auto-fit, 5rem);
   }
 `;

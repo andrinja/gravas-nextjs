@@ -1,4 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
+import { colors } from "../components/theme";
 
 //Pages in Next.js skip the definition of the surrounding document's markup
 //extends the Document clas
@@ -27,10 +28,10 @@ export default class MyDocument extends Document {
           <link
             rel="mask-icon"
             href="/staticsafari-pinned-tab.svg"
-            color="#1E514B"
+            color={colors.primary}
           />
-          <meta name="msapplication-TileColor" content="#1E514B" />
-          <meta name="theme-color" content="#1E514B" />
+          <meta name="msapplication-TileColor" content={colors.primary} />
+          <meta name="theme-color" content={colors.primary} />
           <link
             href="https://fonts.googleapis.com/css?family=Raleway:300,500,600,700&display=swap"
             rel="preload"

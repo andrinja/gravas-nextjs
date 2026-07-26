@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-const breakpoints = {
-  md: "(max-width: 1240px)",
-  sm: "(max-width: 512px)"
-};
+import { media } from "../theme";
 
 export const Item = styled.div`
   width: 100%;
@@ -16,10 +13,10 @@ export const Item = styled.div`
     margin-right: 1rem;
   }
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     padding-left: 0;
   }
-  @media ${breakpoints.sm} {
+  @media ${media.xs} {
     padding-left: 0;
     grid-template-columns: 1fr;
   }
@@ -32,11 +29,11 @@ export const Item = styled.div`
       display: flex;
       justify-content: center;
 
-      @media ${breakpoints.md} {
+      @media ${media.md} {
         margin-left: 0;
       }
     }
-    @media ${breakpoints.sm} {
+    @media ${media.xs} {
       display: none;
     }
   }

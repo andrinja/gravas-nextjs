@@ -1,4 +1,5 @@
 import Item from "./style";
+import { colors } from "../theme";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
 import { useTranslation } from 'next-i18next';
@@ -16,7 +17,7 @@ const GuesthousePriceTag = ({
   const Icon = dynamic(() => import(`../icons/${iconName}`));
   return (
     <Item>
-      <Icon style={{ color: "#C4AF5C", fontSize: "48px" }} />
+      <Icon style={{ color: colors.secondaryDark, fontSize: "48px" }} />
       <h2>{t(title)}</h2>
       <p>{t(forPerson)}</p>
       <p>{t(additionalPerson)}</p>

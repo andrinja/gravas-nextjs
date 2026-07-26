@@ -1,4 +1,5 @@
 import Card from "./style";
+import { colors } from "../theme";
 import dynamic from "next/dynamic";
 import toCapitalCase from "../../lib/toCapitalCase";
 import { TR_NS } from '../../constants/translationNamespace';
@@ -10,7 +11,7 @@ const HighlightCard = ({ icon, label, caption}) => {
   const Icon = dynamic(() => import(`../icons/${iconName}`));
   return (
     <Card>
-      <Icon style={{ color: "#1E514B", fontSize: "24px" }} />
+      <Icon style={{ color: colors.primary, fontSize: "24px" }} />
       <h4 className="label">{t(label)}</h4>
       <p className="caption">{t(caption)}</p>
     </Card>

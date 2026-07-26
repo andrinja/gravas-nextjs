@@ -39,7 +39,22 @@ const theme = {
     light: "300",
     medium: "500",
     bold: "700"
+  },
+
+  // Ready-to-interpolate media-query strings:  @media ${media.sm} { ... }
+  //
+  // `sm` (720) and `xs` (512) are both real and both wanted. They used to be
+  // two module-level `breakpoints` consts that shared a name but not a value —
+  // navbar/style.js had sm: 720px, contact/style.js had sm: 512px — which read
+  // as a bug but is actually two components with different reflow points. They
+  // are named apart here so the difference is deliberate rather than accidental.
+  media: {
+    md: "(max-width: 1240px)",
+    sm: "(max-width: 720px)",
+    xs: "(max-width: 512px)"
   }
 };
+
+export const { colors, fontColors, fonts, fontWeight, media } = theme;
 
 export default theme;

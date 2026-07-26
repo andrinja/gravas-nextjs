@@ -1,14 +1,12 @@
 import styled from "@emotion/styled";
+import { media } from "../theme";
 
-const breakpoints = {
-  md: "(max-width: 1240px)"
-};
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -26,7 +24,7 @@ export const ContactItems = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  @media ${breakpoints.md} {
+  @media ${media.md} {
     width: 100%;
   }
 `;

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { media } from '../theme';
 
 const Item = styled.div`
     
@@ -13,7 +14,7 @@ const Item = styled.div`
         margin: 2rem 0;
         background: ${props => props.theme.colors.primary};
     } 
-    @media (max-width: 720px) {
+    @media ${media.sm} {
         .detail {
             grid-template-columns: none;
             justify-content: center; 
