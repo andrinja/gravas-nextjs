@@ -2,12 +2,12 @@ import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import ServiceHeader from "../../components/service-header/ServiceHeader";
-import RitualHighlightCards from "../../components/highlight-cards/RitualHighlightCards";
+import HighlightCards from "../../components/highlight-cards/HighlightCards";
 import { Descriptions } from "../../components/page-descriptions/PageDescriptions";
-import RitualAmenities from "../../components/amenities/RitualAmenities";
+import Amenities from "../../components/amenities/Amenities";
 import Employee from "../../components/employee/Employee";
-import RitualExtraDetails from "../../components/extra-details/RitualExtraDetails";
-import RitualPriceTags from "../../components/pricesTags/RitualPriceTags";
+import ExtraDetails from "../../components/extra-details/ExtraDetails";
+import PriceTags from "../../components/price-tags/PriceTags";
 import Footer from "../../components/footer/footer";
 import EmployeeDetails from "../../static/data/employees/employees";
 import saunaRituals from "../../static/data/sauna-rituals/saunaRituals";
@@ -36,20 +36,23 @@ const SaunaRitualPage = () => {
     >
       <PageHeaderImage imgsrc={saunaRitual.img} alt={t(saunaRitual.alt)} />
       <ServiceHeader title={t(saunaRitual.title)} />
-      <RitualHighlightCards highlights={saunaRitual.highlights} />
-      <Descriptions descriptions={saunaRitual.descriptions} translationNamespace="sauna_rituals" />
-      <RitualAmenities
+      <HighlightCards highlights={saunaRitual.highlights} translationNamespace={TR_NS.SAUNA_RITUALS} />
+      <Descriptions descriptions={saunaRitual.descriptions} translationNamespace={TR_NS.SAUNA_RITUALS} />
+      <Amenities
         amenities={saunaRitual.amenities}
         title={saunaRitual.whatIsIncludedTitle}
+        translationNamespace={TR_NS.SAUNA_RITUALS}
       />
       <Employee employee={EmployeeDetails} />
-      <RitualExtraDetails
+      <ExtraDetails
         details={saunaRitual.extraDetails}
         title={saunaRitual.considerTitle}
+        translationNamespace={TR_NS.SAUNA_RITUALS}
       />
-      <RitualPriceTags
+      <PriceTags
         prices={saunaRitual.allPrices}
         title={saunaRitual.allPriceTitle}
+        translationNamespace={TR_NS.SAUNA_RITUALS}
       />
       <Footer />
     </Layout>

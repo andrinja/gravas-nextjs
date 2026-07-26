@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import ServiceHeader from "../../components/service-header/ServiceHeader";
-import ActivityHighlightCards from "../../components/highlight-cards/ActivityHighlightCards";
+import HighlightCards from "../../components/highlight-cards/HighlightCards";
 import { Descriptions } from "../../components/page-descriptions/PageDescriptions";
-import ActivityAmenities from "../../components/amenities/ActivityAmenities";
-import ActivityExtraDetails from "../../components/extra-details/ActivityExtraDetails";
-import ActivityPriceTags from "../../components/pricesTags/ActivityPriceTags";
+import Amenities from "../../components/amenities/Amenities";
+import ExtraDetails from "../../components/extra-details/ExtraDetails";
+import PriceTags from "../../components/price-tags/PriceTags";
 import sportActivities from "../../static/data/sport-activities/sportActivities";
 import Footer from "../../components/footer/footer";
 import { useTranslation } from 'next-i18next';
@@ -30,19 +30,22 @@ const SportActivityPage = () => {
     >
       <PageHeaderImage imgsrc={activity.img} alt={t(activity.alt)} />
       <ServiceHeader title={t(activity.title)} />
-      <ActivityHighlightCards highlights={activity.highlights} />
+      <HighlightCards highlights={activity.highlights} translationNamespace={TR_NS.SPORT_ACTIVITIES} />
       <Descriptions descriptions={activity.descriptions} translationNamespace={TR_NS.SPORT_ACTIVITIES} />
-      <ActivityAmenities
+      <Amenities
         amenities={activity.amenities}
         title={activity.whatIsIncludedTitle}
+        translationNamespace={TR_NS.SPORT_ACTIVITIES}
       />
-      <ActivityExtraDetails
+      <ExtraDetails
         details={activity.extraDetails}
         title={activity.considerTitle}
+        translationNamespace={TR_NS.SPORT_ACTIVITIES}
       />
-      <ActivityPriceTags
+      <PriceTags
         prices={activity.allPrices}
         title={activity.allPriceTitle}
+        translationNamespace={TR_NS.SPORT_ACTIVITIES}
       />
       <Footer />
     </Layout>

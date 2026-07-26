@@ -2,12 +2,12 @@ import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import ServiceHeader from "../../components/service-header/ServiceHeader";
-import GuesthouseHighlightCards from "../../components/highlight-cards/GuesthouseHighlightCards";
+import HighlightCards from "../../components/highlight-cards/HighlightCards";
 import guestHouseServices from "../../static/data/guesthouse/guesthouse";
 import { Descriptions } from "../../components/page-descriptions/PageDescriptions";
-import GuesthouseAmenities from "../../components/amenities/GuesthouseAmenities";
-import GuesthouseExtraDetails from "../../components/extra-details/GuesthouseExtraDetails";
-import GuesthousePriceTags from "../../components/pricesTags/GuesthousePriceTags";
+import Amenities from "../../components/amenities/Amenities";
+import ExtraDetails from "../../components/extra-details/ExtraDetails";
+import PriceTags from "../../components/price-tags/PriceTags";
 import Footer from "../../components/footer/footer";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
@@ -33,19 +33,22 @@ const GuesthousePage = () => {
         alt={t(guesthouseService.alt)}
       />
       <ServiceHeader title={t(guesthouseService.title)} />
-      <GuesthouseHighlightCards highlights={guesthouseService.highlights} />
+      <HighlightCards highlights={guesthouseService.highlights} translationNamespace={TR_NS.GUESTHOUSE} />
       <Descriptions descriptions={guesthouseService.descriptions} translationNamespace={TR_NS.GUESTHOUSE} />
-      <GuesthouseAmenities
+      <Amenities
         amenities={guesthouseService.amenities}
         title={guesthouseService.whatIsIncludedTitle}
+        translationNamespace={TR_NS.GUESTHOUSE}
       />
-      <GuesthouseExtraDetails
+      <ExtraDetails
         details={guesthouseService.extraDetails}
         title={guesthouseService.considerTitle}
+        translationNamespace={TR_NS.GUESTHOUSE}
       />
-      <GuesthousePriceTags
+      <PriceTags
         prices={guesthouseService.allPrices}
         title={guesthouseService.allPriceTitle}
+        translationNamespace={TR_NS.GUESTHOUSE}
       />
       <Footer />
     </Layout>
