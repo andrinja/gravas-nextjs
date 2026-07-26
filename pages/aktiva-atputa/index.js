@@ -10,7 +10,7 @@ import { TR_NS } from '../../constants/translationNamespace'
 import { useTranslation } from 'next-i18next';
 
 const SportActivitiesPage = () => {
-	const { t } = useTranslation(TR_NS.SPORTS_ACTIVITIES_HEADER);
+	const { t } = useTranslation(TR_NS.SPORT_ACTIVITIES_HEADER);
   return (
     <Layout
       title={t(SportActivitiesHeaderText.metaTitle)}
@@ -42,7 +42,7 @@ export const getStaticProps = async ({ locale }) => ({
 	props: {
 		...await serverSideTranslations(
 			locale,
-			[TR_NS.SPORT_ACTIVITIES_HEADER, TR_NS.SPORT_ACTIVITIES, TR_NS.NAVBAR, TR_NS.SPORTS_ACTIVITIES_HEADER]
+			[TR_NS.SPORT_ACTIVITIES_HEADER, TR_NS.SPORT_ACTIVITIES, TR_NS.NAVBAR]
 		),
 	},
 })
