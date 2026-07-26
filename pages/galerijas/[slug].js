@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import galleries from "../../static/data/galleries";
 import { useState } from 'react'
-import Layout, { Images, Main, Aside, IconItems, Image } from "./style";
+import Layout, { Images, Main, Aside, IconItems, Image } from "../../components/gallery/style";
 import { useTransition, animated } from "react-spring";
 import CloseIcon from "../../components/icons/Close";
 import NextIcon from "../../components/icons/Next";

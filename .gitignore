@@ -1,11 +1,6 @@
 .next
 node_modules
-sendgrid.env
 scratchbook.js
-gift-card-pdf/output/*
-gift-card-pdf/qr/*
-!gift-card-pdf/qr/.gitkeep
-!gift-card-pdf/output/.gitkeep
 .env
 
 # yarn.lock is the authoritative lockfile — Vercel builds from it.

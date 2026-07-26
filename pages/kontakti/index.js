@@ -4,7 +4,7 @@ import ContactsText from "../../static/data/contacts/contacts";
 import Contacts from "../../components/contacts/contacts";
 import FAQ from "../../components/frequent-questions";
 import contactHeader from "../../static/data/contacts/contactHeaders";
-import FaqHeader from "./style";
+import FaqHeader from "../../components/faq-header/style";
 import { TR_NS } from '../../constants/translationNamespace';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
