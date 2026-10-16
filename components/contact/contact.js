@@ -2,7 +2,7 @@ import { Icon } from "../icons/Icon";
 import Button from "../button/button";
 import { colors } from "../theme";
 import { Item, Details } from "./style";
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const Contact = ({ icon, href, contact, buttonText}) => {

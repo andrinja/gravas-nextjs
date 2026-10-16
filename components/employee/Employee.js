@@ -8,7 +8,7 @@ import PhoneIcon from "../../components/icons/Phone";
 import EmailIcon from "../../components/icons/Mail";
 import Image from "next/image";
 import { TR_NS } from '../../constants/translationNamespace';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 const Users = ({ employee}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

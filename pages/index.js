@@ -4,8 +4,8 @@ import ExploreCards from "../components/explore-cards/ExploreCards";
 import { Descriptions } from "../components/page-descriptions/PageDescriptions";
 import cards from "../static/data/index-page/exploreCards";
 import serviceDescriptions from "../static/data/index-page/serviceDescriptions";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
 import { TR_NS } from '../constants/translationNamespace';
 
 export default function Index() {
@@ -17,7 +17,7 @@ export default function Index() {
     >
       <ExploreCards cards={cards} />
       <PageHeaderImage
-        imgsrc="/static/home/gravas-atputa-bauska.jpg?webp?lqip"
+        imgsrc="/static/home/gravas-atputa-bauska.jpg"
         alt={t('home_hero_alt')}
       />
       <Descriptions descriptions={serviceDescriptions} translationNamespace={TR_NS.SERVICE_DESCRIPTIONS} />

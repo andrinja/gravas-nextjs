@@ -1,18 +1,18 @@
 # Gravas
 
 Marketing site for Gravas — sauna rituals, guesthouse and outdoor activities
-near Bauska. Next.js 13 (pages router), React 18, Emotion 10, three locales
-(`lv` default, `en`, `ru`).
+near Bauska. Next.js 16 (pages router, Turbopack), React 19, Emotion 11,
+next-i18next 16, three locales (`lv` default, `en`, `ru`).
 
 Production: https://gravas.lv (www redirects to the apex host)
 
 ## Running it
 
 ```bash
-yarn install --frozen-lockfile
+yarn install --frozen-lockfile   # Node >= 22.13 (yarn checks engines)
 yarn dev            # http://localhost:3000
-yarn build          # production build
-yarn lint
+yarn build          # production build (Turbopack)
+yarn lint           # eslint . — Next 16 has no `next lint`; config is eslint.config.mjs
 ```
 
 `yarn.lock` is the authoritative lockfile and is what the deploy builds from.
@@ -30,7 +30,8 @@ components/icons/     @svgr output + registry.ts (regenerate via icons:convert)
 lib/sections/         the three service sections, described as data
 public/locales/       translations — THE live tree
 static/data/          content as i18n keys, slugs and image paths
-static/               images (legacy Next path, still served)
+static/               images (legacy Next path; Next 16 still serves it, with a
+                      deprecation warning — moving it under public/ is pending)
 ```
 
 ### The service sections
@@ -70,8 +71,8 @@ is how a phantom `gallery` namespace went unnoticed for years.
    renders raw keys once the client hydrates.
 
 ```javascript
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const Page = () => {
@@ -84,8 +85,12 @@ export const getStaticProps = async ({ locale }) => ({
 });
 ```
 
-In `.tsx`, use `useT` from `lib/useT.ts` instead — it narrows next-i18next 8's
-return type so `t()` can be used directly as a React child.
+Pages-router code imports from `next-i18next/pages` and
+`next-i18next/pages/serverSideTranslations`; the bare `next-i18next` entry is
+the App Router API and exports neither `useTranslation` nor `appWithTranslation`.
+
+In `.tsx`, `useT` from `lib/useT.ts` remains as a thin wrapper from the
+next-i18next 8 days; plain `useTranslation` is fine too.
 
 There is no `fallbackLng`, so a key missing from a locale renders as the key
 itself, not as Latvian.
@@ -122,8 +127,10 @@ what previously made every data-driven icon invisible on the whole site.
 - `en/` and `ru/` copy for the contacts page and page chrome: the key slots
   exist and currently hold the Latvian text as a placeholder, so those pages
   still read Latvian in English and Russian.
-- Dependency upgrades are deliberately deferred: Emotion 10 → 11, MUI v4 → v5,
-  react-spring v8 → v9 (one file, `pages/galerijas/[slug].js`), next-i18next
-  8 → 15, Next 13 → 15.
-- `pages/_app.js` still defines `getInitialProps`, which opts the whole app out
-  of Automatic Static Optimization.
+- `static/` should move under `public/static/` (same URLs) before Next drops
+  the deprecated root-level `static` serving. `static/data` and `static/icons`
+  are build inputs, not served files, and can stay.
+- Hero images go through a plain `<img>` at full resolution; the cards use
+  `next/image`. The heroes should too.
+- The www → apex redirect is a Vercel domain setting and currently a 307;
+  flip it to 308 in the Vercel dashboard.

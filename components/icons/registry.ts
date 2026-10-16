@@ -46,6 +46,7 @@ export const ICONS = {
 	Gloves:          dynamic(() => import('./Gloves')),
 	Hat:             dynamic(() => import('./Hat')),
 	Herbs:           dynamic(() => import('./Herbs')),
+	Instagram:       dynamic(() => import('./Instagram')),
 	Key:             dynamic(() => import('./Key')),
 	Kitchen:         dynamic(() => import('./Kitchen')),
 	Location:        dynamic(() => import('./Location')),

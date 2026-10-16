@@ -2,12 +2,12 @@ import { useRouter } from "next/router";
 import galleries from "../../static/data/galleries";
 import { useState } from 'react'
 import Layout, { Images, Main, Aside, IconItems, Image } from "../../components/gallery/style";
-import { useTransition, animated } from "react-spring";
+import { useTransition, animated } from "@react-spring/web";
 import CloseIcon from "../../components/icons/Close";
 import NextIcon from "../../components/icons/Next";
 import BackIcon from "../../components/icons/Back";
 import { default as NextImage } from 'next/image'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
 import { getPaths } from '../../utils/getPaths';
 
@@ -36,7 +36,10 @@ const Gallery = () => {
     const lastImageIndex = gallery.images.length - 1;
     setIndex(previousImageIndex < 0 ? lastImageIndex : previousImageIndex);
   };
-  const transitions = useTransition(gallery.images[index], image => image.id, {
+  // react-spring v9+ API: keys live in the config and the hook returns a
+  // render function instead of an array of { item, props, key }.
+  const transitions = useTransition(gallery.images[index], {
+    keys: image => image.id,
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 }
@@ -54,8 +57,8 @@ const Gallery = () => {
               onClick={handleBack}
               style={{ color: "#000000", fontSize: "28px" }}
             />
-            {transitions.map(({ item, props, key }) => (
-              <animated.div key={key} style={{ ...props, display: 'flex', alignItems: 'center' }}>
+            {transitions((style, item) => (
+              <animated.div style={{ ...style, display: 'flex', alignItems: 'center' }}>
                   <NextImage height={512} width={864} src={item.path} alt={item.title} type="image/webp" />
               </animated.div>
             ))}

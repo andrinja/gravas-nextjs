@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {Card} from "./style";
 import Image from 'next/image'
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { TR_NS } from '../../constants/translationNamespace';
 
 export default function ExploreCard ({ label, img, href}) {

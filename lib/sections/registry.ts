@@ -54,7 +54,7 @@ export const SECTIONS: Record<SectionKey, SectionDescriptor> = {
 		contentNs: TR_NS.SAUNA_RITUALS,
 		headerNs: TR_NS.SAUNA_RITUALS_HEADER,
 		headerKeys: saunaRitualsHeader,
-		indexHero: '/static/sauna-rituals/pirts-rituali-kopa.jpg?webp?lqip',
+		indexHero: '/static/sauna-rituals/pirts-rituali-kopa.jpg',
 		showsEmployee: true,
 		indexNamespaces: [TR_NS.SAUNA_RITUALS, TR_NS.SAUNA_RITUALS_HEADER, TR_NS.NAVBAR],
 		// SAUNA_RITUALS_HEADER was loaded here too, but the detail page never
@@ -72,7 +72,7 @@ export const SECTIONS: Record<SectionKey, SectionDescriptor> = {
 		contentNs: TR_NS.GUESTHOUSE,
 		headerNs: TR_NS.GUESTHOUSE_HEADER,
 		headerKeys: guesthouseHeader,
-		indexHero: '/static/guesthouse/skats-uz-viesu-maju.jpg?webp?lqip',
+		indexHero: '/static/guesthouse/skats-uz-viesu-maju.jpg',
 		showsEmployee: false,
 		indexNamespaces: [TR_NS.GUESTHOUSE_HEADER, TR_NS.GUESTHOUSE, TR_NS.NAVBAR],
 		detailNamespaces: [TR_NS.NAVBAR, TR_NS.GUESTHOUSE, TR_NS.HOW_TO_RESERVE],
@@ -83,7 +83,7 @@ export const SECTIONS: Record<SectionKey, SectionDescriptor> = {
 		contentNs: TR_NS.SPORT_ACTIVITIES,
 		headerNs: TR_NS.SPORT_ACTIVITIES_HEADER,
 		headerKeys: sportActivitiesHeader,
-		indexHero: '/static/sport-activities/laukums.jpg?webp?lqip',
+		indexHero: '/static/sport-activities/laukums.jpg',
 		showsEmployee: false,
 		indexNamespaces: [TR_NS.SPORT_ACTIVITIES_HEADER, TR_NS.SPORT_ACTIVITIES, TR_NS.NAVBAR],
 		// HOW_TO_RESERVE added: this page renders <Footer/>, which translates

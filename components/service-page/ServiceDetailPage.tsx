@@ -28,7 +28,7 @@ export const ServiceDetailPage = ({ section, item }: Props) => {
 			title={t(item.metaTitle)}
 			description={t(item.metaDescription)}
 			// og:image was the same home photo on all 15 detail pages; use the
-			// service's own. The ?webp?lqip suffix is an inert leftover query.
+			// service's own. The  suffix is an inert leftover query.
 			image={item.img.split('?')[0]}
 		>
 			<PageHeaderImage imgsrc={item.img} alt={t(item.alt)} />

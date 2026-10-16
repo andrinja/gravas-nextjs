@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from 'next/link'
 import NavItem from "../nav-item/NavItem";
 import { Nav, NavItems, Divider, SelectItems } from "./style";
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { TR_NS } from '../../constants/translationNamespace';
 import MenuIcon from "../../components/icons/Menu";
 import CloseIcon from "../../components/icons/Close";

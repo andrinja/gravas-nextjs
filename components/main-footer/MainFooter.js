@@ -1,17 +1,16 @@
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import Grid from '@material-ui/core/Grid';
-import {Footer, PartnerLink} from './style';
+import InstagramIcon from '../icons/Instagram';
+import FacebookIcon from '../icons/Facebook';
+import { Footer, PartnerLinks, SocialLinks, PartnerLink } from './style';
 import theme from '../theme';
 import Link from 'next/link'
 
- const MainFooter = () => {
+const MainFooter = () => {
 	return (
-		<Footer container justifyContent="space-between" alignItems="center">
+		<Footer>
 		<Link href="/sitemap.xml" style={{textDecoration: 'none', color: theme.fontColors.secondary}}>
-		© 2020 Gravas
+		© {new Date().getFullYear()} Gravas
 		</Link>
-		<Grid item style={{ display: 'flex', flexDirection: 'column'}}>
+		<PartnerLinks>
 				<h5 style={{ paddingBottom: '8px', color: theme.fontColors.disabled}}>Sadarbības partneri</h5>
 			<PartnerLink href="https://www.celotajs.lv/lv/e/gravas_pirts?0">
 				Lauku ceļotājs
@@ -34,26 +33,25 @@ import Link from 'next/link'
 			<PartnerLink href="https://www.lieliskadavana.lv/gravas">
 				Lieliska dāvana
 			</PartnerLink>
-		</Grid>
-		<Grid item>
-			<Link
+		</PartnerLinks>
+		<SocialLinks>
+			<a
 				href="https://www.instagram.com/gravasbauska/"
 				target="_blank"
 				rel="noreferrer"
 				aria-label="Instagram - Gravas Bauska"
-				style={{marginRight: '8px', minWidth: 44, minHeight: 44, display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
-					<InstagramIcon fontSize={'large'} color={'primary'} aria-hidden />
-			</Link>
-			<Link
+				style={{marginRight: '8px'}}>
+					<InstagramIcon aria-hidden />
+			</a>
+			<a
 				href="https://www.facebook.com/gravasatputa"
 				target="_blank"
 				rel="noreferrer"
 				aria-label="Facebook - Gravas atpūta"
-				style={{minWidth: 44, minHeight: 44, display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}
 			>
-					<FacebookIcon fontSize={'large'} color={'primary'} aria-hidden />
-			</Link>
-		</Grid>
+					<FacebookIcon aria-hidden />
+			</a>
+		</SocialLinks>
 		</Footer>
 	)
 }

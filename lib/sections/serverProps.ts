@@ -1,4 +1,4 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { SECTIONS, type SectionKey } from './registry';
 import { SECTION_DATA } from './data';

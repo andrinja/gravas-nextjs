@@ -3,8 +3,15 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { Raleway } from 'next/font/google';
-import { Global, css } from "@emotion/core";
-import { appWithTranslation } from 'next-i18next';
+import { Global, css } from "@emotion/react";
+import { appWithTranslation } from 'next-i18next/pages';
+import NProgress from 'nprogress';
+
+// Global stylesheets may only be imported from _app in the pages router.
+// nprogress.css used to be a render-blocking <link> to cdnjs in <Head>;
+// now both are bundled.
+import 'nprogress/nprogress.css';
+import 'react-responsive-modal/styles.css';
 
 // Self-hosted by next/font: the files are downloaded at build time and served
 // from /_next/static, so there is no request to Google at runtime and no
@@ -27,22 +34,31 @@ const raleway = Raleway({
 // UA tag to this GA4 stream.
 export const GA_MEASUREMENT_ID = 'G-TSZ2R9WG12';
 
-function usePageViews() {
+function useRouteEffects() {
   const router = useRouter();
   useEffect(() => {
-    const onRouteChange = url => {
+    const onStart = () => NProgress.start();
+    const onDone = () => NProgress.done();
+    const onComplete = url => {
+      NProgress.done();
       if (typeof window.gtag === 'function') {
         window.gtag('config', GA_MEASUREMENT_ID, { page_path: url });
       }
     };
     // The initial page view is sent by the gtag config call itself.
-    router.events.on('routeChangeComplete', onRouteChange);
-    return () => router.events.off('routeChangeComplete', onRouteChange);
+    router.events.on('routeChangeStart', onStart);
+    router.events.on('routeChangeComplete', onComplete);
+    router.events.on('routeChangeError', onDone);
+    return () => {
+      router.events.off('routeChangeStart', onStart);
+      router.events.off('routeChangeComplete', onComplete);
+      router.events.off('routeChangeError', onDone);
+    };
   }, [router.events]);
 }
 
 function MyApp({ Component, pageProps }) {
-  usePageViews();
+  useRouteEffects();
 
   return (
     <>
@@ -86,8 +102,8 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-// No getInitialProps here any more. The old class component defined one that
-// only returned `namespacesRequired`, a next-i18next v6 concept that v8
-// ignores, and its mere presence opted every page without getStaticProps out
+// No getInitialProps here. The old class component defined one that only
+// returned `namespacesRequired`, a next-i18next v6 concept later versions
+// ignore, and its mere presence opted every page without getStaticProps out
 // of Automatic Static Optimization.
 export default appWithTranslation(MyApp);

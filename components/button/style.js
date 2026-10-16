@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 
 const ButtonStyle = styled.button`
   border-radius: 0.5rem;

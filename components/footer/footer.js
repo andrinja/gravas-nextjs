@@ -3,13 +3,13 @@ import { colors } from "../theme";
 import Router from "next/router";
 import Button from "../button/button";
 import { BottomItems, ModalItems } from "./style";
-import Modal from "react-responsive-modal";
+import { Modal } from "react-responsive-modal";
 import howToReserveDetails from "../../static/data/contacts/howToReserve";
 import PhoneIcon from "../../components/icons/Phone";
 import EmailIcon from "../../components/icons/Mail";
 import GiftCardIcon from "../../components/icons/GiftCard";
 import { TR_NS } from '../../constants/translationNamespace';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

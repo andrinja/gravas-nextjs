@@ -4,8 +4,8 @@ import PageHeader from "../../components/page-header/PageHeader";
 import ReviewDescriptions from "../../static/data/reviews/reviews";
 import Review from "../../components/review/Review";
 import { TR_NS } from '../../constants/translationNamespace';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const ReviewsPage = () => {
   const { t } = useTranslation(TR_NS.PAGES);
@@ -16,7 +16,7 @@ const ReviewsPage = () => {
       description={t('reviews_meta_description')}
     >
       <PageHeaderImage
-        imgsrc="/static/guesthouse/viesu-majas-atsauksmes.jpg?webp?lqip"
+        imgsrc="/static/guesthouse/viesu-majas-atsauksmes.jpg"
         alt={t('reviews_hero_alt')}
       />
       <PageHeader

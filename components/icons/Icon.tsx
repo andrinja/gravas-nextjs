@@ -33,7 +33,7 @@ export function Icon({ name, ...rest }: IconProps) {
 
 	if (!key) {
 		if (process.env.NODE_ENV !== 'production') {
-			// eslint-disable-next-line no-console
+			 
 			console.warn(`[Icon] unknown icon token: ${JSON.stringify(name)}`);
 		}
 		return null;

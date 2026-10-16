@@ -6,8 +6,8 @@ import FAQ from "../../components/frequent-questions";
 import contactHeader from "../../static/data/contacts/contactHeaders";
 import FaqHeader from "../../components/faq-header/style";
 import { TR_NS } from '../../constants/translationNamespace';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 const ContactsPage = () => {
 	const {t} = useTranslation(TR_NS.CONTACTS);

@@ -3,8 +3,8 @@ import PageHeaderImage from "../../components/page-header-image/PageHeaderImage"
 import PageHeader from "../../components/page-header/PageHeader";
 import giftCardHeader from "../../static/data/index-page/giftcardHeader";
 import Button from "../../components/button/button";
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const Index = () => {
@@ -15,7 +15,7 @@ const Index = () => {
 		description={t(giftCardHeader.metaDescription)}
 	>
     <PageHeaderImage
-      imgsrc="/static/gift-card/gift-card-header.jpg?webp?lqip"
+      imgsrc="/static/gift-card/gift-card-header.jpg"
       alt={t(giftCardHeader.alt)}
     />
     <div>
