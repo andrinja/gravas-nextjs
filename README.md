@@ -4,7 +4,7 @@ Marketing site for Gravas — sauna rituals, guesthouse and outdoor activities
 near Bauska. Next.js 13 (pages router), React 18, Emotion 10, three locales
 (`lv` default, `en`, `ru`).
 
-Production: https://www.gravas.lv
+Production: https://gravas.lv (www redirects to the apex host)
 
 ## Running it
 

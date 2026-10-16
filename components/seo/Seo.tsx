@@ -2,7 +2,11 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { i18n } from '../../next-i18next.config';
 
-export const SITE_URL = 'https://www.gravas.lv';
+// The apex host is what Vercel serves; www.gravas.lv answers with a redirect
+// to it. Canonical and hreflang URLs must name the final host, not the one
+// that redirects, or search engines index the redirect target under a
+// different canonical than the page declares.
+export const SITE_URL = 'https://gravas.lv';
 
 const LOCALES = i18n.locales as string[];
 const DEFAULT_LOCALE = i18n.defaultLocale as string;

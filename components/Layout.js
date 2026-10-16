@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Head from "next/head";
 import Navbar from "./navbar/Navbar";
 import MainFooter from "./main-footer/MainFooter";
@@ -8,7 +7,6 @@ import theme from "./theme";
 import Container from "./container/style";
 import Router from "next/router";
 import NProgress from "nprogress";
-import { initGA, logPageView } from "../utils/analytics";
 
 Router.onRouteChangeStart = () => {
   NProgress.start();
@@ -16,15 +14,10 @@ Router.onRouteChangeStart = () => {
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
+// Page views are tracked in pages/_app.js (GA4 via next/script). This used to
+// hold a dependency-less useEffect that called react-ga's pageview() on every
+// render of every page, not just on navigation.
 const Layout = ({ children, title, description, image = null }) => {
-  useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true;
-    }
-    logPageView();
-  });
-
   return (
     <ThemeProvider theme={theme}>
       <Seo title={title || ""} description={description} image={image} />

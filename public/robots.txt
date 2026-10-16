@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.gravas.lv/sitemap.xml
+Sitemap: https://gravas.lv/sitemap.xml
