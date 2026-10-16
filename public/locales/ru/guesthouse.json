@@ -2,10 +2,8 @@
   "what_is_included": "Что входит",
   "consider_title": "Принять к сведению",
   "price_title": "Цены",
-
   "highlights_location_label": "Kомплекс отдыха Гравас",
   "highlights_location_caption": "Бауска",
-
   "amenity_space_label": "Гостевой дом",
   "amenity_space_caption": "с широкой территорию",
   "amenity_bed_label": "Ночлег",
@@ -30,21 +28,18 @@
   "amenity_canopy_caption": "торжества",
   "amenity_bed_sheets_label": "постельные принадлежности",
   "amenity_bed_sheets_caption": "Белье, полотенца",
-
   "arrival_departue_title": "Заезд / Bыезд",
   "arrival_departue_description": "Время прибытия с 16:00 и время выезда 11:00 следующего дня. Другие времена могут быть согласованы индивидуально.",
   "reservation_extras_title": "Другие услуги",
   "reservation_extras_description": "Дополнительные услуги и другие запросы должны быть забронированы до прибытия.",
   "reservation_public_holidays_title": "Праздничные дни",
   "reservation_public_holidays_description": "Цены в праздничные дни, такие как Рождество, Новый год, Лиго, Пасха, Фестиваль музыки кантри, могут меняться.",
-
   "sauna_rental": "Баня в аренду",
   "sauna_rental_max_number_of_persons": "до 10 гостей",
   "accommodation": "Спальное место",
   "accommodation_per_person": " 1 персонa",
   "grill_place": "Гриль место",
   "grill_place_accessories": "с дровами, аксессуары для гриля",
-
   "viesu_majas_ire": "Гостевой дом",
   "guesthouse_rental_num_of_persons": "от 10 гостей",
   "guesthouse_rental_price_from": "от 200 €",
@@ -60,7 +55,6 @@
   "guesthouse_description_title": "О гостевом доме",
   "guesthouse_description_text": "В предложение включено: 12 койко-мест, объединённый санузел, небольшая кухонка для приготовления пищи, пляжный волейбол, баскетбольная площадка, место для гриля(принадлежности не включено).",
   "guesthouse_max_number_of_persons": "от 10 человек",
-
   "naktsmitnes": "Ночлег",
   "accommodation_num_of_persons": "от 1 человек",
   "accommodation_price_from": "от 20 €",
@@ -76,7 +70,6 @@
   "accommodation_amenity_bed_caption": "от 10 гостей",
   "accommodation_not_allowed_title": "Kровати",
   "accommodation_not_allowed_description": "Дополнительные кровати предоставляются только для больших торжеств.",
-
   "iekurinata_pirts": "Баня в аренду",
   "sauna_num_of_persons": "до 10 гостей",
   "sauna_price_from": "от 55 €",
@@ -94,14 +87,13 @@
   "sauna_additional_time_description": "Каждый дополнительный час 10 €.",
   "sauna_holiday_price_title": "Цена",
   "sauna_holiday_price_description": "Цена может менятся в праздничные дни или в зависимости от поздних вечерних / ночных часов",
-
   "svinibu_vieta": "Место для торжеств",
   "celebration_place_num_of_persons": "до 20 персон",
   "celebration_place_price_from": "от 50 €",
   "celebration_place_alt": "Место для торжеств в Бауске",
   "celebration_place_meta_title": "Место для торжеств | Gravas",
   "celebration_place_meta_description": "Вечеринки по случаю дня рождения, свадьбы, выпускные вечера или торжества с друзьями, одноклассниками, коллегами и семьой. Место празднования находится недалеко от Бауски. Место для торжеств с активным отдыхом",
-  "celebration_place_description_title": "Par vietu",
+  "celebration_place_description_title": "О месте",
   "celebration_place_description_text": "Место для торжеств находится в 6 км от Бауски. Место проведения подходит для празднования дней рождения, праздников, корпоративных или спортивных мероприятий. Место для торжеств просторная, обставленная столами и стульями. Территория огорожена и оборудована спортивными площадками, такими как баскетбол, пляжный волейбол, пейнтбол и стрельба из лука.",
   "celebration_place_highlights_maks_persons_label": "до 20 персон",
   "celebration_place_highlights_maks_persons_caption": "Makc. людей",
@@ -114,7 +106,6 @@
   "celebration_place_extra_hour": "Дополнительный час",
   "celebration_place_extra_details": "за каждый следующий час",
   "celebration_place_max_number_of_persons": "до 20 персон / 3 h",
-
   "kazu_svinibu_vieta": "Свадебное торжество",
   "wedding_num_of_persons": "до 50 персон",
   "wedding_price_from": "от 530 €",
@@ -140,11 +131,9 @@
   "wedding_sauna_rental_max_number_of_persons": "все гости",
   "wedding_venue_place": "Свадебное торжество",
   "wedding_venue_extra": "Место проведения церемонии",
-
-  "sporta_laukumi": "Sporta pasākumi",
-  "sport_activities_num_of_persons": "līdz 20 personām",
+  "sporta_laukumi": "Спортивные мероприятия",
+  "sport_activities_num_of_persons": "до 20 человек",
   "sport_activities_price_from": "no 50 €",
-
   "isolation_place": "Место самоизоляции",
   "isolation_place_max_number_of_persons": "человек"
 }
