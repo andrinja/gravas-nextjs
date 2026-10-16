@@ -3,10 +3,12 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { Raleway, Cormorant_Garamond } from 'next/font/google';
-import { Global, css } from "@emotion/react";
+import { Global, css, ThemeProvider } from "@emotion/react";
 import { appWithTranslation } from 'next-i18next/pages';
 import NProgress from 'nprogress';
 import theme from '../components/theme';
+import Navbar from '../components/navbar/Navbar';
+import PageTransition from '../components/page-transition/PageTransition';
 
 // Global stylesheets may only be imported from _app in the pages router.
 // nprogress.css used to be a render-blocking <link> to cdnjs in <Head>;
@@ -69,9 +71,16 @@ function useRouteEffects() {
 
 function MyApp({ Component, pageProps }) {
   useRouteEffects();
+  const router = useRouter();
+  // The gallery lightbox is a full-screen view with its own close button.
+  // /_error has no getStaticProps and so no navbar translations either.
+  const showNavbar = !router.pathname.startsWith('/galerijas') && router.pathname !== '/_error';
+  // Locale is part of the key so switching language animates like a route
+  // change (asPath has no locale prefix).
+  const routeKey = `${router.locale}:${router.asPath.split(/[?#]/)[0]}`;
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Global
         styles={css`
           :root {
@@ -141,8 +150,11 @@ function MyApp({ Component, pageProps }) {
           gtag('config', '${GA_MEASUREMENT_ID}');
         `}
       </Script>
-      <Component {...pageProps} />
-    </>
+      {showNavbar && <Navbar />}
+      <PageTransition routeKey={routeKey}>
+        <Component {...pageProps} />
+      </PageTransition>
+    </ThemeProvider>
   );
 }
 

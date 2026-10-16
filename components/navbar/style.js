@@ -60,39 +60,50 @@ export const Nav = styled.nav`
   }
 `;
 
-export const SelectItems = styled.div`
+// Language switch: three links in a pill. Was a native <select>, which is a
+// poor fit for three options (no visible choices, OS-dependent popup) and
+// gave search engines nothing to follow; links to the same path in each
+// locale are both.
+export const LangItems = styled.div`
   display: flex;
   align-items: center;
   margin-left: 1.5rem;
   border: 1px solid ${props => props.theme.colors.lightGrey};
   border-radius: ${props => props.theme.radii.pill};
-  padding: 0 0.875rem 0 0.75rem;
-  min-height: 40px;
-  flex-direction: row-reverse;
-  gap: 0.375rem;
+  padding: 0.1875rem;
+  gap: 0.125rem;
 
-  select {
-    color: ${props => props.theme.colors.ink};
-    font-family: inherit;
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    min-height: 2rem;
+    padding: 0 0.5rem;
+    border-radius: ${props => props.theme.radii.pill};
     font-size: ${props => props.theme.fonts.eyebrow};
     font-weight: ${props => props.theme.fontWeight.semibold};
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    border: none;
-    background: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    min-height: 38px;
+    color: ${props => props.theme.fontColors.disabled};
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      color: ${props => props.theme.colors.ink};
+    }
+
+    &[aria-current="true"] {
+      background: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.fontColors.onDark};
+    }
   }
 
-  .icon {
-    color: ${props => props.theme.fontColors.disabled};
-    font-size: 18px !important;
-  }
   @media ${media.md} {
     margin: 0.5rem 0 1rem;
+    a {
+      min-height: 2.5rem;
+      min-width: 3rem;
+    }
   }
 `;
 
