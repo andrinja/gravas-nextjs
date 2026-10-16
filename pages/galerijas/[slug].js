@@ -59,7 +59,14 @@ const Gallery = () => {
             />
             {transitions((style, item) => (
               <animated.div style={{ ...style, display: 'flex', alignItems: 'center' }}>
-                  <NextImage height={512} width={864} src={item.path} alt={item.title} />
+                  <NextImage
+                    height={512}
+                    width={864}
+                    sizes="(max-width: 1240px) 100vw, 864px"
+                    src={item.path}
+                    alt={item.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  />
               </animated.div>
             ))}
             <NextIcon
