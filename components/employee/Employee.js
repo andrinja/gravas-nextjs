@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { colors } from "../theme";
 import EmployeeExperience from "../employee-experience/EmployeeExperience";
 import Button from "../button/button";
 import { EmployeeDetails, ModalItems } from "./style";
@@ -7,7 +8,7 @@ import PhoneIcon from "../../components/icons/Phone";
 import EmailIcon from "../../components/icons/Mail";
 import Image from "next/image";
 import { TR_NS } from '../../constants/translationNamespace';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 const Users = ({ employee}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,7 +21,7 @@ const Users = ({ employee}) => {
       <div className="right-column">
         <div className="image-and-timeline">
           <div className="image-wrapper">
-            <Image height={112} width={112} objectFit="cover" className="image" src={employee.img} alt={employee.alt} />
+            <Image height={112} width={112} style={{ objectFit: "cover" }} className="image" src={employee.img} alt={employee.alt} />
           </div>
           <div className="timeline">
             {employee.educations.map(education => (
@@ -46,13 +47,13 @@ const Users = ({ employee}) => {
                 <h2>{t(employee.getInTouchTitle)}</h2>
                 <p>{t(employee.getInTouchDescription)}</p>
                 <div className="contacts">
-                  <PhoneIcon style={{ color: "#1E514B", fontSize: "36px" }} />
+                  <PhoneIcon style={{ color: colors.primary, fontSize: "36px" }} />
                   <a className="contact-detail" href="tel:+37126647133">
                     +371 26647133
                   </a>
                 </div>
                 <div className="contacts">
-                  <EmailIcon style={{ color: "#1E514B", fontSize: "36px" }} />
+                  <EmailIcon style={{ color: colors.primary, fontSize: "36px" }} />
                   <a className="contact-detail" href="mailto:info@gravas.lv">
                     info@gravas.lv
                   </a>

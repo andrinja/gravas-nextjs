@@ -2,5 +2,10 @@
   "call_number": "Call",
   "send_email": "Send email",
   "find_on_map": "Find on map",
-  "follow_on_social_media": "Follow"
+  "follow_on_social_media": "Follow",
+  "contacts_meta_title": "Contact | Gravas",
+  "contacts_meta_description": "Get in touch with Gravas. Reservations by email or phone; booking in advance is required. Book a sauna ritual, a wedding, the guesthouse or accommodation.",
+  "contacts_header_title": "Contact",
+  "contacts_header_description": "Time out with family, friends and colleagues.",
+  "frequent_questions_title": "Frequently asked questions"
 }

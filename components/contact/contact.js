@@ -1,18 +1,16 @@
+import { Icon } from "../icons/Icon";
 import Button from "../button/button";
+import { colors } from "../theme";
 import { Item, Details } from "./style";
-import dynamic from "next/dynamic";
-import toCapitalCase from "../../lib/toCapitalCase";
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const Contact = ({ icon, href, contact, buttonText}) => {
-  const iconName = toCapitalCase(icon);
-  const Icon = dynamic(() => import(`../icons/${iconName}`));
   const {t} = useTranslation(TR_NS.CONTACTS);
   return (
     <Item>
       <Details>
-        <Icon style={{ color: "#1E514B", fontSize: "28px" }} />
+        <Icon name={icon} style={{ color: colors.primary, fontSize: "28px" }} />
 		<a
 			className="contact-detail"
 			target="_blank"

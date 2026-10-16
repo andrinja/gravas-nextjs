@@ -1,6 +1,11 @@
 {
-  "call_number": "Zvanīt",
-  "send_email": "Sūtīt epastu",
-  "find_on_map": "Atrast kartē",
-  "follow_on_social_media": "Sekot"
+  "call_number": "Позвонить",
+  "send_email": "Написать",
+  "find_on_map": "Найти на карте",
+  "follow_on_social_media": "Подписаться",
+  "contacts_meta_title": "Контакты | Gravas",
+  "contacts_meta_description": "Свяжитесь с Gravas. Бронирование по электронной почте или телефону; предварительная запись обязательна. Забронируйте банный ритуал, свадьбу, гостевой дом или ночлег.",
+  "contacts_header_title": "Контакты",
+  "contacts_header_description": "Отдых с семьёй, друзьями и коллегами.",
+  "frequent_questions_title": "Часто задаваемые вопросы"
 }

@@ -2,16 +2,25 @@
         {
             "id": "1",
             "label": "sauna_title",
-            "text": "sauna_description"
+            "text": "sauna_description",
+            "cta": "sauna_cta",
+            "img": "/static/sauna-rituals/pirts-rituali-kopa.jpg",
+            "href": "/pirts-rituali"
         },
         {
             "id": "2",
             "label": "wedding_title",
-            "text": "wedding_description"
+            "text": "wedding_description",
+            "cta": "wedding_cta",
+            "img": "/static/guesthouse/kazu-svinibu-vieta.jpg",
+            "href": "/viesu-maja/kazu-svinibu-vieta"
         },
         {
             "id": "3",
             "label": "accommodation_title",
-            "text": "accommodation_description"
+            "text": "accommodation_description",
+            "cta": "accommodation_cta",
+            "img": "/static/guesthouse/skats-uz-viesu-maju.jpg",
+            "href": "/viesu-maja/naktsmitnes"
         }
 ]

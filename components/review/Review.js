@@ -1,19 +1,16 @@
-import Item from './style'
+import Item, { ReviewList } from './style'
 
 const Review = ({reviews}) => {
     return (
-        <div>
+        <ReviewList>
             {reviews.map(review => (
                 <Item key={review.name}>
-                    <div className="line"></div>
-                    <h4>{review.name}</h4>
-                    <p>{review.date}</p>
                     <p>{review.description}</p>
+                    <footer>{review.name}</footer>
                 </Item>
             ))}
-        </div>
+        </ReviewList>
     )
 }
 
 export default Review;
-

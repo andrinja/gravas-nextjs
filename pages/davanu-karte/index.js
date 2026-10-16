@@ -2,10 +2,12 @@ import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import PageHeader from "../../components/page-header/PageHeader";
 import giftCardHeader from "../../static/data/index-page/giftcardHeader";
-import Button from "../../components/button/button";
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ActionLink } from "../../components/hero/style";
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
+
+const steps = ["form_gift_card", "payment_confirmation", "receive_gift_card_in_mail"];
 
 const Index = () => {
 	const {t} = useTranslation(TR_NS.GIFT_CARDS);
@@ -15,45 +17,27 @@ const Index = () => {
 		description={t(giftCardHeader.metaDescription)}
 	>
     <PageHeaderImage
-      imgsrc="/static/gift-card/gift-card-header.jpg?webp?lqip"
+      imgsrc="/static/gift-card/gift-card-header.jpg"
       alt={t(giftCardHeader.alt)}
+      title={t(giftCardHeader.title)}
     />
-    <div>
-      <PageHeader
-        title={t(giftCardHeader.title)}
-        description={t(giftCardHeader.description)}
-      />
-      <h3>{t("gift_card_how_to_purchase")}</h3>
-		<ul style={{
-			margin: '1rem 1.5rem'
-		}}>
-        <li>{t("form_gift_card")}</li>
-        <li>{t("payment_confirmation")}</li>
-        <li>{t("receive_gift_card_in_mail")}</li>
-      </ul>
-      <div>
-        <a
-			className="buttonLink"
-			href="mailto:info@gravas.lv"
-			rel="noopener noreferrer"
-			style={{ textDecoration: 'none' }}
-        >
-          <Button
-            type="button"
-            buttonStyle="btn--primary--outline"
-          >
-			{t("write_email")}
-		</Button>
-        </a>
-      </div>
-    </div>
+    <PageHeader description={t(giftCardHeader.description)} />
+    <section aria-labelledby="gift-steps" style={{ maxWidth: '44rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', margin: '0.5rem 0 1rem' }}>
+      <h2 id="gift-steps" style={{ fontSize: '1.75rem' }}>{t("gift_card_how_to_purchase")}</h2>
+      <ol style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingLeft: '1.5rem', color: '#3E4B48' }}>
+        {steps.map(step => <li key={step}>{t(step)}</li>)}
+      </ol>
+      <ActionLink href="mailto:info@gravas.lv" className="primary" style={{ alignSelf: 'flex-start', marginTop: '0.5rem' }}>
+        {t("write_email")}
+      </ActionLink>
+    </section>
   </Layout>
 	)
 }
 
 export const getStaticProps = async ({ locale }) => ({
 	props: {
-		...await serverSideTranslations(locale),
+		...await serverSideTranslations(locale, [TR_NS.GIFT_CARDS, TR_NS.NAVBAR]),
 	},
 })
 

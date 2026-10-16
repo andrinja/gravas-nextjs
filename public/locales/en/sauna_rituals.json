@@ -2,7 +2,6 @@
   "consider_title": "Consider",
   "price_title": "Prices",
   "what_is_included": "What is included",
-
   "amenity_sauna_label": "Sauna",
   "amenity_sauna_caption": "Desired temperature",
   "amenity_scrub_label": "Scrubing",
@@ -13,7 +12,7 @@
   "amenity_whisks_caption": "with 5 different whisks",
   "amenity_feet_bath_label": "Feet bath",
   "amenity_feet_bath_caption": "from herbs",
-  "amenity_amber_feet_bath_caption": "ar dzintaru",
+  "amenity_amber_feet_bath_caption": "with amber",
   "amenity_pool_label": "Pool",
   "amenity_pool_caption": "Cooling down at pool",
   "amenity_honey_label": "Body mask",
@@ -25,29 +24,24 @@
   "amenity_snacks_caption": "Local snacks, herbal tea",
   "amenity_singing_bowls": "Singing bowls",
   "amenity_singing_bowls_caption": "baltic signs",
-
   "accommodation": "Accommodation",
   "accommodation_per_person": "1 person",
   "accommodation_additional_person": "farm breakfest 8 € per person",
-
   "breakfest": "Breakfest",
   "breakfest_per_person": "per person",
-
   "body_massage": "Body massage",
   "body_massage_per_person": "per 1 person",
   "body_massage_back_massage": "seperate back massage 15 €",
-
   "highlights_duration_caption": "Sauna ritual duration",
   "highlights_maks_persons_caption": "Max number of persons",
-  "highlights_location_label": "Gravas atpūtas komplekss",
-  "highlights_location_caption": "Bauskas novads",
+  "highlights_location_label": "Gravas retreat",
+  "highlights_location_caption": "Bauska municipality",
   "take_with_you": "Take with you",
   "take_with_you_description": "Bring your towel",
   "cancelation": "Cancelation",
   "cancelation_description": "Gravas has right to cancel reservation if the agreed arrival time is delayed more than 1 hour.",
   "customer_requirement": "Customer requirement",
   "customer_requirement_description": "If you have any dietary restrictions, inform us upon your arrival. If you have any health issues, please inform sauna attendant before sauna session.",
-
   "zalu_pirts_rituals": "Herbal sauna ritual",
   "herbal_sauna_num_of_persons": "1 person",
   "herbal_sauna_price_from": "from 80 €",
@@ -62,7 +56,6 @@
   "herbal_sauna_additional_person": "if participate at least 2 persons in a session",
   "individual_herbal_sauna_ritual": "Individual herbal sauna ritual",
   "individual_herbal_sauna_per_person": "Participate only 1 person",
-
   "milestibas_pirts_rituals": "Couple sauna ritual",
   "couple_sauna_num_of_persons": "1 person",
   "couple_sauna_price_from": "from 90 €",
@@ -76,12 +69,10 @@
   "couple_sauna_amenity_love_whisks_label": "Steaming with Jasmin whisks",
   "couple_sauna_amenity_love_whisks_caption": "with sauna whisks",
   "couple_sauna_per_person": "1 person",
-
   "dzimsanas_dienas_pirts_rituals": "Birthday sauna ritual",
   "birthday_sauna_num_of_persons": "1 person",
   "birthday_sauna_price_from": "from 90 €",
   "birthday_sauna_alt": "Birthday sauna ritual gift",
-  "birthday_sauna__metaTitle": "Birthday sauna ritual | Gravas",
   "birthday_sauna_metaDescription": "Birthday sauna ritual is gift for boyfrien, girlfriend, wife, husband, collegue or friend. Birthday sauna ritual is spa, massages, sauna un meditation. Altenative birthday gift for loved one",
   "birthday_sauna_highlights_duration_label": "4 hours",
   "birthday_sauna_highlights_maks_persons_label": "1 person",
@@ -90,7 +81,6 @@
   "birthday_sauna_amenity_chakra_label": "Chakra cleansing",
   "birthday_sauna_amenity_chakra_caption": "pafter sauna ritual",
   "birthday_sauna_per_person": "1 person",
-
   "ligavas_pirts_rituals": "Bride's sauna ritual",
   "bride_sauna_num_of_persons": "for bride",
   "bride_sauna_price_from": "from 90 €",
@@ -108,7 +98,6 @@
   "amenity_bride_sisters_label": "Bride massage",
   "amenity_bride_sisters_caption": "involved sisters of the bride",
   "bride_sauna_per_person": " for 1 person",
-
   "rozu_pirts_rituals": "Rose sauna ritual",
   "rose_sauna_num_of_persons": "1 person",
   "rose_sauna_price_from": "from 90 €",
@@ -124,7 +113,6 @@
   "rose_sauna_per_person": "1 person",
   "rose_sauna_ritual_individual": "Individual rose sauna ritual",
   "rose_sauna_individual_caption": "If 1 person attends",
-
   "dzintara_pirts_rituals": "Amber sauna ritual",
   "amber_sauna_num_of_persons": "1 person",
   "amber_sauna_price_from": "from 90 €",
@@ -138,7 +126,6 @@
   "amber_sauna_per_person": "1 person",
   "amber_sauna_ritual_individual": "Individual amber sauna ritual",
   "amber_sauna_ritual_individual_caption": "If 1 person attends",
-
   "meitenu_spa_vakars": "Girls spa evening",
   "girls_spa_num_of_persons": "2 persons",
   "girls_spa_price_from": "from 50 €",
@@ -156,5 +143,6 @@
   "amenity_whisks_girls_spa": "Sauna whisks",
   "amenity_whisks_girls_spa_caption": "choose yourself",
   "girl_spa_amenity_snacks_label": "Drinks",
-  "girl_spa_amenity_snacks_caption": "Tea, water"
+  "girl_spa_amenity_snacks_caption": "Tea, water",
+  "birthday_sauna_metaTitle": "Birthday sauna ritual | Gravas"
 }

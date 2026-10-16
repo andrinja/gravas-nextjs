@@ -1,45 +1,60 @@
 import React, { useState } from "react";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import tabData from "../../static/data/contacts/faq";
-import { TabItem, TabContent, FaqItem, Question } from "./style";
-import { useTranslation } from 'next-i18next';
+import { TabList, TabButton, TabItem, TabContent, FaqItem, Question } from "./style";
+import { useTranslation } from 'next-i18next/pages';
 import { TR_NS } from '../../constants/translationNamespace';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#1E514B"
-    },
-    secondary: {
-      main: "#F9E18B"
-    }
-  }
-});
-
+// The tab strip used to be MUI v4's <Tabs>/<Tab>, which pulled in the whole
+// of @material-ui/core plus its own ThemeProvider for one row of buttons.
+// It is now a plain ARIA tablist styled with Emotion.
 const FAQ = () => {
 	const {t} = useTranslation(TR_NS.FREQUENT_QUESTIONS);
 	const [activeTab, setActiveTab] = useState(0);
 	const [activeQuestion, setActiveQuestion] = useState();
 
-  const handleChange = (event, tab) => {
-    setActiveTab(tab);
+  const onTabKeyDown = event => {
+    const last = tabData.length - 1;
+    let next = null;
+    if (event.key === 'ArrowRight') next = activeTab === last ? 0 : activeTab + 1;
+    if (event.key === 'ArrowLeft') next = activeTab === 0 ? last : activeTab - 1;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = last;
+    if (next === null) return;
+    event.preventDefault();
+    setActiveTab(next);
+    event.currentTarget.parentElement.children[next]?.focus();
   };
 
   return (
     <React.Fragment>
-      <ThemeProvider theme={theme}>
-        <Tabs value={activeTab} textColor="primary" onChange={handleChange}>
-          {tabData.map(item => (
-            <Tab key={item.title} label={t(item.title)} />
-          ))}
-        </Tabs>
-      </ThemeProvider>
+      <TabList role="tablist">
+        {tabData.map((item, index) => (
+          <TabButton
+            key={item.title}
+            type="button"
+            role="tab"
+            id={`faq-tab-${index}`}
+            aria-selected={activeTab === index}
+            aria-controls={`faq-panel-${index}`}
+            tabIndex={activeTab === index ? 0 : -1}
+            active={activeTab === index}
+            onClick={() => setActiveTab(index)}
+            onKeyDown={onTabKeyDown}
+          >
+            {t(item.title)}
+          </TabButton>
+        ))}
+      </TabList>
 
       <TabContent>
         {tabData.map((item, index) => (
-          <TabItem key={index} active={activeTab === index}>
+          <TabItem
+            key={index}
+            role="tabpanel"
+            id={`faq-panel-${index}`}
+            aria-labelledby={`faq-tab-${index}`}
+            active={activeTab === index}
+          >
             {item.questions.map(({ label, answer }, qIndex) => (
               <FaqItem key={label}>
                 <Question active={answer === activeQuestion}>

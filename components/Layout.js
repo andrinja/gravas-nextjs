@@ -1,56 +1,19 @@
-import { useEffect } from "react";
-import Head from "next/head";
-import Navbar from "./navbar/Navbar";
 import MainFooter from "./main-footer/MainFooter";
-import { ThemeProvider } from "emotion-theming";
-import theme from "./theme";
+import Seo from "./seo/Seo";
 import Container from "./container/style";
-import Router from "next/router";
-import NProgress from "nprogress";
-import { initGA, logPageView } from "../utils/analytics";
 
-Router.onRouteChangeStart = () => {
-  NProgress.start();
-};
-Router.onRouteChangeComplete = () => NProgress.done();
-Router.onRouteChangeError = () => NProgress.done();
-
-const Layout = ({ children, title, description }) => {
-  useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true;
-    }
-    logPageView();
-  });
-
+// Per-page frame: head metadata, the page column and the site footer.
+// The ThemeProvider and the Navbar live in pages/_app.js so they persist
+// across route changes while the page content animates in and out.
+const Layout = ({ children, title, description, image = null }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <Head>
-        <title>{title || ""}</title>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
-        />
-        <meta property="title" content={title || ""}/>
-        <meta name="description" content={description}/>
-        <meta
-          name="keywords"
-          content="pirts rituals, naktsmitnes, aktiva atputa, pirts rituali, kazu svinibas, svinibu telpas, viesu majas ire"
-        />
-        <meta name="url" content="https://www.gravas.lv/"/>
-        <meta
-          property="image"
-          content="https://www.gravas.lv/static/home/gravas-atputa-bauska.jpg?webp?lqip"
-        />
-		<meta name="google-site-verification" content="VERIFICATION_ID" />
-      </Head>
-      <Navbar />
+    <>
+      <Seo title={title || ""} description={description} image={image} />
       <Container>
 		  {children}
 	  </Container>
 	  <MainFooter/>
-    </ThemeProvider>
+    </>
   )
 }
 

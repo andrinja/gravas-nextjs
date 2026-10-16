@@ -1,46 +1,177 @@
-import React from "react";
-import App from "next/app";
+import React, { useEffect } from "react";
 import Head from 'next/head';
-import { Global, css } from "@emotion/core";
-import { appWithTranslation } from 'next-i18next';
+import Script from 'next/script';
+import { useRouter } from 'next/router';
+import { Raleway, Cormorant_Garamond } from 'next/font/google';
+import { Global, css, ThemeProvider } from "@emotion/react";
+import { appWithTranslation } from 'next-i18next/pages';
+import NProgress from 'nprogress';
+import theme from '../components/theme';
+import Navbar from '../components/navbar/Navbar';
+import PageTransition from '../components/page-transition/PageTransition';
 
-//uses the App component to initialize pages
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    const pageProps = Component.getInitialProps
-      ? await Component.getInitialProps(ctx)
-      : {};
+// Global stylesheets may only be imported from _app in the pages router.
+// nprogress.css used to be a render-blocking <link> to cdnjs in <Head>;
+// now both are bundled.
+import 'nprogress/nprogress.css';
+import 'react-responsive-modal/styles.css';
 
-    return {
-      namespacesRequired: ["navbar"],
-      pageProps
+// Self-hosted by next/font: the files are downloaded at build time and served
+// from /_next/static, so there is no request to Google at runtime and no
+// flash of fallback font.
+//
+// latin-ext covers Latvian diacritics (ā, č, ē, ģ, ī, ķ, ļ, ņ, š, ū, ž);
+// cyrillic covers the Russian locale.
+// Two weights only. next/font preloads one file per weight per subset, and
+// each preload competes with the hero image for bandwidth on a slow
+// connection: four weights × three subsets was ~400 KB of fonts ahead of
+// the LCP image. Regular and semibold cover the design; theme.fontWeight
+// maps medium/bold onto them.
+const raleway = Raleway({
+  weight: ['400', '600'],
+  subsets: ['latin', 'latin-ext', 'cyrillic'],
+  display: 'swap',
+  variable: '--font-body',
+});
+
+// Display face for headlines (the "Lauku miers" redesign). Cormorant has no
+// cyrillic subset on Google Fonts, so Russian headlines fall through to the
+// Georgia/serif stack declared in theme.families.display. Not preloaded:
+// it is used for a handful of headlines, display: swap covers the gap, and
+// the browser then fetches only the unicode ranges the page actually uses.
+const cormorant = Cormorant_Garamond({
+  weight: ['600'],
+  style: ['normal', 'italic'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  preload: false,
+  variable: '--font-display',
+});
+
+// GA4 property. The previous react-ga integration loaded the Universal
+// Analytics script (UA-24911009-1), which Google stopped processing in July
+// 2023; data only kept arriving because Google forwards from the connected
+// UA tag to this GA4 stream.
+export const GA_MEASUREMENT_ID = 'G-TSZ2R9WG12';
+
+function useRouteEffects() {
+  const router = useRouter();
+  useEffect(() => {
+    const onStart = () => NProgress.start();
+    const onDone = () => NProgress.done();
+    const onComplete = url => {
+      NProgress.done();
+      if (typeof window.gtag === 'function') {
+        window.gtag('config', GA_MEASUREMENT_ID, { page_path: url });
+      }
     };
-  }
-
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-		<>
-			<Global
-				styles={css`
-					a {
-						text-decoration: none !important;
-					}
-				`}
-			/>
-			<Head>
-				<meta
-				name="Pirts rituāli | Kāzu svinības | Viesu māja | GRAVAS"
-				content="Individuāli pirts rituāli. Kāzas lauku stilā pie Bauskas. Viesu mājas īre ar aktīvo atpūtu un naktsmītnēm."/>
-				<meta charSet="utf-8" />
-				<meta name="robots" content="" />
-				<meta name="viewport" content="width=device-width" />
-				<meta name="google-site-verification" content="FZcWhbzt4eDfLszahYRguIoAxD3eGvc4mYYplruNtk8"/>
-				</Head>
-			<Component {...pageProps} />
-		</>
-	)
-  }
+    // The initial page view is sent by the gtag config call itself.
+    router.events.on('routeChangeStart', onStart);
+    router.events.on('routeChangeComplete', onComplete);
+    router.events.on('routeChangeError', onDone);
+    return () => {
+      router.events.off('routeChangeStart', onStart);
+      router.events.off('routeChangeComplete', onComplete);
+      router.events.off('routeChangeError', onDone);
+    };
+  }, [router.events]);
 }
 
+function MyApp({ Component, pageProps }) {
+  useRouteEffects();
+  const router = useRouter();
+  // The gallery lightbox is a full-screen view with its own close button.
+  // /_error has no getStaticProps and so no navbar translations either.
+  const showNavbar = !router.pathname.startsWith('/galerijas') && router.pathname !== '/_error';
+  // Locale is part of the key so switching language animates like a route
+  // change (asPath has no locale prefix).
+  const routeKey = `${router.locale}:${router.asPath.split(/[?#]/)[0]}`;
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Global
+        styles={css`
+          :root {
+            --font-body: ${raleway.style.fontFamily};
+            --font-display: ${cormorant.style.fontFamily};
+          }
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+          html {
+            background: ${theme.colors.background};
+          }
+          body {
+            font-family: ${theme.families.body};
+            font-size: ${theme.fonts.body};
+            line-height: 1.6;
+            color: ${theme.colors.ink};
+            background: ${theme.colors.background};
+            -webkit-font-smoothing: antialiased;
+          }
+          h1, h2 {
+            font-family: ${theme.families.display};
+            font-weight: ${theme.fontWeight.semibold};
+            line-height: 1.08;
+            letter-spacing: -0.005em;
+          }
+          a {
+            color: ${theme.colors.primary};
+            text-decoration: none;
+          }
+          :focus-visible {
+            outline: 2px solid ${theme.colors.primaryCool};
+            outline-offset: 3px;
+          }
+          #nprogress .bar {
+            background: ${theme.colors.secondaryDark};
+            height: 3px;
+          }
+          #nprogress .peg {
+            box-shadow: 0 0 10px ${theme.colors.secondaryDark}, 0 0 5px ${theme.colors.secondaryDark};
+          }
+          .react-responsive-modal-modal {
+            background: ${theme.colors.background};
+            border-radius: ${theme.radii.md};
+          }
+        `}
+      />
+      <Head>
+        {/* The page title used to be repeated here as a <meta name="...">
+            attribute, which is not a thing. Titles are emitted by
+            components/seo/Seo.tsx. */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="google-site-verification" content="FZcWhbzt4eDfLszahYRguIoAxD3eGvc4mYYplruNtk8" />
+      </Head>
+      {/* lazyOnload: analytics has no business in the LCP window. The 180 KB
+          gtag bundle used to load right after hydration and shared the
+          connection with the hero image. Page views still fire for every
+          route change once it is in. */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="lazyOnload"
+      />
+      <Script id="gtag-init" strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
+      {showNavbar && <Navbar />}
+      <PageTransition routeKey={routeKey}>
+        <Component {...pageProps} />
+      </PageTransition>
+    </ThemeProvider>
+  );
+}
+
+// No getInitialProps here. The old class component defined one that only
+// returned `namespacesRequired`, a next-i18next v6 concept later versions
+// ignore, and its mere presence opted every page without getStaticProps out
+// of Automatic Static Optimization.
 export default appWithTranslation(MyApp);

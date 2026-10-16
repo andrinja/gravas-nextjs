@@ -1,41 +1,46 @@
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 
-const Card = styled(motion.div)`
-  text-decoration: none;
-  box-shadow: 0px 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
-  cursor: pointer;
+const Card = styled.a`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  gap: 0.875rem;
+  color: ${props => props.theme.colors.ink};
 
-  picture {
-    display: block;
-    overflow: hidden;
+  .photo {
+    position: relative;
     width: 100%;
-    line-height: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: ${props => props.theme.radii.md};
+    background: ${props => props.theme.colors.surface};
+
+    img {
+      transition: transform 0.4s ease;
+    }
   }
 
-  img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0.25rem 0.25rem 0 0;
-    display: block;
+  &:hover .photo img {
+    transform: scale(1.03);
   }
 
   .title {
-    color: ${props => props.theme.colors.primary};
-    padding: 1rem;
+    font-family: ${props => props.theme.families.display};
+    font-size: ${props => props.theme.fonts.headline5};
+    font-weight: ${props => props.theme.fontWeight.semibold};
+    line-height: 1.15;
   }
 
   .detail-items {
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem 1rem 1rem;
-    color: ${props => props.theme.fontColors.secondary};
+    gap: 1rem;
+    font-size: ${props => props.theme.fonts.caption};
+    color: ${props => props.theme.fontColors.disabled};
+
+    .price {
+      color: ${props => props.theme.colors.secondaryDark};
+      font-weight: ${props => props.theme.fontWeight.semibold};
+    }
   }
 `;
 

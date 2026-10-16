@@ -1,10 +1,14 @@
 import styled from "@emotion/styled";
+import { media } from "../theme";
 
 export const EmployeeDetails = styled.div`
   display: grid;
-  grid-template-columns: 25% 75%;
-  margin: 1rem 0;
-  gap: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  column-gap: 3rem;
+  margin: 1.5rem 0 3rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid ${props => props.theme.colors.lightGrey};
+  border-bottom: 1px solid ${props => props.theme.colors.lightGrey};
 
   .left-column {
     display: flex;
@@ -14,13 +18,15 @@ export const EmployeeDetails = styled.div`
 
   .right-column {
     display: grid;
-    grid-gap: 1rem;
+    gap: 1.25rem;
   }
 
   .role-title {
-    font-size: ${props => props.theme.fonts.headline5};
-    font-weight: ${props => props.theme.fontWeight.bold};
-    color: ${props => props.theme.fontColors.primary};
+    font-family: ${props => props.theme.families.display};
+    font-size: ${props => props.theme.fonts.headline4};
+    font-weight: ${props => props.theme.fontWeight.semibold};
+    line-height: 1.12;
+    color: ${props => props.theme.colors.ink};
     margin: 0;
   }
 
@@ -51,28 +57,14 @@ export const EmployeeDetails = styled.div`
 
   .description {
     margin: 0;
+    color: ${props => props.theme.fontColors.secondary};
+    max-width: 68ch;
   }
 
-  @media (max-width: 720px) {
+  @media ${media.sm} {
     grid-template-columns: 1fr;
-    align-items: center;
-
-    .left-column {
-      align-items: center;
-      text-align: center;
-    }
-
-    .role-title {
-      margin-bottom: 1.5rem;
-    }
-
-    .image-and-timeline {
-      justify-content: center;
-    }
-
-    .image-wrapper .image {
-      margin: 0 auto;
-    }
+    row-gap: 1rem;
+    padding: 2rem 0;
   }
 `;
 
@@ -81,11 +73,17 @@ export const ModalItems = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin: 2rem 1rem;
   max-width: 31rem;
 
+  h2 {
+    font-size: ${props => props.theme.fonts.headline4};
+  }
+
   p {
     padding-top: 1rem;
+    color: ${props => props.theme.fontColors.secondary};
   }
   .contacts {
     padding-top: 2rem;
@@ -96,9 +94,9 @@ export const ModalItems = styled.div`
     }
 
     a {
-      text-decoration: none;
       cursor: pointer;
-      color: ${props => props.theme.colors.darkGrey};
+      font-weight: ${props => props.theme.fontWeight.semibold};
+      color: ${props => props.theme.colors.ink};
     }
   }
 `;

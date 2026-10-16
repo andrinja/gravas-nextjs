@@ -2,10 +2,8 @@
   "what_is_included": "What is included",
   "consider_title": "Consider",
   "price_title": "Prices",
-
-  "highlights_location_label": "Gravas atpūtas komplekss",
+  "highlights_location_label": "Gravas retreat",
   "highlights_location_caption": "Location",
-
   "amenity_space_label": "Guesthouse",
   "amenity_space_caption": "with spacious teritory",
   "amenity_bed_label": "Accommodation",
@@ -30,21 +28,18 @@
   "amenity_canopy_caption": "for celebration",
   "amenity_bed_sheets_label": "Bed clothes",
   "amenity_bed_sheets_caption": "Bed sheets, towels",
-
   "arrival_departue_title": "Arrival & departure time",
   "arrival_departue_description": "Checkin time is from 16 PM and checkout time is until 11 AM next morning",
   "reservation_extras_title": "Extras",
   "reservation_extras_description": "Any extra services should be discussed and reserved before arrival time",
   "reservation_public_holidays_title": "Holidays",
   "reservation_public_holidays_description": "Prices can be different on holidays like Christmas, New Years, Easter,'Ligo' midsummer, Country festival in Bauska",
-
   "sauna_rental": "Sauna rental",
   "sauna_rental_max_number_of_persons": "up to 10 persons",
   "accommodation": "Accommodation",
   "accommodation_per_person": "1 person",
   "grill_place": "Grill place",
   "grill_place_accessories": "wood, grill supplies included",
-
   "viesu_majas_ire": "Guesthouse",
   "guesthouse_rental_num_of_persons": "from 10 guests",
   "guesthouse_rental_price_from": "from 200 €",
@@ -60,7 +55,6 @@
   "guesthouse_description_title": "About guesthouse",
   "guesthouse_description_text": "Recently constructed wooden guesthouse, located 6 km from the city of Bauska or A7 road. 15 minute drive to Rundale or Mezotne palace and a 1-hour drive to Riga. Beautiful pine forest with walking paths across the street. Top floor has 2 partitioned areas with 12 beds, while the ground floor features a spacious living room, kitchenette and en-suite facilities.",
   "guesthouse_max_number_of_persons": "from 10 guests",
-
   "naktsmitnes": "Accommodation",
   "accommodation_num_of_persons": "per person",
   "accommodation_price_from": "from 20 €",
@@ -76,7 +70,6 @@
   "accommodation_amenity_bed_caption": "up to 20 guests",
   "accommodation_not_allowed_title": "Accommodation",
   "accommodation_not_allowed_description": "We offer extra accommodation only for large events.",
-
   "iekurinata_pirts": "Sauna rental",
   "sauna_num_of_persons": "up to 10 persons",
   "sauna_price_from": "from 55 €",
@@ -94,13 +87,12 @@
   "sauna_additional_time_description": "If you wish to have sauna more than 3 hours, it will be 10 € per extra hour.",
   "sauna_holiday_price_title": "Price",
   "sauna_holiday_price_description": "If sauna is reserved on public holidays or late night hours, price can be changed.",
-
   "svinibu_vieta": "Celebration place",
   "celebration_place_num_of_persons": "up to 20 guests",
   "celebration_place_price_from": "from 50 €",
   "celebration_place_alt": "Celebration place in Bauska",
   "celebration_place_meta_title": "Celebration place | Gravas",
-  "celebration_place_meta_description": "Dzimšanas dienas svinības, kāzu svinības, kristību svinības, izlaiduma svinības vai pēdēja zvana svinības kopā ar draugiem, klasesbiedriem, kolēģiem un ģimeni. Svinību vieta atrodas pie Bauskas. Svinību vieta kopā ar aktīvo atpūtu",
+  "celebration_place_meta_description": "Birthdays, weddings, christenings, graduations and last-bell parties with friends, classmates, colleagues and family. A celebration venue near Bauska, with outdoor activities on site.",
   "celebration_place_description_title": "About place",
   "celebration_place_description_text": "Celebration place is located 6 km from Bauska. It is suitable for birthday parties, anniversaries, cooperative or sport events.",
   "celebration_place_highlights_maks_persons_label": "up to 20 guests",
@@ -114,7 +106,6 @@
   "celebration_place_extra_hour": "Extra hour",
   "celebration_place_extra_details": "price per hour",
   "celebration_place_max_number_of_persons": "up to 20 guests / 3 hours",
-
   "kazu_svinibu_vieta": "Wedding venue",
   "wedding_venue_description_title": "About wedding",
   "wedding_venue_description_text": "Wedding venue is located 6 km from Bauska. A spacious fenced teritory is located next to a forest with easy access from the main road. The buildings and some decorations reminds of rustic wedding style atmosphere. Gravas hosts will try their best to fit the wedding celebration needs.",
@@ -140,8 +131,7 @@
   "wedding_sauna_rental_max_number_of_persons": "for all guests",
   "wedding_venue_place": "Wedding celebration",
   "wedding_venue_extra": "Wedding venue",
-
-  "sporta_laukumi": "Sporta pasākumi",
-  "sport_activities_num_of_persons": "līdz 20 personām",
+  "sporta_laukumi": "Sports events",
+  "sport_activities_num_of_persons": "up to 20 people",
   "sport_activities_price_from": "no 50 €"
 }

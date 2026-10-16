@@ -1,42 +1,27 @@
 import styled from "@emotion/styled";
-const breakpoints = {
-  md: "(max-width: 1240px)",
-  sm: "(max-width: 512px)"
-};
+import { media } from "../theme";
 
 export const Item = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: 300px 1fr;
+  display: flex;
   align-items: center;
-  padding-left: 2rem;
-  margin: 1rem 0;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid ${props => props.theme.colors.lightGrey};
 
-  svg {
-    margin-right: 1rem;
-  }
-
-  @media ${breakpoints.md} {
-    padding-left: 0;
-  }
-  @media ${breakpoints.sm} {
-    padding-left: 0;
-    grid-template-columns: 1fr;
+  &:first-of-type {
+    border-top: 1px solid ${props => props.theme.colors.lightGrey};
   }
 
   .buttonLink {
-    margin-left: auto;
-    text-decoration: none;
+    flex-shrink: 0;
     button {
-      width: 150px;
-      display: flex;
-      justify-content: center;
-
-      @media ${breakpoints.md} {
-        margin-left: 0;
-      }
+      min-height: 2.5rem;
+      padding: 0 1rem;
+      font-size: ${props => props.theme.fonts.caption};
     }
-    @media ${breakpoints.sm} {
+    @media ${media.xs} {
       display: none;
     }
   }
@@ -44,17 +29,18 @@ export const Item = styled.div`
 
 export const Details = styled.div`
   display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
 
-  span {
-    font-size: 1.75rem;
+  svg {
+    flex-shrink: 0;
     color: ${props => props.theme.colors.primary};
-    padding: 0 1rem;
   }
 
   .contact-detail {
-    align-self: center;
-    text-decoration: none;
-    color: ${props => props.theme.fontColors.primary};
-    cursor: pointer;
+    color: ${props => props.theme.colors.ink};
+    font-weight: ${props => props.theme.fontWeight.medium};
+    overflow-wrap: anywhere;
   }
 `;

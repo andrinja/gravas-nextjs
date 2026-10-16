@@ -1,5 +1,5 @@
 import Experience from './style';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { TR_NS } from '../../constants/translationNamespace';
 
 const EmployeeExperience = ({year, event}) => {
