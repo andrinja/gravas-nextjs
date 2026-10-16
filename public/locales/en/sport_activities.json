@@ -2,7 +2,6 @@
   "consider_title": "Consider",
   "price_title": "Prices",
   "what_is_included": "What is included",
-
   "highlights_duration_caption": "Duration",
   "highlights_maks_persons_caption": "Max. number of players",
   "highlights_location_label": "Gravas atpūtas komplekss",
@@ -13,9 +12,10 @@
   "purchase_description": "It is allowed to use only paintball balls purchased from Gravas.",
   "school_trips_title": "Friendly offer",
   "school_trips_description": "Student groups with more than 14 persons will get a friendly offer. Gravas paintball provides up to 14 paintball guns.",
+  "reservation_title": "Reservation",
+  "reservation_description": "Advance reservation is required.",
   "additional_guests_title": "Viesu skaits",
   "additional_guests_description": "Sporta pasākuma sākotnējā cena ir piemērota 20 viesiem. Cena var mainīties, ja ierodās vairāk personu.",
-
   "peintbols": "Paintball",
   "paintball_num_of_persons": "for 1 persona",
   "paintball_price_from": "from 9 €",
@@ -43,7 +43,6 @@
   "paintball_balls_500": "Extra 500 balls",
   "paintball_balls_1000": "Extra 1000 balls",
   "paintball_balls_2000": "Box with 2000 balls",
-
   "loka_sausana": "Archery",
   "archery_num_of_persons": "1 person",
   "archery_price_from": "from 3 €",
@@ -63,16 +62,17 @@
   "archery_per_minutes": "10 minutes",
   "archery_per_hour": "1 hour",
   "archery_per_person": "per person",
-
   "skolenu_ekskursijas": "School trips",
   "school_trips_num_of_persons": "1 person",
   "school_trips_price_from": "from 9 €",
   "school_trips_alt": "School trips in Bauska",
   "school_trips_meta_title": "School trips | Gravas",
   "school_trips_meta_description": "School trips and excursions to Bauska. Gravas offers paintball, archery, grill place.",
-
+  "school_trips_description_text": "Gravas paintball suits everyone, regardless of age, gender or skill level. It is an especially good-value activity for school trips and groups of more than 14. From 14 people upwards the game is run as a tournament, and the starter kit includes more than 50 balls per person.",
+  "amenity_school_trips_balls_caption": "in the starter kit",
+  "school_trips_extra_balls": "Extra 50 balls",
+  "bonfire_title": "Barbecue equipment",
   "sporta_laukumi": "Sport events",
-  "sport_fields_num_of_persons": "",
   "sport_fields_price_from": "from 50 €",
   "sport_fields_alt": "Sport event in Bauska",
   "sport_fields_meta_title": "Sport events | Gravas",
@@ -98,5 +98,6 @@
   "grill_place_accessories": "wood, skewers, grates",
   "sauna_rental": "Sauna rental",
   "sauna_rental_duration": "3 hours",
-  "sport_fields_per_person": "up to 3 hours"
+  "sport_fields_per_person": "up to 3 hours",
+  "sport_fields_num_of_persons": ""
 }
