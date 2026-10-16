@@ -12,8 +12,10 @@ export const HighlightCard = ({ icon, label, caption, translationNamespace }: Pr
 	return (
 		<Card>
 			<Icon name={icon} style={{ color: colors.primary, fontSize: '24px' }} />
-			<h4 className="label">{t(label)}</h4>
-			<p className="caption">{t(caption)}</p>
+			{/* Not a heading: this strip sits right under the h1, and an h4
+			    there skips two levels. It is a label/value pair. */}
+			<span className="label">{t(label)}</span>
+			<span className="caption">{t(caption)}</span>
 		</Card>
 	);
 };

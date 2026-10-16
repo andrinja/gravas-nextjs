@@ -25,6 +25,9 @@ module.exports = {
 		// /_next/image, so the originals under public/static are only ever
 		// fetched by the optimizer.
 		formats: ['image/avif', 'image/webp'],
+		// Heroes use 60: at AVIF the difference from 75 is invisible on a
+		// photo and saves roughly a third of the bytes on the LCP image.
+		qualities: [60, 75],
 		// How long optimized variants stay in the image cache (and the
 		// Cache-Control max-age they are served with). The source photos
 		// change a few times a year at most.

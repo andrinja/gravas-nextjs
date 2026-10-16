@@ -46,7 +46,6 @@ export const HeroFrame = styled.section`
 
     em {
       font-style: italic;
-      font-weight: ${props => props.theme.fontWeight.medium};
     }
   }
 

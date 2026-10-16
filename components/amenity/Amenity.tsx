@@ -12,7 +12,7 @@ export const Amenity = ({ icon, label, caption, translationNamespace }: Props) =
 	return (
 		<Card>
 			<Icon name={icon} style={{ color: colors.primaryDark, fontSize: '32px' }} />
-			<h4 className="label">{t(label)}</h4>
+			<h3 className="label">{t(label)}</h3>
 			<p className="caption">{t(caption)}</p>
 		</Card>
 	);

@@ -14,7 +14,7 @@ export const Amenities = ({ amenities, title, translationNamespace }: Props) => 
 	const t = useT(translationNamespace);
 	return (
 		<Items>
-			<h3 className="title">{t(title)}</h3>
+			<h2 className="title">{t(title)}</h2>
 			<div className="amenities">
 				{amenities.map(amenity => (
 					<Amenity

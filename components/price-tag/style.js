@@ -16,7 +16,7 @@ const Item = styled.div`
         margin-bottom: 0.75rem;
     }
 
-    h2 {
+    .title {
         font-family: ${props => props.theme.families.body};
         font-size: ${props => props.theme.fonts.body};
         font-weight: ${props => props.theme.fontWeight.semibold};

@@ -18,7 +18,7 @@ export const ServiceCard = ({title, priceTitle, priceFrom, img, translationNames
           style={{ objectFit: "cover" }}
         />
       </span>
-      <h3 className="title">{t(title)}</h3>
+      <h2 className="title">{t(title)}</h2>
       <span className="detail-items">
         <span>{t(priceTitle)}</span>
         <span className="price">{t(priceFrom)}</span>

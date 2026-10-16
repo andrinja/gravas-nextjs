@@ -15,10 +15,10 @@ const theme = {
     primaryCool: "#37A7A2",
 
     // Gold. `secondary` is the bright one for use on dark grounds, `secondaryDark`
-    // the muted one that passes contrast on cream (4.6:1 against background).
+    // the muted one that passes AA contrast for small text on cream (4.8:1).
     secondary: "#E3C565",
     secondaryLight: "#F0D98A",
-    secondaryDark: "#A3812F",
+    secondaryDark: "#85661F",
 
     surface: "#EFE9DB",
     background: "#F6F2E8",
@@ -56,12 +56,14 @@ const theme = {
     caption: ".875rem",
     eyebrow: ".8125rem"
   },
+  // Only 400 and 600 are loaded (see pages/_app.js); the other names map
+  // onto them so no style asks for a weight the browser would synthesise.
   fontWeight: {
-    light: "300",
+    light: "400",
     regular: "400",
-    medium: "500",
+    medium: "600",
     semibold: "600",
-    bold: "700"
+    bold: "600"
   },
 
   radii: {

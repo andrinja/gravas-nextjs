@@ -14,7 +14,7 @@ export const PriceTags = ({ prices, title, translationNamespace }: Props) => {
 	const t = useT(translationNamespace);
 	return (
 		<Items>
-			<h3 className="title">{t(title)}</h3>
+			<h2 className="title">{t(title)}</h2>
 			<div className="price-cards">
 				{prices.map(price => (
 					<PriceTag

@@ -22,8 +22,13 @@ import 'react-responsive-modal/styles.css';
 //
 // latin-ext covers Latvian diacritics (ā, č, ē, ģ, ī, ķ, ļ, ņ, š, ū, ž);
 // cyrillic covers the Russian locale.
+// Two weights only. next/font preloads one file per weight per subset, and
+// each preload competes with the hero image for bandwidth on a slow
+// connection: four weights × three subsets was ~400 KB of fonts ahead of
+// the LCP image. Regular and semibold cover the design; theme.fontWeight
+// maps medium/bold onto them.
 const raleway = Raleway({
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600'],
   subsets: ['latin', 'latin-ext', 'cyrillic'],
   display: 'swap',
   variable: '--font-body',
@@ -31,12 +36,15 @@ const raleway = Raleway({
 
 // Display face for headlines (the "Lauku miers" redesign). Cormorant has no
 // cyrillic subset on Google Fonts, so Russian headlines fall through to the
-// Georgia/serif stack declared in theme.families.display.
+// Georgia/serif stack declared in theme.families.display. Not preloaded:
+// it is used for a handful of headlines, display: swap covers the gap, and
+// the browser then fetches only the unicode ranges the page actually uses.
 const cormorant = Cormorant_Garamond({
-  weight: ['500', '600'],
+  weight: ['600'],
   style: ['normal', 'italic'],
   subsets: ['latin', 'latin-ext'],
   display: 'swap',
+  preload: false,
   variable: '--font-display',
 });
 
@@ -138,11 +146,15 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width" />
         <meta name="google-site-verification" content="FZcWhbzt4eDfLszahYRguIoAxD3eGvc4mYYplruNtk8" />
       </Head>
+      {/* lazyOnload: analytics has no business in the LCP window. The 180 KB
+          gtag bundle used to load right after hydration and shared the
+          connection with the hero image. Page views still fire for every
+          route change once it is in. */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="gtag-init" strategy="afterInteractive">
+      <Script id="gtag-init" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

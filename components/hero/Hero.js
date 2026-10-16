@@ -11,6 +11,10 @@ const Hero = ({ imgsrc, alt, eyebrow, title, titleEm, lede, primary, secondary }
       alt={alt}
       fill
       priority
+      // `priority` adds the preload; Lighthouse's LCP checklist also wants the
+      // attribute on the element itself.
+      fetchPriority="high"
+      quality={60}
       sizes="(max-width: 1440px) 100vw, 1440px"
       style={{ objectFit: "cover" }}
     />

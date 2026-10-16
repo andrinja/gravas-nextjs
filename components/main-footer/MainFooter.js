@@ -13,7 +13,7 @@ const MainFooter = () => {
 			<Link href="/sitemap.xml">© {new Date().getFullYear()} Gravas · Bauska</Link>
 		</Brand>
 		<PartnerLinks>
-			<h5>Sadarbības partneri</h5>
+			<p className="heading">Sadarbības partneri</p>
 			<PartnerLink href="https://www.celotajs.lv/lv/e/gravas_pirts?0">
 				Lauku ceļotājs
 			</PartnerLink>

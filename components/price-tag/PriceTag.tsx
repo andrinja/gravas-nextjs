@@ -19,14 +19,14 @@ export const PriceTag = ({
 	return (
 		<Item>
 			<Icon name={icon} style={{ color: colors.secondaryDark, fontSize: '48px' }} />
-			<h2>{t(title)}</h2>
+			<h3 className="title">{t(title)}</h3>
 			<p>{t(forPerson)}</p>
 			{/* additionalPerson is absent on 45 of the 63 price entries — only the
 			    ritual section uses it. Rendering an empty <p> is the pre-existing
 			    behaviour and is kept deliberately: making it conditional would
 			    change the markup on every guesthouse and activity price card. */}
 			<p>{t(additionalPerson)}</p>
-			<h3 className="price">{t(totalPrice)}</h3>
+			<p className="price">{t(totalPrice)}</p>
 		</Item>
 	);
 };

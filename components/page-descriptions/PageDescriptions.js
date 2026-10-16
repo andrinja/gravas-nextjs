@@ -8,7 +8,7 @@ export const Descriptions = ({ descriptions, translationNamespace}) => {
     <ServiceDescriptions>
       {descriptions.map(description => (
         <div className="item" key={description.id}>
-          <h3 className="label">{t(description.label)}</h3>
+          <h2 className="label">{t(description.label)}</h2>
           <p className="description">{t(description.text)}</p>
         </div>
       ))}

@@ -26,6 +26,8 @@ const PageHeaderImage = ({ imgsrc, alt, title = null, caption = null }) => {
         alt={alt}
         fill
         priority
+        fetchPriority="high"
+        quality={60}
         sizes="(max-width: 1440px) 100vw, 1440px"
         style={{ objectFit: "cover" }}
       />

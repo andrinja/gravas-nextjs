@@ -14,7 +14,7 @@ export const ExtraDetails = ({ details, title, translationNamespace }: Props) =>
 	const t = useT(translationNamespace);
 	return (
 		<Items>
-			<h3 className="title">{t(title)}</h3>
+			<h2 className="title">{t(title)}</h2>
 			<div>
 				{details.map(detail => (
 					<ExtraDetail

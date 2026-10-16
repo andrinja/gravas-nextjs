@@ -43,7 +43,7 @@ export const PartnerLinks = styled.div`
 	flex-direction: column;
 	gap: 0.375rem;
 
-	h5 {
+	.heading {
 		font-size: ${props => props.theme.fonts.eyebrow};
 		font-weight: ${props => props.theme.fontWeight.semibold};
 		letter-spacing: 0.12em;
