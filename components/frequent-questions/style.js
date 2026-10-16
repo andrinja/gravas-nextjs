@@ -5,30 +5,29 @@ import styled from "@emotion/styled";
 export const TabList = styled.div`
   display: flex;
   overflow-x: auto;
-  border-bottom: 1px solid ${props => props.theme.fontColors.divider};
+  border-bottom: 1px solid ${props => props.theme.colors.lightGrey};
 `;
 
 export const TabButton = styled.button`
   background: none;
   border: none;
-  border-bottom: 2px solid ${p => (p.active ? p.theme.colors.primary : "transparent")};
+  border-bottom: 2px solid ${p => (p.active ? p.theme.colors.secondaryDark : "transparent")};
   margin-bottom: -1px;
   padding: 0.75rem 1rem;
   min-height: 48px;
-  min-width: 90px;
   font: inherit;
-  font-size: ${props => props.theme.fonts.button};
-  font-weight: ${props => props.theme.fontWeight.medium};
+  font-size: ${props => props.theme.fonts.eyebrow};
+  font-weight: ${props => props.theme.fontWeight.semibold};
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
   white-space: nowrap;
   cursor: pointer;
-  color: ${p => (p.active ? p.theme.colors.primary : p.theme.fontColors.disabled)};
+  color: ${p => (p.active ? p.theme.colors.ink : p.theme.fontColors.disabled)};
   transition: color 0.2s, border-color 0.2s;
 
   &:hover,
   &:focus-visible {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.ink};
   }
   &:focus-visible {
     outline: 2px solid ${props => props.theme.colors.primaryCool};
@@ -39,30 +38,47 @@ export const TabButton = styled.button`
 export const TabItem = styled.div`
   display: ${p => (p.active ? `flex` : "none")};
   flex-direction: column;
-  padding-bottom: 1rem;
+  width: 100%;
 `;
 
 export const TabContent = styled.div`
   display: flex;
-  background: rgba(51, 51, 51, 0.03);
-  padding: 2rem;
+  padding: 1.5rem 0 1rem;
 `;
 
 export const FaqItem = styled.div`
-  padding-bottom: 1rem;
+  border-bottom: 1px solid ${props => props.theme.colors.lightGrey};
 `;
 
 export const Question = styled.div`
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  padding: 0.25rem 0;
+
   h3 {
-    color: ${props => props.theme.colors.primary};
-    padding-bottom: 0.5rem;
+    font-size: ${props => props.theme.fonts.body};
+    font-weight: ${props => props.theme.fontWeight.semibold};
+    color: ${props => props.theme.colors.ink};
+
+    button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      color: inherit;
+    }
+    button:after {
+      content: "${p => (p.active ? "–" : "+")}";
+      color: ${props => props.theme.colors.secondaryDark};
+      font-size: 1.25rem;
+      line-height: 1;
+    }
   }
   .answer {
-    color: ${props => props.theme.fontColors.primary};
+    color: ${props => props.theme.fontColors.secondary};
     display: ${p => (p.active ? `block` : "none")};
-    line-height: 1.8;
+    line-height: 1.7;
+    padding: 0 0 1rem;
+    max-width: 68ch;
   }
 `;

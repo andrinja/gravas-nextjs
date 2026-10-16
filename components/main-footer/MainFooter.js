@@ -1,17 +1,19 @@
 import InstagramIcon from '../icons/Instagram';
 import FacebookIcon from '../icons/Facebook';
-import { Footer, PartnerLinks, SocialLinks, PartnerLink } from './style';
-import theme from '../theme';
-import Link from 'next/link'
+import { Footer, FooterInner, Brand, PartnerLinks, SocialLinks, PartnerLink } from './style';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const MainFooter = () => {
 	return (
 		<Footer>
-		<Link href="/sitemap.xml" style={{textDecoration: 'none', color: theme.fontColors.secondary}}>
-		© {new Date().getFullYear()} Gravas
-		</Link>
+		<FooterInner>
+		<Brand>
+			<Image width={120} height={21} src="/static/logo.svg" alt="Gravas" />
+			<Link href="/sitemap.xml">© {new Date().getFullYear()} Gravas · Bauska</Link>
+		</Brand>
 		<PartnerLinks>
-				<h5 style={{ paddingBottom: '8px', color: theme.fontColors.disabled}}>Sadarbības partneri</h5>
+			<h5>Sadarbības partneri</h5>
 			<PartnerLink href="https://www.celotajs.lv/lv/e/gravas_pirts?0">
 				Lauku ceļotājs
 			</PartnerLink>
@@ -39,8 +41,7 @@ const MainFooter = () => {
 				href="https://www.instagram.com/gravasbauska/"
 				target="_blank"
 				rel="noreferrer"
-				aria-label="Instagram - Gravas Bauska"
-				style={{marginRight: '8px'}}>
+				aria-label="Instagram - Gravas Bauska">
 					<InstagramIcon aria-hidden />
 			</a>
 			<a
@@ -52,6 +53,7 @@ const MainFooter = () => {
 					<FacebookIcon aria-hidden />
 			</a>
 		</SocialLinks>
+		</FooterInner>
 		</Footer>
 	)
 }

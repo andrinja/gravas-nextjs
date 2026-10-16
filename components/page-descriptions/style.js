@@ -1,33 +1,32 @@
 import styled from '@emotion/styled'
 import { media } from '../theme';
 
+// Detail pages: a serif label column and a prose column.
 const ServiceDescriptions = styled.div`
-    margin: 2rem 0;
+    margin: 1.5rem 0 3rem;
     display: grid;
-    grid-row-gap: 2rem;
+    row-gap: 2.5rem;
 
     .item {
         display: grid;
-        grid-template-columns:  25% 75%;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+        column-gap: 3rem;
 
         .label {
-            font-size: ${props => props.theme.fonts.headline5};
-            font-weight: ${props => props.theme.fontWeight.bold};
-            color: ${props => props.theme.fontColors.primary};
+            font-family: ${props => props.theme.families.display};
+            font-size: ${props => props.theme.fonts.headline4};
+            font-weight: ${props => props.theme.fontWeight.semibold};
+            line-height: 1.12;
+            color: ${props => props.theme.colors.ink};
         }
         .description {
-            color: ${props => props.theme.fontColors.secondary}
+            color: ${props => props.theme.fontColors.secondary};
+            max-width: 68ch;
         }
 
         @media ${media.sm} {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .label {
-                font-size: ${props => props.theme.fonts.headline5};
-                padding: 2rem;
-            }
+            grid-template-columns: 1fr;
+            row-gap: 0.75rem;
         }
     }
 `

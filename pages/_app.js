@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import Head from 'next/head';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
-import { Raleway } from 'next/font/google';
+import { Raleway, Cormorant_Garamond } from 'next/font/google';
 import { Global, css } from "@emotion/react";
 import { appWithTranslation } from 'next-i18next/pages';
 import NProgress from 'nprogress';
+import theme from '../components/theme';
 
 // Global stylesheets may only be imported from _app in the pages router.
 // nprogress.css used to be a render-blocking <link> to cdnjs in <Head>;
@@ -15,17 +16,26 @@ import 'react-responsive-modal/styles.css';
 
 // Self-hosted by next/font: the files are downloaded at build time and served
 // from /_next/static, so there is no request to Google at runtime and no
-// flash of fallback font. This replaces a <link rel="preload"> to
-// fonts.googleapis.com that had no `as` attribute — browsers drop such
-// preloads, and there was no <link rel="stylesheet"> either, so Raleway never
-// loaded at all and the whole site rendered in Times.
+// flash of fallback font.
 //
 // latin-ext covers Latvian diacritics (ā, č, ē, ģ, ī, ķ, ļ, ņ, š, ū, ž);
 // cyrillic covers the Russian locale.
 const raleway = Raleway({
-  weight: ['300', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin', 'latin-ext', 'cyrillic'],
   display: 'swap',
+  variable: '--font-body',
+});
+
+// Display face for headlines (the "Lauku miers" redesign). Cormorant has no
+// cyrillic subset on Google Fonts, so Russian headlines fall through to the
+// Georgia/serif stack declared in theme.families.display.
+const cormorant = Cormorant_Garamond({
+  weight: ['500', '600'],
+  style: ['normal', 'italic'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-display',
 });
 
 // GA4 property. The previous react-ga integration loaded the Universal
@@ -64,16 +74,50 @@ function MyApp({ Component, pageProps }) {
     <>
       <Global
         styles={css`
+          :root {
+            --font-body: ${raleway.style.fontFamily};
+            --font-display: ${cormorant.style.fontFamily};
+          }
           * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
           }
+          html {
+            background: ${theme.colors.background};
+          }
           body {
-            font-family: ${raleway.style.fontFamily}, sans-serif;
+            font-family: ${theme.families.body};
+            font-size: ${theme.fonts.body};
+            line-height: 1.6;
+            color: ${theme.colors.ink};
+            background: ${theme.colors.background};
+            -webkit-font-smoothing: antialiased;
+          }
+          h1, h2 {
+            font-family: ${theme.families.display};
+            font-weight: ${theme.fontWeight.semibold};
+            line-height: 1.08;
+            letter-spacing: -0.005em;
           }
           a {
-            text-decoration: none !important;
+            color: ${theme.colors.primary};
+            text-decoration: none;
+          }
+          :focus-visible {
+            outline: 2px solid ${theme.colors.primaryCool};
+            outline-offset: 3px;
+          }
+          #nprogress .bar {
+            background: ${theme.colors.secondaryDark};
+            height: 3px;
+          }
+          #nprogress .peg {
+            box-shadow: 0 0 10px ${theme.colors.secondaryDark}, 0 0 5px ${theme.colors.secondaryDark};
+          }
+          .react-responsive-modal-modal {
+            background: ${theme.colors.background};
+            border-radius: ${theme.radii.md};
           }
         `}
       />

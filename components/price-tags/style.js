@@ -3,25 +3,34 @@ import { media } from "../theme";
 
 const Items = styled.div`
   display: grid;
-  grid-template-columns: 25% 75%;
-  margin: 1rem 0 6rem 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  column-gap: 3rem;
+  margin: 1.5rem 0 1rem;
 
   .title {
-    font-size: ${props => props.theme.fonts.headline5};
-    font-weight: ${props => props.theme.fontWeight.bold};
-    color: ${props => props.theme.fontColors.primary};
-    padding-bottom: 1rem;
+    font-family: ${props => props.theme.families.display};
+    font-size: ${props => props.theme.fonts.headline4};
+    font-weight: ${props => props.theme.fontWeight.semibold};
+    line-height: 1.12;
+    color: ${props => props.theme.colors.ink};
   }
   .price-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10.5rem, 16rem));
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: 1rem;
   }
 
   @media ${media.sm} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    .price-cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media ${media.xs} {
+    .price-cards {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 

@@ -16,8 +16,9 @@ const LanguageSelect = () => {
 
   return (
     <SelectItems>
-      <ArrowDownIcon className="icon" style={{ fontSize: "24px" }} />
+      <ArrowDownIcon className="icon" aria-hidden />
       <select
+		aria-label="Valoda / Language"
 		value={i18n.language}
         onChange={event => {
 			router.push(router.asPath, undefined, {
@@ -25,23 +26,34 @@ const LanguageSelect = () => {
 			})
         }}
       >
-        <option value="lv">Latviešu</option>
-        <option value="ru">Pусский</option>
-        <option value="en">English</option>
+        <option value="lv">LV</option>
+        <option value="ru">RU</option>
+        <option value="en">EN</option>
       </select>
     </SelectItems>
   );
 };
 
+const iconButtonStyle = {
+  background: 'none',
+  border: 'none',
+  padding: 8,
+  cursor: 'pointer',
+  minWidth: 44,
+  minHeight: 44,
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
 export default function Navbar() {
-const { t } = useTranslation(TR_NS.NAVBAR);
+  const { t } = useTranslation(TR_NS.NAVBAR);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Nav>
+    <Nav aria-label="Galvenā izvēlne">
       <div className="logo-items">
-        <Link href="/">
-			<Image width={160} height={28} className="gravas-logo" src="/static/logo.svg" alt="gravas logo" />
+        <Link href="/" aria-label="Gravas">
+			<Image width={150} height={26} className="gravas-logo" src="/static/logo.svg" alt="Gravas" priority />
         </Link>
 
         {isMenuOpen ? (
@@ -50,9 +62,10 @@ const { t } = useTranslation(TR_NS.NAVBAR);
             onClick={() => setIsMenuOpen(false)}
             className="icon-close icon"
             aria-label={t("close_menu")}
-            style={{ background: 'none', border: 'none', padding: 8, cursor: 'pointer', minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
+            aria-expanded="true"
+            style={iconButtonStyle}
           >
-            <CloseIcon aria-hidden style={{ fontSize: "28px" }} />
+            <CloseIcon aria-hidden style={{ fontSize: "24px" }} />
           </button>
         ) : (
           <button
@@ -60,31 +73,20 @@ const { t } = useTranslation(TR_NS.NAVBAR);
             onClick={() => setIsMenuOpen(true)}
             className="icon-menu icon"
             aria-label={t("open_menu")}
-            style={{ background: 'none', border: 'none', padding: 8, cursor: 'pointer', minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
+            aria-expanded="false"
+            style={iconButtonStyle}
           >
-            <MenuIcon aria-hidden style={{ fontSize: "28px" }} />
+            <MenuIcon aria-hidden style={{ fontSize: "26px" }} />
           </button>
         )}
       </div>
       <NavItems isOpen={isMenuOpen}>
-        <NavItem
-          rel="preconnect"
-          href="/pirts-rituali"
-          label={t("pirts_rituali")}
-        />
-        <NavItem rel="preconnect" href="/viesu-maja" label={t("viesu_maja")} />
-        <NavItem
-          rel="preconnect"
-          href="/aktiva-atputa"
-          label={t("aktiva_atputa")}
-        />
-        <NavItem
-          rel="preconnect"
-          href="/davanu-karte"
-          label={t("davanu_karte")}
-        />
-        <NavItem rel="preconnect" href="/atsauksmes" label={t("atsauksmes")} />
-        <NavItem rel="preconnect" href="/kontakti" label={t("kontakti")} />
+        <NavItem href="/pirts-rituali" label={t("pirts_rituali")} />
+        <NavItem href="/viesu-maja" label={t("viesu_maja")} />
+        <NavItem href="/aktiva-atputa" label={t("aktiva_atputa")} />
+        <NavItem href="/davanu-karte" label={t("davanu_karte")} />
+        <NavItem href="/atsauksmes" label={t("atsauksmes")} />
+        <NavItem href="/kontakti" label={t("kontakti")} />
 
         <Divider />
 

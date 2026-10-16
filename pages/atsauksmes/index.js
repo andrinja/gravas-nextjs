@@ -18,11 +18,9 @@ const ReviewsPage = () => {
       <PageHeaderImage
         imgsrc="/static/guesthouse/viesu-majas-atsauksmes.jpg"
         alt={t('reviews_hero_alt')}
-      />
-      <PageHeader
         title={t('reviews_header_title')}
-        description={t('reviews_header_description')}
       />
+      <PageHeader description={t('reviews_header_description')} />
       {/* The reviews themselves are guest testimonials in the language they
           were written in, and stay untranslated on purpose. Only the page
           chrome above is localisable. */}

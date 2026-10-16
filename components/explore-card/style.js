@@ -1,24 +1,42 @@
 import styled from '@emotion/styled';
-import { motion } from "framer-motion";
 
-export const Card = styled(motion.div)`
-    box-shadow: 0px .2rem .8rem rgba(0, 0, 0, 0.10);
-    border-radius: .25rem;
-    cursor: pointer;
+export const Card = styled.a`
     display: flex;
-	text-decoration: none;
-	color: ${props => props.theme.fontColors.primary};
+    flex-direction: column;
+    gap: 0.875rem;
+    color: ${props => props.theme.colors.ink};
 
-    img {
-        width: 100px;
-        height: 100%;
-        object-fit: cover;
-        border-radius: .25rem 0 0 .25rem;
+    .photo {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: ${props => props.theme.radii.md};
+        background: ${props => props.theme.colors.surface};
+
+        img {
+            transition: transform 0.4s ease;
+        }
     }
+
+    &:hover .photo img {
+        transform: scale(1.03);
+    }
+
     .label {
-        height: 100%;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        padding: 1rem;
+        gap: 0.5rem;
+        font-weight: ${props => props.theme.fontWeight.semibold};
+
+        .arrow {
+            color: ${props => props.theme.colors.secondaryDark};
+            transition: transform 0.2s ease;
+        }
+    }
+
+    &:hover .label .arrow {
+        transform: translateX(3px);
     }
 `;

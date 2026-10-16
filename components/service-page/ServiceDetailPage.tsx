@@ -7,7 +7,7 @@ import Amenities from '../amenities/Amenities';
 import Employee from '../employee/Employee';
 import ExtraDetails from '../extra-details/ExtraDetails';
 import PriceTags from '../price-tags/PriceTags';
-import Footer from '../footer/footer';
+import ReservationBand from '../reservation-band/ReservationBand';
 import EmployeeDetails from '../../static/data/employees/employees.json';
 import { useT } from '../../lib/useT';
 import type { SectionDescriptor } from '../../lib/sections/registry';
@@ -28,8 +28,8 @@ export const ServiceDetailPage = ({ section, item }: Props) => {
 			title={t(item.metaTitle)}
 			description={t(item.metaDescription)}
 			// og:image was the same home photo on all 15 detail pages; use the
-			// service's own. The  suffix is an inert leftover query.
-			image={item.img.split('?')[0]}
+			// service's own.
+			image={item.img}
 		>
 			<PageHeaderImage imgsrc={item.img} alt={t(item.alt)} />
 			<ServiceHeader title={t(item.title)} />
@@ -51,7 +51,8 @@ export const ServiceDetailPage = ({ section, item }: Props) => {
 				title={item.allPriceTitle}
 				translationNamespace={ns}
 			/>
-			<Footer />
+			{/* Was a fixed bottom bar with a modal; now an in-flow band. */}
+			<ReservationBand />
 		</Layout>
 	);
 };

@@ -19,8 +19,14 @@ export const ServiceIndexPage = ({ section, items }: Props) => {
 
 	return (
 		<Layout title={t(headerKeys.metaTitle)} description={t(headerKeys.metaDescription)}>
-			<PageHeaderImage imgsrc={section.indexHero} alt={t(headerKeys.alt)} />
-			<PageHeader title={t(headerKeys.title)} description={t(headerKeys.description)} />
+			{/* The section title is the page's h1, laid over the hero. These pages
+			    previously had no h1 at all (the title was an h2 under the photo). */}
+			<PageHeaderImage
+				imgsrc={section.indexHero}
+				alt={t(headerKeys.alt)}
+				title={t(headerKeys.title)}
+			/>
+			<PageHeader description={t(headerKeys.description)} />
 			<Cards>
 				{items.map(serviceCard => (
 					<ServiceCard

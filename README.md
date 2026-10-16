@@ -108,6 +108,24 @@ t('key', { some_variable_name: 'value' });
 t('item', { count: 55 }); // "items"
 ```
 
+## Design
+
+The "Lauku miers" look (P15): cream ground, deep-green ink, brand green for
+actions, muted gold for accents; Cormorant Garamond for h1/h2 over Raleway.
+Everything is a token in `components/theme.js` — colours, the two font
+stacks (`families`), type sizes, radii and the page layout (max width,
+gutters, nav height). Both fonts are loaded with next/font in `pages/_app.js`
+and exposed as `--font-display` / `--font-body`; global element styles live
+in the Emotion `<Global>` there.
+
+Shared chrome: `components/navbar`, `container`, `main-footer`, and
+`reservation-band` (the green "Kā rezervēt?" band that replaced the fixed
+bottom bar on detail pages). Button-shaped links are `ActionLink` in
+`components/hero/style.js`; the `Button` component is for real buttons.
+Section index pages put their h1 on the hero (`PageHeaderImage` with
+`title`); detail pages keep the h1 below it. The three mock-up directions
+that led here are on the design canvas (A was chosen).
+
 ## Images
 
 Every photo goes through `next/image`: the heroes with `fill` + `priority`
@@ -135,8 +153,8 @@ what previously made every data-driven icon invisible on the whole site.
 
 ## Outstanding
 
-- `en/` and `ru/` copy for the contacts page and page chrome: the key slots
-  exist and currently hold the Latvian text as a placeholder, so those pages
-  still read Latvian in English and Russian.
+- `en/` and `ru/` copy for the contacts page chrome still holds Latvian
+  placeholders (`contacts_meta_*`, `contacts_header_*`). The home page,
+  reviews page, 404 and service descriptions are translated.
 - The www → apex redirect is a Vercel domain setting and currently a 307;
   flip it to 308 in the Vercel dashboard.

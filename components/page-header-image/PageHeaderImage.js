@@ -5,22 +5,21 @@ import galleries from "../../static/data/galleries";
 
 import { Header } from "./style";
 
-// The hero is the LCP element on every page that has one. It used to be a
-// plain <img> pointing at the original JPG (up to 523 KB, 1440px wide, sent
-// to every phone). next/image with `fill` serves a resized AVIF/WebP from
-// /_next/image, and `priority` adds a preload so the browser starts fetching
-// it before hydration.
+// The hero is the LCP element on every page that has one, so it goes through
+// next/image with `fill` + `priority`: a resized AVIF/WebP from /_next/image
+// plus a preload hint.
 //
-// title/caption are optional and no caller currently passes either, so both
-// conditional blocks below are dead today. Defaults are what make them
-// optional to TypeScript for the .tsx callers.
+// With `title` the headline is laid over the photo on a gradient; section
+// index pages use that for their h1. Detail pages pass no title and render
+// their h1 below the photo instead.
 const PageHeaderImage = ({ imgsrc, alt, title = null, caption = null }) => {
   const router = useRouter();
   const { slug } = router.query;
   const hasGallery = galleries.find(gallery => gallery.slug === slug);
+  const withText = Boolean(title || caption);
 
   return (
-    <Header>
+    <Header withText={withText}>
       <Image
         className="image"
         src={imgsrc}
@@ -31,8 +30,12 @@ const PageHeaderImage = ({ imgsrc, alt, title = null, caption = null }) => {
         style={{ objectFit: "cover" }}
       />
 
-      {title && <h1>{title}</h1>}
-      {caption && <p>{caption}</p>}
+      {withText && (
+        <div className="text">
+          {title && <h1>{title}</h1>}
+          {caption && <p>{caption}</p>}
+        </div>
+      )}
       {hasGallery && (
         <Link className="gallery-link" href={`/galerijas/${slug}`} prefetch={false}>Galerija
         </Link>

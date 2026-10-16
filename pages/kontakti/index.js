@@ -16,7 +16,9 @@ const ContactsPage = () => {
       title={t(contactHeader.metaTitle)}
       description={t(contactHeader.metaDescription)}
     >
+      {/* No hero photo on this page, so the title is the h1 here. */}
       <PageHeader
+        level="h1"
         title={t(contactHeader.headerTitle)}
         description={t(contactHeader.headerDescription)}
       />

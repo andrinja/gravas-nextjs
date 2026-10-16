@@ -4,34 +4,35 @@ import { media } from "../theme";
 export const Nav = styled.nav`
   display: flex;
   width: 100%;
-  height: 64px;
+  height: ${props => props.theme.layout.navHeight};
   justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
-  background: white;
-  z-index: 2;
+  left: 0;
+  padding: 0 ${props => props.theme.layout.gutter};
+  background: rgba(246, 242, 232, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid ${props => props.theme.colors.lightGrey};
+  z-index: 20;
 
   .logo-items {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
 
     .icon {
       display: none;
       cursor: pointer;
       align-items: center;
       justify-content: center;
+      color: ${props => props.theme.colors.ink};
 
       @media ${media.md} {
         display: flex;
         margin-left: auto;
         min-width: 44px;
         min-height: 44px;
-
-        &.icon-menu {
-          font-size: 28px;
-        }
       }
     }
 
@@ -39,6 +40,7 @@ export const Nav = styled.nav`
       box-sizing: content-box;
       cursor: pointer;
       margin-right: auto;
+      display: block;
     }
 
     @media ${media.md} {
@@ -48,38 +50,53 @@ export const Nav = styled.nav`
 
   @media ${media.md} {
     height: auto;
+    min-height: ${props => props.theme.layout.navHeight};
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    background: ${props => props.theme.colors.background};
+    padding: 0.75rem 1.5rem;
+  }
+  @media ${media.sm} {
+    padding: 0.75rem ${props => props.theme.layout.gutterSm};
   }
 `;
 
 export const SelectItems = styled.div`
   display: flex;
   align-items: center;
-  margin: 0 1rem;
+  margin-left: 1.5rem;
+  border: 1px solid ${props => props.theme.colors.lightGrey};
+  border-radius: ${props => props.theme.radii.pill};
+  padding: 0 0.875rem 0 0.75rem;
+  min-height: 40px;
+  flex-direction: row-reverse;
+  gap: 0.375rem;
 
   select {
-    color: ${props => props.theme.fontColors.disabled};
-    font-size: ${props => props.theme.fonts.body};
+    color: ${props => props.theme.colors.ink};
+    font-family: inherit;
+    font-size: ${props => props.theme.fonts.eyebrow};
+    font-weight: ${props => props.theme.fontWeight.semibold};
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     border: none;
     background: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     cursor: pointer;
+    min-height: 38px;
   }
 
   .icon {
-    padding-right: 0.5rem;
     color: ${props => props.theme.fontColors.disabled};
+    font-size: 18px !important;
   }
   @media ${media.md} {
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 1rem;
   }
 `;
+
 export const NavItems = styled.div`
-  max-width: 70%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -90,9 +107,10 @@ export const NavItems = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 0.5rem;
 
     .item {
-      padding: 1rem;
+      padding: 0.875rem 1rem;
     }
   }
 `;
@@ -102,7 +120,7 @@ export const Divider = styled.div`
   @media ${media.md} {
     display: flex;
     width: 100%;
-    border: 0.5px solid ${props => props.theme.fontColors.divider};
-    margin-bottom: 1rem;
+    border-top: 1px solid ${props => props.theme.colors.lightGrey};
+    margin: 0.5rem 0;
   }
 `;

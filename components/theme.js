@@ -1,44 +1,80 @@
+// Design tokens for the "Lauku miers" look (redesign, P15): a warm cream
+// ground, deep green ink, the brand green for actions and a muted gold for
+// accents. Cormorant Garamond for display type over Raleway for everything
+// else; both are loaded with next/font in pages/_app.js and exposed as the
+// CSS variables referenced by `families` below.
+//
+// The key names (colors.primary, fontColors.disabled, fonts.headline5 …) are
+// kept from the previous theme so every existing style.js keeps working;
+// only the values changed. New groups: families, radii, layout.
 const theme = {
   colors: {
     primary: "#1E514B",
     primaryLight: "#4B7E77",
-    primaryDark: "#002823",
+    primaryDark: "#0E302C",
     primaryCool: "#37A7A2",
 
-    secondary: "#F9E18B",
-    secondaryLight: "#FFFFBC",
-    secondaryDark: "#C4AF5C",
+    // Gold. `secondary` is the bright one for use on dark grounds, `secondaryDark`
+    // the muted one that passes contrast on cream (4.6:1 against background).
+    secondary: "#E3C565",
+    secondaryLight: "#F0D98A",
+    secondaryDark: "#A3812F",
 
-    surface: "#BDBDBD",
-    background: "#FAFAF8",
+    surface: "#EFE9DB",
+    background: "#F6F2E8",
+    ink: "#1B2E2B",
     error: "#B00020",
 
-    darkGrey: "#333333",
-    lightGrey: "#D8DACE",
-    superLightGrey: "#F2F2F2",
+    darkGrey: "#3E4B48",
+    lightGrey: "#D9D2C1",
+    superLightGrey: "#FBF9F4",
 
     white: "#FFFFFF"
   },
 
   fontColors: {
-    primary: "#333333",
-    secondary: "#4F4F4F",
-    disabled: "#6B6B6B",
-    divider: "#BDBDBD"
+    primary: "#1B2E2B",
+    secondary: "#3E4B48",
+    disabled: "#5A6663",
+    divider: "#D9D2C1",
+    onDark: "#F6F2E8"
   },
+
+  families: {
+    display: "var(--font-display), Georgia, serif",
+    body: "var(--font-body), sans-serif"
+  },
+
   fonts: {
-    headline3: "2.5rem",
+    headline2: "clamp(2.75rem, 5vw, 4.75rem)",
+    headline3: "clamp(2.25rem, 3.5vw, 2.75rem)",
     headline4: "2rem",
     headline5: "1.5rem",
     title: "1.25rem",
-    body: "1rem",
-    button: ".8rem",
-    caption: ".75rem"
+    body: "1.0625rem",
+    button: ".9375rem",
+    caption: ".875rem",
+    eyebrow: ".8125rem"
   },
   fontWeight: {
     light: "300",
+    regular: "400",
     medium: "500",
+    semibold: "600",
     bold: "700"
+  },
+
+  radii: {
+    sm: "2px",
+    md: "3px",
+    pill: "999px"
+  },
+
+  layout: {
+    maxWidth: "90rem",
+    gutter: "3.5rem",
+    gutterSm: "1rem",
+    navHeight: "4.5rem"
   },
 
   // Ready-to-interpolate media-query strings:  @media ${media.sm} { ... }
@@ -55,6 +91,6 @@ const theme = {
   }
 };
 
-export const { colors, fontColors, fonts, fontWeight, media } = theme;
+export const { colors, fontColors, families, fonts, fontWeight, radii, layout, media } = theme;
 
 export default theme;

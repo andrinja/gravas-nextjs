@@ -2,15 +2,21 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 const ButtonStyle = styled.button`
-  border-radius: 0.5rem;
+  border-radius: ${props => props.theme.radii.sm};
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  height: 3rem;
-  padding: 0 1rem;
-  font-size: ${props => props.theme.fonts.body};
-  font-weight: ${props => props.theme.fontWeight.light};
-  display: flex;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  min-height: 3rem;
+  padding: 0 1.5rem;
+  font-family: inherit;
+  font-size: ${props => props.theme.fonts.button};
+  font-weight: ${props => props.theme.fontWeight.semibold};
+  line-height: 1;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
 
   ${p =>
     p.disabled &&
@@ -21,24 +27,37 @@ const ButtonStyle = styled.button`
 
   &.btn--primary--solid {
     background: ${props => props.theme.colors.primary};
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.fontColors.onDark};
+    &:hover {
+      background: ${props => props.theme.colors.primaryDark};
+    }
   }
 
   &.btn--primary--outline {
-    background: ${props => props.theme.colors.white};
+    background: transparent;
     color: ${props => props.theme.colors.primary};
-    border: 1px solid ${props => props.theme.colors.primary};
+    border-color: ${props => props.theme.colors.primary};
+    &:hover {
+      background: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.fontColors.onDark};
+    }
   }
 
   &.btn--secondary--solid {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.primary};
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.ink};
+    &:hover {
+      background: ${props => props.theme.colors.white};
+    }
   }
 
   &.btn--secondary--outline {
-    background: ${props => props.theme.colors.white};
-    color: ${props => props.theme.colors.secondary};
-    border: 1px solid ${props => props.theme.colors.secondary};
+    background: transparent;
+    color: ${props => props.theme.fontColors.onDark};
+    border-color: rgba(246, 242, 232, 0.7);
+    &:hover {
+      border-color: ${props => props.theme.fontColors.onDark};
+    }
   }
   .icon-gift-card {
     font-size: 1.5rem;
