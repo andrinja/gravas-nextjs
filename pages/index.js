@@ -25,7 +25,9 @@ export default function Index() {
   );
 }
 
-export async function getServerSideProps({locale}) {
+// Was getServerSideProps, which rendered the home page on every request for
+// content that only changes at build time. Static now, like every other page.
+export async function getStaticProps({locale}) {
 	return {
 		props: {
 			...(await serverSideTranslations(

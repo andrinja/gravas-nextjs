@@ -29,9 +29,10 @@ components/           one folder per component, kebab-case, with its style.js
 components/icons/     @svgr output + registry.ts (regenerate via icons:convert)
 lib/sections/         the three service sections, described as data
 public/locales/       translations — THE live tree
-static/data/          content as i18n keys, slugs and image paths
-static/               images (legacy Next path; Next 16 still serves it, with a
-                      deprecation warning — moving it under public/ is pending)
+public/static/        photos, favicons, manifest — served at /static/* (moved
+                      here from the deprecated root-level static/ in P14)
+static/data/          content as i18n keys, slugs and image paths (build input)
+static/icons/         SVG sources for icons:convert (build input, not served)
 ```
 
 ### The service sections
@@ -107,6 +108,16 @@ t('key', { some_variable_name: 'value' });
 t('item', { count: 55 }); // "items"
 ```
 
+## Images
+
+Every photo goes through `next/image`: the heroes with `fill` + `priority`
+(they are the LCP element), the cards with fixed dimensions and a `sizes`
+hint. `next.config.js` serves AVIF first, caches optimized variants for 31
+days, and sends a 31-day `Cache-Control` for the originals under
+`/static/*` (images only; the manifest stays uncached). The files are not
+content-hashed, so replacing a photo under the same name takes up to a month
+to reach returning visitors — rename it if that matters.
+
 ## Icons
 
 `components/icons/*.js` are `@svgr` output; regenerate with
@@ -127,10 +138,5 @@ what previously made every data-driven icon invisible on the whole site.
 - `en/` and `ru/` copy for the contacts page and page chrome: the key slots
   exist and currently hold the Latvian text as a placeholder, so those pages
   still read Latvian in English and Russian.
-- `static/` should move under `public/static/` (same URLs) before Next drops
-  the deprecated root-level `static` serving. `static/data` and `static/icons`
-  are build inputs, not served files, and can stay.
-- Hero images go through a plain `<img>` at full resolution; the cards use
-  `next/image`. The heroes should too.
 - The www → apex redirect is a Vercel domain setting and currently a 307;
   flip it to 308 in the Vercel dashboard.

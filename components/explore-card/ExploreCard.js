@@ -18,7 +18,7 @@ export default function ExploreCard ({ label, img, href}) {
 				transition: { duration: 0.3 }
 			}}>
 			<picture>
-			<Image width={100} height={75} src={img} alt={t(label)} type="image/webp" />
+			<Image width={100} height={75} src={img} alt={t(label)} />
 			</picture>
 			<span className="label">{t(label)}</span>
 		</Card>

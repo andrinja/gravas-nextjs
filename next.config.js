@@ -20,6 +20,17 @@ module.exports = {
 
 	i18n: { defaultLocale, locales, localeDetection },
 
+	images: {
+		// AVIF first, WebP for browsers without it. Photos go through
+		// /_next/image, so the originals under public/static are only ever
+		// fetched by the optimizer.
+		formats: ['image/avif', 'image/webp'],
+		// How long optimized variants stay in the image cache (and the
+		// Cache-Control max-age they are served with). The source photos
+		// change a few times a year at most.
+		minimumCacheTTL: 60 * 60 * 24 * 31,
+	},
+
 	async redirects() {
 		return legacyRedirects.map(({ from, to }) => ({
 			source: from,
@@ -43,6 +54,17 @@ module.exports = {
 
 	async headers() {
 		return [
+			{
+				// Photos, icons and favicons under public/static. Next serves
+				// public/ with max-age=0 by default, which made every image a
+				// revalidation on every visit. These files are not
+				// content-hashed, so this is a month, not a year: replacing a
+				// photo under the same name takes effect within 31 days.
+				source: '/static/:file(.*\\.(?:jpg|jpeg|png|webp|avif|svg|ico))',
+				headers: [
+					{ key: 'Cache-Control', value: 'public, max-age=2678400, stale-while-revalidate=604800' },
+				],
+			},
 			{
 				// Keep the service-worker tombstone (P10) from being cached, so
 				// browsers that still have the old worker installed pick up the

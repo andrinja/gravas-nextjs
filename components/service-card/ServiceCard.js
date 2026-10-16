@@ -19,7 +19,7 @@ export const ServiceCard = ({title, priceTitle, priceFrom, img, translationNames
 			transition: { duration: 0.3 }
 		}}>
         <picture>
-          <Image width={324} height={230} src={img} alt={t(title)} type="image/webp" />
+          <Image width={324} height={230} sizes="(max-width: 720px) 100vw, 324px" src={img} alt={t(title)} />
         </picture>
         <h3 className="title">{t(title)}</h3>
         <div className="detail-items">

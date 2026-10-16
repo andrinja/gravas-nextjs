@@ -21,7 +21,7 @@ const Users = ({ employee}) => {
       <div className="right-column">
         <div className="image-and-timeline">
           <div className="image-wrapper">
-            <Image height={112} width={112} objectFit="cover" className="image" src={employee.img} alt={employee.alt} />
+            <Image height={112} width={112} style={{ objectFit: "cover" }} className="image" src={employee.img} alt={employee.alt} />
           </div>
           <div className="timeline">
             {employee.educations.map(education => (

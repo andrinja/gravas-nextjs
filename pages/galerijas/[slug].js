@@ -59,7 +59,7 @@ const Gallery = () => {
             />
             {transitions((style, item) => (
               <animated.div style={{ ...style, display: 'flex', alignItems: 'center' }}>
-                  <NextImage height={512} width={864} src={item.path} alt={item.title} type="image/webp" />
+                  <NextImage height={512} width={864} src={item.path} alt={item.title} />
               </animated.div>
             ))}
             <NextIcon
@@ -81,7 +81,7 @@ const Gallery = () => {
                 key={index}
                 src={image.path}
                 alt={image.title}
-                type="image/webp"
+               
               />
             </picture>
           ))}

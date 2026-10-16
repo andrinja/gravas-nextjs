@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 
+// position: relative is what next/image `fill` anchors to.
 export const Header = styled.div`
   position: relative;
   max-width: 100%;
@@ -9,6 +10,7 @@ export const Header = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
 
   h1,
   p {
@@ -42,13 +44,4 @@ export const Header = styled.div`
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     text-transform: uppercase;
   }
-`;
-
-export const HeaderImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 `;
