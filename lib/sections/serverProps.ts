@@ -46,3 +46,25 @@ export function sectionDetailStaticProps(key: SectionKey): GetStaticProps {
 		};
 	};
 }
+
+export interface GalleryParent {
+	href: string;
+	titleKey: string;
+	ns: string;
+}
+
+/**
+ * A gallery belongs to the service with the same slug; the back link, the
+ * title key and the namespace come from that service's section. A gallery
+ * with no matching service (sporta-laukumi) falls back to its section index.
+ */
+export function galleryParent(slug: string): GalleryParent {
+	for (const section of Object.values(SECTIONS)) {
+		const item = SECTION_DATA[section.key].find(candidate => slugOf(candidate) === slug);
+		if (item) {
+			return { href: `/${section.prefix}/${slug}`, titleKey: item.title, ns: section.contentNs };
+		}
+	}
+	const activities = SECTIONS.activities;
+	return { href: `/${activities.prefix}`, titleKey: activities.headerKeys.title, ns: activities.headerNs };
+}

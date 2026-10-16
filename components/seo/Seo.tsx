@@ -19,29 +19,28 @@ export function localeUrl(path: string, locale: string): string {
 		: `${SITE_URL}/${locale}${clean}`;
 }
 
+type JsonLd = Record<string, unknown>;
+
 type Props = {
 	title: string;
 	description?: string;
 	/** Page-specific share image path, e.g. a service photo. Defaults to the home hero. */
 	image?: string;
+	/** Structured data objects, one <script type="application/ld+json"> each. Null entries are skipped. */
+	jsonLd?: (JsonLd | null)[];
+	/** Keep the page out of search results (thin pages such as gallery lightboxes). */
+	noindex?: boolean;
 };
 
 /**
  * All head metadata for a page: title, description, canonical, hreflang
- * alternates and Open Graph.
- *
- * Previously this lived ad-hoc in Layout.js and _app.js and was wrong in
- * several ways: property="title"/property="image" instead of og:*, a single
- * hardcoded share image for all 15 detail pages, no canonical and no hreflang
- * despite three locales, and a literal `VERIFICATION_ID` placeholder that
- * shadowed the real Search Console token because next/head dedupes <meta> by
- * name and Layout rendered after _app.
+ * alternates, Open Graph and JSON-LD.
  *
  * The hreflang set is derived from i18n.locales, the same source the sitemap
  * uses, so the two cannot disagree — Search Console reports errors on both
  * when they do.
  */
-export const Seo = ({ title, description, image }: Props) => {
+export const Seo = ({ title, description, image, jsonLd = [], noindex = false }: Props) => {
 	const { asPath, locale } = useRouter();
 	// strip query/hash so the canonical is stable
 	const path = (asPath || '/').split(/[?#]/)[0];
@@ -53,6 +52,7 @@ export const Seo = ({ title, description, image }: Props) => {
 		<Head>
 			<title>{title}</title>
 			{description && <meta name="description" content={description} />}
+			{noindex && <meta name="robots" content="noindex, follow" />}
 
 			<link rel="canonical" href={canonical} />
 			{LOCALES.map(l => (
@@ -72,6 +72,16 @@ export const Seo = ({ title, description, image }: Props) => {
 			<meta name="twitter:title" content={title} />
 			{description && <meta name="twitter:description" content={description} />}
 			<meta name="twitter:image" content={shareImage} />
+
+			{jsonLd.filter(Boolean).map((data, i) => (
+				<script
+					key={`ld-${i}`}
+					type="application/ld+json"
+					// JSON.stringify output is safe inside a script element except
+					// for "</script>"; the replace guards against that.
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }}
+				/>
+			))}
 		</Head>
 	);
 };

@@ -1,118 +1,196 @@
 import styled from "@emotion/styled";
 import { media } from "../theme";
 
-const Layout = styled.div`
-  width: calc(100vw - 5rem);
-  max-width: 90rem;
-  height: calc(100vh - 3rem);
-  margin: 0 auto;
-
-  @media ${media.md} {
-    width: 100vw;
-  }
-`;
-
-export const IconItems = styled.div`
-  height: 3rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  svg {
-    cursor: pointer;
-  }
-
-  @media ${media.md} {
-    position: relative;
-    z-index: 2;
-    margin: 0.5rem 1rem;
-  }
-`;
-
-export const Images = styled.div`
-  width: 100%;
-  height: 100%;
+// Full-viewport lightbox on the deep green. Three rows: top bar, stage,
+// thumbnail strip. The stage takes whatever height is left.
+export const Lightbox = styled.div`
+  position: fixed;
+  inset: 0;
   display: grid;
-  grid-template-columns: 85% 15%;
-  align-content: space-evenly;
-
-  @media ${media.md} {
-    grid-template-columns: 100%;
-  }
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  background: ${props => props.theme.colors.primaryDark};
+  color: ${props => props.theme.fontColors.onDark};
+  user-select: none;
 `;
 
-export const Image = styled.div`
+export const TopBar = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 54rem;
-  height: 32rem;
-  position: relative;
-  margin: 0 auto;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  min-height: 4rem;
 
-  svg {
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-    top: calc(50% - 2rem);
-
-    &:first-child {
-      left: -4rem;
-    }
-
-    &:last-child {
-      left: 100%;
-    }
-  }
-
-  > div {
-    width: auto;
-    height: 100%;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 0.25rem;
-  }
-  @media ${media.md} {
-    width: 100vw;
-    img {
-      width: 100%;
-      height: 100%;
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    color: rgba(246, 242, 232, 0.8);
+    font-size: ${props => props.theme.fonts.eyebrow};
+    font-weight: ${props => props.theme.fontWeight.semibold};
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    &:hover {
+      color: ${props => props.theme.fontColors.onDark};
     }
     svg {
-      display: none;
+      font-size: 18px;
+    }
+  }
+
+  .counter {
+    font-family: ${props => props.theme.families.display};
+    font-size: ${props => props.theme.fonts.title};
+    color: ${props => props.theme.colors.secondary};
+    white-space: nowrap;
+  }
+
+  @media ${media.sm} {
+    padding: 0.5rem 0.75rem;
+    .back span {
+      max-width: 40vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 `;
 
-export const Main = styled.main`
-  p {
-    padding: 1rem 0;
-    text-align: center;
+export const IconButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: none;
+  border: none;
+  border-radius: ${props => props.theme.radii.pill};
+  color: ${props => props.theme.fontColors.onDark};
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background: rgba(246, 242, 232, 0.1);
+  }
+  &:focus-visible {
+    outline: 2px solid ${props => props.theme.colors.secondary};
+    outline-offset: 2px;
   }
 `;
 
-export const Aside = styled.aside`
+export const Stage = styled.div`
+  position: relative;
   display: grid;
-  grid-template-columns: 5rem 5rem;
-  grid-auto-rows: 5rem;
-  grid-gap: 1rem;
-  margin: auto 0;
-  justify-content: center;
-  cursor: pointer;
-  img {
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  padding: 0 4.5rem 0.5rem;
+  min-height: 0;
+
+  .frame {
+    position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 0.25rem;
+    min-height: 0;
+    touch-action: pan-y;
   }
 
-  @media ${media.md} {
-    grid-template-columns: repeat(auto-fit, 5rem);
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide img {
+    border-radius: ${props => props.theme.radii.md};
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .caption {
+    text-align: center;
+    font-size: ${props => props.theme.fonts.body};
+    color: rgba(246, 242, 232, 0.85);
+    min-height: 1.6em;
+    padding: 0 1rem;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    background: rgba(246, 242, 232, 0.08);
+    border: 1px solid rgba(246, 242, 232, 0.18);
+    svg {
+      font-size: 22px;
+    }
+    &.prev {
+      left: 0.75rem;
+    }
+    &.next {
+      right: 0.75rem;
+    }
+  }
+
+  @media ${media.sm} {
+    padding: 0 0.75rem 0.5rem;
+    .arrow {
+      display: none;
+    }
+    .slide img {
+      border-radius: ${props => props.theme.radii.sm};
+      box-shadow: none;
+    }
   }
 `;
 
-export default Layout;
+export const Thumbs = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem 1.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  justify-content: safe center;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  button {
+    position: relative;
+    flex: 0 0 auto;
+    width: 4.5rem;
+    height: 3.375rem;
+    padding: 0;
+    background: none;
+    border: 2px solid transparent;
+    border-radius: ${props => props.theme.radii.md};
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 0.15s ease, border-color 0.15s ease;
+
+    &:hover,
+    &[aria-current="true"] {
+      opacity: 1;
+    }
+    &[aria-current="true"] {
+      border-color: ${props => props.theme.colors.secondary};
+    }
+    &:focus-visible {
+      outline: 2px solid ${props => props.theme.colors.secondary};
+      outline-offset: 2px;
+    }
+  }
+
+  @media ${media.sm} {
+    padding: 0.5rem 0.75rem 1rem;
+    button {
+      width: 3.5rem;
+      height: 2.625rem;
+    }
+  }
+`;
