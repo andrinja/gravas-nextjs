@@ -7,5 +7,11 @@
   "cancelation": "Cancelation",
   "cancelation_description": "Gravas has right to cancel reservation if the agreed arrival time is delayed more than 1 hour.",
   "customer_requirement": "Customer requirement",
-  "customer_requirement_description": "If you have any dietary restrictions, inform us upon your arrival. If you have any health issues, please inform sauna attendant before sauna session."
+  "customer_requirement_description": "If you have any dietary restrictions, inform us upon your arrival. If you have any health issues, please inform sauna attendant before sauna session.",
+  "gallery": "Gallery",
+  "gallery_back_to": "Back to {{title}}",
+  "gallery_close": "Close gallery",
+  "gallery_previous": "Previous image",
+  "gallery_next": "Next image",
+  "gallery_counter": "{{current}} of {{total}}"
 }

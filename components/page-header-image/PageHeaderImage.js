@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { Link } from '../../components/link'
 import galleries from "../../static/data/galleries";
+import { useTranslation } from 'next-i18next/pages';
+import { TR_NS } from '../../constants/translationNamespace';
 
 import { Header } from "./style";
 
@@ -16,6 +18,8 @@ const PageHeaderImage = ({ imgsrc, alt, title = null, caption = null }) => {
   const router = useRouter();
   const { slug } = router.query;
   const hasGallery = galleries.find(gallery => gallery.slug === slug);
+  // Only detail pages render the gallery link, and those load COMMON.
+  const { t } = useTranslation(TR_NS.COMMON);
   const withText = Boolean(title || caption);
 
   return (
@@ -39,7 +43,7 @@ const PageHeaderImage = ({ imgsrc, alt, title = null, caption = null }) => {
         </div>
       )}
       {hasGallery && (
-        <Link className="gallery-link" href={`/galerijas/${slug}`} prefetch={false}>Galerija
+        <Link className="gallery-link" href={`/galerijas/${slug}`} prefetch={false}>{t("gallery")}
         </Link>
       )}
     </Header>

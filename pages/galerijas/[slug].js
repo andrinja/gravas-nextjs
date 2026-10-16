@@ -1,115 +1,163 @@
-import { useRouter } from "next/router";
-import galleries from "../../static/data/galleries";
-import { useState } from 'react'
-import Layout, { Images, Main, Aside, IconItems, Image } from "../../components/gallery/style";
-import { useTransition, animated } from "@react-spring/web";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import { Lightbox, TopBar, IconButton, Stage, Thumbs } from "../../components/gallery/style";
+import Seo from "../../components/seo/Seo";
 import CloseIcon from "../../components/icons/Close";
 import NextIcon from "../../components/icons/Next";
 import BackIcon from "../../components/icons/Back";
-import { default as NextImage } from 'next/image'
+import galleries from "../../static/data/galleries";
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
 import { TR_NS } from '../../constants/translationNamespace';
-import { getPaths } from '../../utils/getPaths';
+import { localePaths } from '../../lib/paths';
+import { galleryParent } from '../../lib/sections/serverProps';
 
-const Gallery = () => {
-  const router = useRouter();
+const SWIPE_PX = 60;
 
-  const { slug } = router.query;
-  const gallery = galleries.find(gallery => gallery.slug === slug);
+// Slide direction: +1 going forward, -1 going back. The leaving image slides
+// out the way the arriving one came in.
+const variants = {
+  enter: dir => ({ x: dir * 48, opacity: 0 }),
+  center: { x: 0, opacity: 1, transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } },
+  exit: dir => ({ x: dir * -48, opacity: 0, transition: { duration: 0.18 } }),
+};
 
-  gallery.images = gallery.images.map((image, key) => {
-    return {
-      id: key,
-      ...image
+const Gallery = ({ gallery, parent }) => {
+  const { t } = useTranslation(TR_NS.COMMON);
+  const { t: tParent } = useTranslation(parent.ns);
+  const [[index, direction], setPosition] = useState([0, 0]);
+  const thumbsRef = useRef(null);
+  const total = gallery.images.length;
+  const image = gallery.images[index];
+  const parentTitle = tParent(parent.titleKey);
+
+  const go = useCallback(
+    step => setPosition(([i]) => [(i + step + total) % total, step > 0 ? 1 : -1]),
+    [total]
+  );
+  const jump = useCallback(i => setPosition(([cur]) => [i, i > cur ? 1 : -1]), []);
+
+  useEffect(() => {
+    const onKey = event => {
+      if (event.key === "ArrowRight") go(1);
+      if (event.key === "ArrowLeft") go(-1);
     };
-  });
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [go]);
 
-  const [index, setIndex] = useState(0);
-
-  const handleNext = () => {
-    const nextImageIndex = index + 1;
-    setIndex(nextImageIndex > gallery.images.length - 1 ? 0 : nextImageIndex);
-  };
-
-  const handleBack = () => {
-    const previousImageIndex = index - 1;
-    const lastImageIndex = gallery.images.length - 1;
-    setIndex(previousImageIndex < 0 ? lastImageIndex : previousImageIndex);
-  };
-  // react-spring v9+ API: keys live in the config and the hook returns a
-  // render function instead of an array of { item, props, key }.
-  const transitions = useTransition(gallery.images[index], {
-    keys: image => image.id,
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 }
-  });
+  // Keep the active thumbnail in view as the user moves through the strip.
+  useEffect(() => {
+    thumbsRef.current
+      ?.querySelector('[aria-current="true"]')
+      ?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+  }, [index]);
 
   return (
-    <Layout>
-      <IconItems>
-        <CloseIcon onClick={router.back} style={{ fontSize: "28px" }} />
-      </IconItems>
-      <Images>
-        <Main>
-          <Image alt="">
-            <BackIcon
-              onClick={handleBack}
-              style={{ color: "#000000", fontSize: "28px" }}
-            />
-            {transitions((style, item) => (
-              <animated.div style={{ ...style, display: 'flex', alignItems: 'center' }}>
-                  <NextImage
-                    height={512}
-                    width={864}
-                    sizes="(max-width: 1240px) 100vw, 864px"
-                    src={item.path}
-                    alt={item.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                  />
-              </animated.div>
-            ))}
-            <NextIcon
-              onClick={handleNext}
-              style={{ color: "#000000", fontSize: "28px" }}
-            />
-          </Image>
-          <p>{gallery.images[index].title}</p>
-        </Main>
-        <Aside>
-          {gallery.images.map((image, index) => (
-            <picture key={index}>
-              <NextImage
-              height={80}
-              width={80}
-                onClick={() => {
-                  setIndex(index);
+    <>
+      <Seo title={`${parentTitle} · ${t("gallery")}`} noindex />
+      <Lightbox role="dialog" aria-label={`${parentTitle} · ${t("gallery")}`}>
+        <TopBar>
+          <Link className="back" href={parent.href} aria-label={t("gallery_back_to", { title: parentTitle })}>
+            <BackIcon aria-hidden />
+            <span>{parentTitle}</span>
+          </Link>
+          <span className="counter" aria-live="polite">
+            {t("gallery_counter", { current: index + 1, total })}
+          </span>
+          <IconButton as={Link} href={parent.href} aria-label={t("gallery_close")}>
+            <CloseIcon aria-hidden style={{ fontSize: "22px" }} />
+          </IconButton>
+        </TopBar>
+
+        <Stage>
+          <div className="frame">
+            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+              <motion.div
+                key={image.path}
+                className="slide"
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.6}
+                onDragEnd={(_, info) => {
+                  if (info.offset.x < -SWIPE_PX) go(1);
+                  else if (info.offset.x > SWIPE_PX) go(-1);
                 }}
-                key={index}
-                src={image.path}
-                alt={image.title}
-               
-              />
-            </picture>
-          ))}
-        </Aside>
-      </Images>
-    </Layout>
+              >
+                <Image
+                  src={image.path}
+                  alt={image.title}
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 720px) 100vw, 90vw"
+                  draggable={false}
+                  style={{ objectFit: "contain" }}
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {total > 1 && (
+              <>
+                <IconButton className="arrow prev" type="button" onClick={() => go(-1)} aria-label={t("gallery_previous")}>
+                  <BackIcon aria-hidden />
+                </IconButton>
+                <IconButton className="arrow next" type="button" onClick={() => go(1)} aria-label={t("gallery_next")}>
+                  <NextIcon aria-hidden />
+                </IconButton>
+              </>
+            )}
+          </div>
+          <p className="caption">{image.title}</p>
+        </Stage>
+
+        {total > 1 && (
+          <Thumbs ref={thumbsRef} role="tablist" aria-label={t("gallery")}>
+            {gallery.images.map((thumb, i) => (
+              <button
+                key={thumb.path}
+                type="button"
+                role="tab"
+                aria-current={i === index ? "true" : undefined}
+                aria-label={thumb.title}
+                onClick={() => jump(i)}
+              >
+                <Image src={thumb.path} alt="" fill sizes="80px" style={{ objectFit: "cover" }} />
+              </button>
+            ))}
+          </Thumbs>
+        )}
+      </Lightbox>
+    </>
   );
 };
 
 export async function getStaticPaths() {
+  return {
+    paths: localePaths(galleries.map(g => ({ slug: g.slug }))),
+    fallback: false,
+  };
+}
 
-	return {
-		paths: getPaths(galleries, 'galerijas', 'slug'),
-		fallback: false,
-	}
-  }
-
-export const getStaticProps = async ({ locale }) => ({
-	props: {
-		...await serverSideTranslations(locale, [TR_NS.COMMON]),
-	},
-})
+// galleryParent reaches SECTION_DATA, so it stays inside getStaticProps
+// (see lib/sections/serverProps.ts).
+export const getStaticProps = async ({ locale, params }) => {
+  const gallery = galleries.find(g => g.slug === params.slug);
+  if (!gallery) return { notFound: true };
+  const parent = galleryParent(params.slug);
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [TR_NS.COMMON, parent.ns])),
+      gallery,
+      parent,
+    },
+  };
+};
 
 export default Gallery;

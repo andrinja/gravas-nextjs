@@ -59,11 +59,15 @@ export const SECTIONS: Record<SectionKey, SectionDescriptor> = {
 		indexNamespaces: [TR_NS.SAUNA_RITUALS, TR_NS.SAUNA_RITUALS_HEADER, TR_NS.NAVBAR],
 		// SAUNA_RITUALS_HEADER was loaded here too, but the detail page never
 		// uses it — dropped.
+		// SAUNA_RITUALS_HEADER is back: the breadcrumb JSON-LD names the section.
+		// COMMON carries the gallery link label.
 		detailNamespaces: [
 			TR_NS.SAUNA_RITUALS,
+			TR_NS.SAUNA_RITUALS_HEADER,
 			TR_NS.NAVBAR,
 			TR_NS.EMPLOYEES,
 			TR_NS.HOW_TO_RESERVE,
+			TR_NS.COMMON,
 		],
 	},
 	guesthouse: {
@@ -75,7 +79,7 @@ export const SECTIONS: Record<SectionKey, SectionDescriptor> = {
 		indexHero: '/static/guesthouse/skats-uz-viesu-maju.jpg',
 		showsEmployee: false,
 		indexNamespaces: [TR_NS.GUESTHOUSE_HEADER, TR_NS.GUESTHOUSE, TR_NS.NAVBAR],
-		detailNamespaces: [TR_NS.NAVBAR, TR_NS.GUESTHOUSE, TR_NS.HOW_TO_RESERVE],
+		detailNamespaces: [TR_NS.NAVBAR, TR_NS.GUESTHOUSE, TR_NS.GUESTHOUSE_HEADER, TR_NS.HOW_TO_RESERVE, TR_NS.COMMON],
 	},
 	activities: {
 		key: 'activities',
@@ -89,7 +93,7 @@ export const SECTIONS: Record<SectionKey, SectionDescriptor> = {
 		// HOW_TO_RESERVE added: this page renders <Footer/>, which translates
 		// against it. Its absence made the footer button render the raw key
 		// `how_to_reserve_title` after hydration, and threw a hydration error.
-		detailNamespaces: [TR_NS.NAVBAR, TR_NS.SPORT_ACTIVITIES, TR_NS.HOW_TO_RESERVE],
+		detailNamespaces: [TR_NS.NAVBAR, TR_NS.SPORT_ACTIVITIES, TR_NS.SPORT_ACTIVITIES_HEADER, TR_NS.HOW_TO_RESERVE, TR_NS.COMMON],
 	},
 };
 
