@@ -37,7 +37,7 @@ export default async function CardPage({ params, searchParams }: { params: Promi
 
 	return (
 		<>
-			{created ? <p className="msg">Karte {card.number} un rēķins izveidoti. Nekas vēl nav nosūtīts.</p> : null}
+			{created && card.status === 'draft' ? <p className="msg">Karte {card.number} un rēķins izveidoti. Nekas vēl nav nosūtīts.</p> : null}
 			<div className="page-head">
 				<div className="stack" style={{ gap: 6 }}>
 					<Link href="/admin" className="crumb">
