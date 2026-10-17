@@ -31,6 +31,7 @@ export function localBusiness() {
 			'@type': 'PostalAddress',
 			streetAddress: 'Likverteni',
 			addressLocality: 'Bauskas novads',
+			postalCode: 'LV-3932',
 			addressCountry: 'LV',
 		},
 		// The pin from the embedded map on the contacts page.

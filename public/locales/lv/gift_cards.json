@@ -50,5 +50,16 @@
   "form_gift_card": "Izvēlieties dāvanu kartes noformējumu: summa vai pakalpojumi konkrētam personu skaitam.",
   "payment_confirmation": "Sazinaties ar mums, lai varam Jums nosūtīt rēķinu.",
   "receive_gift_card_in_mail": "Pēc rēķina apmaksas, saņemiet dāvanu karti 1 stundas laikā pa epastu.",
-  "write_email": "Iegādāties"
+  "write_email": "Iegādāties",
+  "request_title": "Pieprasīt dāvanu karti",
+  "request_intro": "Uzrakstiet, ko vēlaties uzdāvināt un cik personām. Nosūtīsim rēķinu, un pēc apmaksas dāvanu karte pienāks uz Jūsu e-pastu.",
+  "request_name": "Vārds, uzvārds",
+  "request_email": "E-pasts",
+  "request_phone": "Tālrunis (nav obligāts)",
+  "request_text": "Ko vēlaties uzdāvināt?",
+  "request_text_placeholder": "Piemēram: Zāļu pirts rituāls 2 personām, vēlams novembrī.",
+  "request_submit": "Nosūtīt pieprasījumu",
+  "request_sending": "Sūta…",
+  "request_error": "Neizdevās nosūtīt. Lūdzu, mēģiniet vēlreiz vai rakstiet uz info@gravas.lv.",
+  "request_or_email": "vai rakstiet uz"
 }

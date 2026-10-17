@@ -160,7 +160,13 @@ PDFs (`lib/pdf`): the invoice and the gift card are rendered on demand with
 are TTF copies of Raleway and Cormorant Garamond in `lib/pdf/fonts`; the
 logo is re-emitted from `logo.svg` as vector paths. Issuer identity is in
 `lib/pdf/issuer.ts`; bank details come from `INVOICE_*` env vars and are
-never committed. Not yet built: the public request form.
+never committed.
+
+Public requests: the form on /davanu-karte posts to
+`/api/giftcard-request`, which creates a draft (amount 0, source "web",
+the customer's text as the first event) and emails the owner (MAIL_BCC, else
+the first ADMIN_EMAILS address). A honeypot field drops bots. The draft
+cannot be sent until the admin edits in a price.
 
 ## Images
 

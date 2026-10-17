@@ -2,7 +2,7 @@ import { and, desc, eq, sql } from 'drizzle-orm';
 import { db, schema } from '../db';
 import type { CardStatus, EventType, GiftCard, CardEvent, Invoice } from '../db/schema';
 import type { CardInput } from './validation';
-import { toIsoDate } from './format';
+import { toIsoDate, addDays, addMonths } from './format';
 import { can } from './status';
 
 /** SERVER ONLY. All writes to gift cards go through here. */
@@ -186,4 +186,59 @@ export async function yearTotals(year: number) {
 		.from(giftCards)
 		.where(and(eq(giftCards.year, year)));
 	return row ?? { count: 0, paidCents: 0 };
+}
+
+export interface WebRequestInput {
+	name: string;
+	email: string;
+	phone?: string;
+	/** What they want, in their words: service, people, occasion. */
+	request: string;
+	language: 'lv' | 'en' | 'ru';
+}
+
+/**
+ * A request from the public gift-card page becomes a draft with no amount
+ * yet: the admin opens it, fills in the price and the card text, and only
+ * then sends the invoice. The validation that guards edits requires an
+ * amount above zero, so a web draft cannot be sent by accident.
+ */
+export async function createWebRequest(input: WebRequestInput): Promise<GiftCard> {
+	const now = new Date();
+	const { number, year, seq } = await allocateNumber(now);
+	const title = input.request.trim().split('\n')[0].slice(0, 120);
+	const [card] = await db
+		.insert(giftCards)
+		.values({
+			number,
+			year,
+			seq,
+			status: 'draft',
+			buyerName: input.name.trim(),
+			buyerEmail: input.email.trim().toLowerCase(),
+			buyerPhone: input.phone?.trim() || null,
+			serviceLine: title,
+			amountCents: 0,
+			cardTitle: title,
+			cardPhoto: 'sauna',
+			language: input.language,
+			validUntil: toIsoDate(addMonths(now, 12)),
+			dueDate: toIsoDate(addDays(now, 7)),
+			source: 'web',
+			createdBy: 'web',
+		})
+		.returning();
+	await db.insert(invoices).values({
+		number,
+		cardId: card.id,
+		issueDate: toIsoDate(now),
+		dueDate: toIsoDate(addDays(now, 7)),
+		buyerName: card.buyerName,
+		buyerEmail: card.buyerEmail,
+		buyerPhone: card.buyerPhone,
+		lineDescription: `Dāvanu karte Nr. ${number} — ${title}`,
+		amountCents: 0,
+	});
+	await logEvent(card.id, 'requested', 'web', input.request.trim().slice(0, 1000), { language: input.language });
+	return card;
 }

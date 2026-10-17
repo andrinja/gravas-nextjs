@@ -50,5 +50,16 @@
   "form_gift_card": "Choose gift card format - services or amount",
   "payment_confirmation": "Get in touch with us, so we can send you an invoice",
   "receive_gift_card_in_mail": "After you have confirmed that invoice is paid, you will get gift card within 1 hour in your email",
-  "write_email": "Buy now"
+  "write_email": "Buy now",
+  "request_title": "Request a gift card",
+  "request_intro": "Tell us what you would like to give and for how many people. We will send an invoice, and after payment the gift card arrives in your inbox.",
+  "request_name": "Full name",
+  "request_email": "Email",
+  "request_phone": "Phone (optional)",
+  "request_text": "What would you like to give?",
+  "request_text_placeholder": "For example: Herbal sauna ritual for 2 people, ideally in November.",
+  "request_submit": "Send request",
+  "request_sending": "Sending…",
+  "request_error": "Could not send. Please try again or write to info@gravas.lv.",
+  "request_or_email": "or write to"
 }

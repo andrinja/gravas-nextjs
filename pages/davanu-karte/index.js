@@ -1,8 +1,8 @@
 import Layout from "../../components/Layout";
 import PageHeaderImage from "../../components/page-header-image/PageHeaderImage";
 import PageHeader from "../../components/page-header/PageHeader";
+import GiftCardRequest from "../../components/gift-card-request/GiftCardRequest";
 import giftCardHeader from "../../static/data/index-page/giftcardHeader";
-import { ActionLink } from "../../components/hero/style";
 import { useTranslation } from 'next-i18next/pages';
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { TR_NS } from '../../constants/translationNamespace';
@@ -27,10 +27,8 @@ const Index = () => {
       <ol style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingLeft: '1.5rem', color: '#3E4B48' }}>
         {steps.map(step => <li key={step}>{t(step)}</li>)}
       </ol>
-      <ActionLink href="mailto:info@gravas.lv" className="primary" style={{ alignSelf: 'flex-start', marginTop: '0.5rem' }}>
-        {t("write_email")}
-      </ActionLink>
     </section>
+    <GiftCardRequest />
   </Layout>
 	)
 }
