@@ -38,9 +38,9 @@ export function CardActions({ id, status, buyerEmail, paidNote, invoiceSentAt }:
 						<span className="hint">{invoiceSentAt ? `Nosūtīts ${invoiceSentAt}` : 'Vēl nav nosūtīts'}</span>
 					</div>
 					<div style={{ display: 'flex', gap: 8 }}>
-						<button type="button" className="btn btn-quiet btn-sm" disabled title="PDF ģenerēšana nāk nākamajā solī">
+						<a className="btn btn-quiet btn-sm" href={`/api/admin/cards/${id}/invoice`} target="_blank" rel="noreferrer">
 							PDF
-						</button>
+						</a>
 						<button
 							type="button"
 							className={`btn btn-sm ${invoiceSentAt ? 'btn-outline' : 'btn-primary'}`}
@@ -88,9 +88,9 @@ export function CardActions({ id, status, buyerEmail, paidNote, invoiceSentAt }:
 						<span className="hint">{status === 'card_sent' || status === 'redeemed' ? 'Nosūtīta' : paid ? 'Gatava sūtīšanai' : 'Pieejams pēc apmaksas'}</span>
 					</div>
 					<div style={{ display: 'flex', gap: 8 }}>
-						<button type="button" className="btn btn-quiet btn-sm" disabled title="PDF ģenerēšana nāk nākamajā solī">
+						<a className="btn btn-quiet btn-sm" href={`/api/admin/cards/${id}/card`} target="_blank" rel="noreferrer">
 							Priekšskatīt PDF
-						</button>
+						</a>
 						<button
 							type="button"
 							className="btn btn-primary btn-sm"

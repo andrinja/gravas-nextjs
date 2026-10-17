@@ -154,8 +154,13 @@ Storage tab for `DATABASE_URL`, run `yarn db:migrate` as a build step,
 and set `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, the Google OAuth client
 and later `RESEND_API_KEY`.
 
-Not yet built: PDF rendering of the invoice and card (the buttons are
-disabled), email attachments, and the public request form.
+PDFs (`lib/pdf`): the invoice and the gift card are rendered on demand with
+@react-pdf/renderer from the database row, served by
+`/api/admin/cards/:id/invoice|card` and attached to the two emails. Fonts
+are TTF copies of Raleway and Cormorant Garamond in `lib/pdf/fonts`; the
+logo is re-emitted from `logo.svg` as vector paths. Issuer identity is in
+`lib/pdf/issuer.ts`; bank details come from `INVOICE_*` env vars and are
+never committed. Not yet built: the public request form.
 
 ## Images
 

@@ -1,5 +1,6 @@
 import type { CardLanguage, CardPhoto } from '../../../lib/db/schema';
 import { formatDate, photoSrc } from '../../../lib/giftcards/format';
+import { CARD_COPY, CONTACT } from '../../../lib/giftcards/cardCopy';
 
 export interface CardPreviewData {
 	number: string;
@@ -11,32 +12,6 @@ export interface CardPreviewData {
 	validUntil: string;
 }
 
-const COPY: Record<CardLanguage, { eyebrow: string; number: string; valid: string; booking: string; legal: string; tag: string }> = {
-	lv: {
-		eyebrow: 'Dāvanu karte',
-		number: 'Kartes numurs',
-		valid: 'Derīga līdz',
-		booking: 'Rezervācija',
-		legal: 'Gravas · Likverteni, Vecsaules pagasts, Bauskas novads · gravas.lv. Iepriekšēja rezervācija nepieciešama. Karte nav apmaināma pret naudu.',
-		tag: 'Atpūta laukos, bez steigas',
-	},
-	en: {
-		eyebrow: 'Gift card',
-		number: 'Card number',
-		valid: 'Valid until',
-		booking: 'Reservations',
-		legal: 'Gravas · Likverteni, Vecsaules parish, Bauska municipality · gravas.lv. Reservation required in advance. Not exchangeable for cash.',
-		tag: 'Rest in the countryside, unhurried',
-	},
-	ru: {
-		eyebrow: 'Подарочная карта',
-		number: 'Номер карты',
-		valid: 'Действительна до',
-		booking: 'Бронирование',
-		legal: 'Gravas · Ликвертени, Вецсаульская волость, Бауский край · gravas.lv. Требуется предварительное бронирование. Не обменивается на деньги.',
-		tag: 'Отдых на природе, без спешки',
-	},
-};
 
 /**
  * The gift card as HTML, shared by the creation form's live preview and the
@@ -45,7 +20,7 @@ const COPY: Record<CardLanguage, { eyebrow: string; number: string; valid: strin
  * same data.
  */
 export function CardPreview({ data }: { data: CardPreviewData }) {
-	const c = COPY[data.language] ?? COPY.lv;
+	const c = CARD_COPY[data.language] ?? CARD_COPY.lv;
 	return (
 		<div className="card-preview-wrap">
 			<div className="gc" aria-label={`${c.eyebrow} ${data.number}`}>
@@ -74,9 +49,9 @@ export function CardPreview({ data }: { data: CardPreviewData }) {
 							<div>
 								<span className="k">{c.booking}</span>
 								<span className="v sm">
-									+371 26647133
+									{CONTACT.phone}
 									<br />
-									info@gravas.lv
+									{CONTACT.email}
 								</span>
 							</div>
 						</div>

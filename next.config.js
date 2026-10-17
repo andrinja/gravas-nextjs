@@ -22,6 +22,13 @@ module.exports = {
 	// bundled; it is required at runtime and never instantiated in production.
 	serverExternalPackages: ['@electric-sql/pglite'],
 
+	// The PDF renderer reads these from disk at request time; file tracing
+	// only follows imports, so name them for the routes that render PDFs.
+	outputFileTracingIncludes: {
+		'/api/admin/**': ['./lib/pdf/fonts/**', './public/static/logo.svg'],
+		'/admin/**': ['./lib/pdf/fonts/**', './public/static/logo.svg'],
+	},
+
 	i18n: { defaultLocale, locales, localeDetection },
 
 	images: {

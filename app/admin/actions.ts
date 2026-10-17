@@ -7,6 +7,7 @@ import { parseCardInput } from '../../lib/giftcards/validation';
 import * as svc from '../../lib/giftcards/service';
 import { sendMail } from '../../lib/mail/send';
 import { formatEuro, formatDate } from '../../lib/giftcards/format';
+import { renderGiftCardPdf, renderInvoicePdf, giftCardFilename, invoiceFilename } from '../../lib/pdf/render';
 
 export type FormState = { errors?: Record<string, string>; raw?: Record<string, string>; message?: string } | null;
 
@@ -41,9 +42,12 @@ export async function sendInvoiceAction(id: string): Promise<{ message: string }
 	const admin = await requireAdmin();
 	const detail = await svc.getCardDetail(id);
 	if (!detail) return { message: 'Karte nav atrasta' };
-	const { card } = detail;
+	const { card, invoice } = detail;
+	if (!invoice) return { message: 'Rēķins nav atrasts' };
+	const pdf = await renderInvoicePdf(card, invoice);
 	const result = await sendMail({
 		to: card.buyerEmail,
+		attachments: [{ filename: invoiceFilename(invoice), content: pdf, contentType: 'application/pdf' }],
 		subject: `Gravas rēķins Nr. ${card.number}`,
 		text: [
 			`Labdien, ${card.buyerName}!`,
@@ -70,8 +74,10 @@ export async function sendCardAction(id: string): Promise<{ message: string }> {
 	const detail = await svc.getCardDetail(id);
 	if (!detail) return { message: 'Karte nav atrasta' };
 	const { card } = detail;
+	const pdf = await renderGiftCardPdf(card);
 	const result = await sendMail({
 		to: card.buyerEmail,
+		attachments: [{ filename: giftCardFilename(card), content: pdf, contentType: 'application/pdf' }],
 		subject: `Jūsu Gravas dāvanu karte Nr. ${card.number}`,
 		text: [
 			`Labdien, ${card.buyerName}!`,

@@ -45,3 +45,20 @@ export async function currentSession() {
 	const h = await headers();
 	return auth.api.getSession({ headers: h });
 }
+
+/**
+ * Same policy as requireAdmin, for route handlers (which answer 401 instead
+ * of redirecting). Returns null when any check fails.
+ */
+export async function getAdminOrNull(): Promise<AdminUser | null> {
+	await ensureMigrated();
+	const h = await headers();
+	const session = await auth.api.getSession({ headers: h });
+	if (!session || !isAllowedEmail(session.user.email)) return null;
+	if (process.env.ADMIN_REQUIRE_PASSKEY !== 'false') {
+		const enrolled = await db.select({ id: schema.passkey.id }).from(schema.passkey).where(eq(schema.passkey.userId, session.user.id)).limit(1);
+		const verified = (session.session as { passkeyVerified?: boolean }).passkeyVerified === true;
+		if (enrolled.length === 0 || !verified) return null;
+	}
+	return { id: session.user.id, email: session.user.email, name: session.user.name ?? null };
+}
