@@ -126,6 +126,37 @@ Section index pages put their h1 on the hero (`PageHeaderImage` with
 `title`); detail pages keep the h1 below it. The three mock-up directions
 that led here are on the design canvas (A was chosen).
 
+## Gift cards admin (/admin)
+
+An App Router area (`app/admin`) next to the public pages. Flow: create a
+card (which creates its invoice, same `YYYY-NNNN` number from a yearly
+sequence) → send the invoice → mark paid by hand → send the gift card →
+mark redeemed. Nothing is emailed automatically; every send is a button.
+
+```
+lib/db/schema.ts        gift_cards, invoices, events, number_sequences (+ auth tables)
+lib/db/index.ts         db: Neon (DATABASE_URL) or embedded PGlite in .data/ when unset
+drizzle/                SQL migrations — yarn db:generate after a schema change
+lib/giftcards/          status rules, validation, numbering, transitions (service.ts)
+lib/auth/               Better Auth: Google + passkey; requireAdmin() gate in guard.ts
+lib/mail/send.ts        Resend when RESEND_API_KEY is set, otherwise a logged dry run
+app/admin/              login, passkey enrol/verify, dashboard, create, card page
+proxy.ts                redirects /admin/* without a session cookie to the login page
+```
+
+Locally nothing needs provisioning: copy `.env.example` to `.env.local`,
+set `ADMIN_EMAILS`, then `yarn db:migrate` and `yarn admin:seed` (with
+`ADMIN_DEV_PASSWORD_LOGIN=true` and an `ADMIN_DEV_PASSWORD`) and sign in
+with the password form. Production sign-in is Google, restricted to
+`ADMIN_EMAILS`, plus a passkey that every session must be created with
+(`ADMIN_REQUIRE_PASSKEY`, default on). On Vercel: Neon Postgres via the
+Storage tab for `DATABASE_URL`, run `yarn db:migrate` as a build step,
+and set `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, the Google OAuth client
+and later `RESEND_API_KEY`.
+
+Not yet built: PDF rendering of the invoice and card (the buttons are
+disabled), email attachments, and the public request form.
+
 ## Images
 
 Every photo goes through `next/image`: the heroes with `fill` + `priority`

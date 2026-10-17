@@ -18,6 +18,10 @@ module.exports = {
 	// Turbopack guess the root one directory too high and warn on every build.
 	turbopack: { root: __dirname },
 
+	// PGlite (embedded Postgres for development) ships WASM that must not be
+	// bundled; it is required at runtime and never instantiated in production.
+	serverExternalPackages: ['@electric-sql/pglite'],
+
 	i18n: { defaultLocale, locales, localeDetection },
 
 	images: {

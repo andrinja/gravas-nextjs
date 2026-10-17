@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
+    "@better-auth/passkey": "^1.7.10",
+    "@electric-sql/pglite": "^0.5.10",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@neondatabase/serverless": "^1.2.0",
+    "better-auth": "^1.7.10",
+    "drizzle-orm": "^0.45.4",
     "framer-motion": "^14.3.0",
     "i18next": "^26.4.7",
     "next": "^16.4.2",
@@ -13,22 +18,30 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-i18next": "^17.0.19",
-    "react-responsive-modal": "^8.0.0"
+    "react-responsive-modal": "^8.0.0",
+    "zod": "^4.6.7"
   },
   "scripts": {
     "lint": "eslint .",
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "icons:convert": "npx @svgr/cli -d components/icons static/icons --replace-attr-values '#002823=currentColor' --replace-attr-values '#fff=currentColor' --replace-attr-values '#000=currentColor' --icon"
+    "icons:convert": "npx @svgr/cli -d components/icons static/icons --replace-attr-values '#002823=currentColor' --replace-attr-values '#fff=currentColor' --replace-attr-values '#000=currentColor' --icon",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:studio": "drizzle-kit studio",
+    "auth:schema": "npx @better-auth/cli@latest generate --config lib/auth/auth.ts --output lib/db/auth-schema.ts -y",
+    "admin:seed": "tsx scripts/seed-admin.ts"
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "drizzle-kit": "^0.31.11",
     "eslint": "^9.39.0",
     "eslint-config-next": "^16.4.2",
+    "tsx": "^4.23.15",
     "typescript": "^5.9.0"
   }
 }
