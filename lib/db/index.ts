@@ -32,6 +32,11 @@ function create(): Db {
 		const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 		return drizzle(pool, { schema });
 	}
+	if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
+		// Serverless filesystems are read-only; an embedded database there would
+		// fail in confusing ways later. Fail here, with the cause in the message.
+		throw new Error('DATABASE_URL is not set. Attach a Neon Postgres database to the Vercel project (Storage tab) and redeploy.');
+	}
 	const { PGlite } = require('@electric-sql/pglite') as typeof import('@electric-sql/pglite');
 	const { drizzle } = require('drizzle-orm/pglite') as typeof import('drizzle-orm/pglite');
 	const dir = process.env.PGLITE_DIR || '.data/pglite';

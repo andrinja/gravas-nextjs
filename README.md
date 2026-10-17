@@ -168,6 +168,26 @@ the customer's text as the first event) and emails the owner (MAIL_BCC, else
 the first ADMIN_EMAILS address). A honeypot field drops bots. The draft
 cannot be sent until the admin edits in a price.
 
+### Going live
+
+1. Vercel → Storage → create a Neon Postgres database and connect it to the
+   project; that sets `DATABASE_URL` for all environments.
+2. Vercel → Settings → Environment Variables (Production): `ADMIN_EMAILS`,
+   `BETTER_AUTH_SECRET` (`openssl rand -base64 32`), `BETTER_AUTH_URL`
+   (`https://gravas.lv`), `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET`,
+   `RESEND_API_KEY`, `MAIL_FROM`, `MAIL_BCC`, `RESEND_WEBHOOK_SECRET`,
+   `INVOICE_BANK_NAME`, `INVOICE_IBAN`, `INVOICE_ACCOUNT_HOLDER`.
+3. Vercel → Settings → Build & Development → Build Command:
+   `yarn db:migrate && next build`, so the schema is applied on every deploy.
+4. Google Cloud → OAuth client (Web application), authorised redirect URI
+   `https://gravas.lv/api/auth/callback/google`.
+5. Resend → Domains → add `gravas.lv` (it can write the DNS records into
+   Vercel DNS); Resend → Webhooks → `https://gravas.lv/api/webhooks/resend`.
+6. First sign-in on the live site is Google; it then asks for a passkey, and
+   from then on the passkey alone signs in.
+
+Without `DATABASE_URL` the admin refuses to start in production on purpose.
+
 ## Images
 
 Every photo goes through `next/image`: the heroes with `fill` + `priority`
