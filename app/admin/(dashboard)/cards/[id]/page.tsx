@@ -34,6 +34,8 @@ export default async function CardPage({ params, searchParams }: { params: Promi
 	if (!detail) notFound();
 	const { card, invoice, events } = detail;
 	const photoLabel = CARD_PHOTO_OPTIONS.find(p => p.key === card.cardPhoto)?.label ?? card.cardPhoto;
+	const request = card.source === 'web' ? events.find(e => e.type === 'requested') : undefined;
+	const needsPrice = card.source === 'web' && card.status === 'draft' && card.amountCents === 0;
 
 	return (
 		<>
@@ -61,6 +63,24 @@ export default async function CardPage({ params, searchParams }: { params: Promi
 				</div>
 			</div>
 
+			{request ? (
+				<section className="panel accent" aria-labelledby="s-request">
+					<div className="head">
+						<h2 id="s-request">Pieprasījums no mājaslapas</h2>
+						<span className="hint">{formatDateTime(request.createdAt)} · {card.language.toUpperCase()}</span>
+					</div>
+					<p style={{ whiteSpace: 'pre-wrap', color: 'var(--ink-2)' }}>{request.note}</p>
+					{needsPrice ? (
+						<div className="head">
+							<span className="hint" style={{ color: 'var(--gold)' }}>Cena vēl nav ievadīta: rēķinu var nosūtīt tikai pēc labošanas.</span>
+							<Link href={`/admin/cards/${card.id}/edit`} className="btn btn-primary btn-sm">
+								Ievadīt cenu un kartes tekstu
+							</Link>
+						</div>
+					) : null}
+				</section>
+			) : null}
+
 			<div className="two-col">
 				<div className="stack" style={{ gap: 16 }}>
 					<CardActions
@@ -69,6 +89,7 @@ export default async function CardPage({ params, searchParams }: { params: Promi
 						buyerEmail={card.buyerEmail}
 						paidNote={card.paidNote}
 						invoiceSentAt={card.invoiceSentAt ? formatDateTime(card.invoiceSentAt) : null}
+						amountCents={card.amountCents}
 					/>
 				</div>
 

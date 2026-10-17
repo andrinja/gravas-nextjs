@@ -44,6 +44,7 @@ export async function sendInvoiceAction(id: string): Promise<{ message: string }
 	if (!detail) return { message: 'Karte nav atrasta' };
 	const { card, invoice } = detail;
 	if (!invoice) return { message: 'Rēķins nav atrasts' };
+	if (card.amountCents <= 0) return { message: 'Vispirms ievadi cenu (Labot), tikai tad var sūtīt rēķinu.' };
 	const pdf = await renderInvoicePdf(card, invoice);
 	const mail = invoiceEmail(card, invoice);
 	const result = await sendMail({

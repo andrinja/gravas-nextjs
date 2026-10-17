@@ -1,8 +1,9 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { z } from 'zod';
 import { ensureMigrated } from '../../../lib/db';
-import { createWebRequest } from '../../../lib/giftcards/service';
-import { sendMail } from '../../../lib/mail/send';
+import { createWebRequest, logEvent } from '../../../lib/giftcards/service';
+import { requestNotificationEmail } from '../../../lib/mail/templates';
+import { sendMail, type MailResult } from '../../../lib/mail/send';
 import { ADMIN_EMAILS } from '../../../lib/auth/auth';
 
 export const dynamic = 'force-dynamic';
@@ -45,18 +46,14 @@ export async function POST(req: NextRequest) {
 	const admin = process.env.MAIL_BCC || ADMIN_EMAILS[0];
 	if (admin) {
 		const origin = process.env.BETTER_AUTH_URL || process.env.NEXT_PUBLIC_SITE_URL || '';
-		await sendMail({
-			to: admin,
-			subject: `Jauns dāvanu kartes pieprasījums · ${card.number}`,
-			text: [
-				`${data.name} <${data.email}>${data.phone ? ` · ${data.phone}` : ''} (${data.language})`,
-				'',
-				data.request,
-				'',
-				`Atvērt: ${origin}/admin/cards/${card.id}`,
-			].join('\n'),
-			tags: { kind: 'request', card: card.number },
-		}).catch(() => undefined);
+		const mail = requestNotificationEmail({ ...data, number: card.number, cardUrl: `${origin}/admin/cards/${card.id}` });
+		const result = await sendMail({ to: admin, ...mail, tags: { kind: 'request', card: card.number } }).catch((e): MailResult => ({ ok: false, dryRun: false, error: String(e) }));
+		if (!result.ok) {
+			// Visible on the card instead of lost in a server log.
+			await logEvent(card.id, 'email_failed', 'system', `Paziņojums administratoram neaizgāja: ${result.error ?? 'nezināma kļūda'}`);
+		} else {
+			await logEvent(card.id, 'note', 'system', result.dryRun ? 'Paziņojums administratoram (izmēģinājuma režīms, e-pasts nav aizgājis)' : `Paziņojums nosūtīts uz ${admin}`, { mailId: result.id, dryRun: result.dryRun });
+		}
 	}
 
 	return NextResponse.json({ ok: true, message: THANKS[data.language] });

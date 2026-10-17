@@ -6,13 +6,14 @@ import type { CardStatus } from '../../../lib/db/schema';
 import { can } from '../../../lib/giftcards/status';
 import { sendInvoiceAction, sendCardAction, setPaidAction, redeemAction, cancelAction, addNoteAction } from '../actions';
 
-type Props = { id: string; status: CardStatus; buyerEmail: string; paidNote: string | null; invoiceSentAt: string | null };
+type Props = { id: string; status: CardStatus; buyerEmail: string; paidNote: string | null; invoiceSentAt: string | null; amountCents: number };
 
 /**
  * The buttons and the paid switch on the card page. Every action confirms
  * first, because each one either emails a customer or changes money state.
  */
-export function CardActions({ id, status, buyerEmail, paidNote, invoiceSentAt }: Props) {
+export function CardActions({ id, status, buyerEmail, paidNote, invoiceSentAt, amountCents }: Props) {
+	const unpriced = amountCents <= 0;
 	const router = useRouter();
 	const [pending, start] = useTransition();
 	const [message, setMessage] = useState<string | null>(null);
@@ -35,7 +36,7 @@ export function CardActions({ id, status, buyerEmail, paidNote, invoiceSentAt }:
 				<div className="head">
 					<div className="stack" style={{ gap: 0 }}>
 						<h2 id="s-rekins">1 · Rēķins</h2>
-						<span className="hint">{invoiceSentAt ? `Nosūtīts ${invoiceSentAt}` : 'Vēl nav nosūtīts'}</span>
+						<span className="hint">{invoiceSentAt ? `Nosūtīts ${invoiceSentAt}` : unpriced ? 'Cena vēl nav ievadīta' : 'Vēl nav nosūtīts'}</span>
 					</div>
 					<div style={{ display: 'flex', gap: 8 }}>
 						<a className="btn btn-quiet btn-sm" href={`/api/admin/cards/${id}/invoice`} target="_blank" rel="noreferrer">
@@ -44,7 +45,8 @@ export function CardActions({ id, status, buyerEmail, paidNote, invoiceSentAt }:
 						<button
 							type="button"
 							className={`btn btn-sm ${invoiceSentAt ? 'btn-outline' : 'btn-primary'}`}
-							disabled={pending || !can.sendInvoice(status)}
+							disabled={pending || !can.sendInvoice(status) || unpriced}
+							title={unpriced ? 'Vispirms ievadi cenu' : undefined}
 							onClick={() => {
 								if (confirm(`Nosūtīt rēķinu uz ${buyerEmail}?`)) run(() => sendInvoiceAction(id));
 							}}

@@ -94,3 +94,35 @@ ${row('Rezervācija', `${CONTACT.phone} · ${CONTACT.email}`)}
 	);
 	return { subject, text, html };
 }
+
+/** Owner notification for a request from the public form. */
+export function requestNotificationEmail(input: { number: string; name: string; email: string; phone?: string; language: string; request: string; cardUrl: string }) {
+	const subject = `Jauns dāvanu kartes pieprasījums · ${input.number}`;
+	const text = [
+		`Jauns pieprasījums no gravas.lv/davanu-karte (${input.language}).`,
+		'',
+		`Vārds: ${input.name}`,
+		`E-pasts: ${input.email}`,
+		`Tālrunis: ${input.phone || '—'}`,
+		'',
+		'Pieprasījums:',
+		input.request,
+		'',
+		`Atvērt kartē: ${input.cardUrl}`,
+	].join('\n');
+	const html = shell(
+		subject,
+		`<p style="margin:0 0 16px 0;">Jauns pieprasījums no mājaslapas formas. Karte ${escape(input.number)} ir izveidota kā melnraksts; ievadi cenu un nosūti rēķinu.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid ${COLORS.line};border-bottom:1px solid ${COLORS.line};margin:8px 0 16px 0;">
+${row('Vārds', input.name)}
+${row('E-pasts', input.email)}
+${row('Tālrunis', input.phone || '—')}
+${row('Valoda', input.language.toUpperCase())}
+</table>
+<p style="margin:0 0 6px 0;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.gold};font-weight:700;">Pieprasījums</p>
+<p style="margin:0 0 20px 0;padding:12px 14px;background:${COLORS.bg};border-radius:3px;color:${COLORS.ink2};white-space:pre-wrap;">${escape(input.request)}</p>
+<p style="margin:0;"><a href="${escape(input.cardUrl)}" style="display:inline-block;background:${COLORS.green};color:#F6F2E8;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:2px;">Atvērt karti ${escape(input.number)}</a></p>`,
+		'Iekšējs paziņojums no Gravas dāvanu karšu sistēmas.'
+	);
+	return { subject, text, html };
+}
