@@ -6,7 +6,7 @@ import { requireAdmin } from '../../lib/auth/guard';
 import { parseCardInput } from '../../lib/giftcards/validation';
 import * as svc from '../../lib/giftcards/service';
 import { sendMail } from '../../lib/mail/send';
-import { formatEuro, formatDate } from '../../lib/giftcards/format';
+import { invoiceEmail, giftCardEmail } from '../../lib/mail/templates';
 import { renderGiftCardPdf, renderInvoicePdf, giftCardFilename, invoiceFilename } from '../../lib/pdf/render';
 
 export type FormState = { errors?: Record<string, string>; raw?: Record<string, string>; message?: string } | null;
@@ -45,19 +45,12 @@ export async function sendInvoiceAction(id: string): Promise<{ message: string }
 	const { card, invoice } = detail;
 	if (!invoice) return { message: 'Rēķins nav atrasts' };
 	const pdf = await renderInvoicePdf(card, invoice);
+	const mail = invoiceEmail(card, invoice);
 	const result = await sendMail({
 		to: card.buyerEmail,
+		...mail,
 		attachments: [{ filename: invoiceFilename(invoice), content: pdf, contentType: 'application/pdf' }],
-		subject: `Gravas rēķins Nr. ${card.number}`,
-		text: [
-			`Labdien, ${card.buyerName}!`,
-			'',
-			`Pielikumā rēķins Nr. ${card.number} par dāvanu karti: ${card.serviceLine}.`,
-			`Summa: ${formatEuro(card.amountCents)}. Apmaksas termiņš: ${formatDate(card.dueDate)}.`,
-			'Pēc maksājuma saņemšanas nosūtīsim dāvanu karti uz šo e-pastu.',
-			'',
-			'Gravas · +371 26647133 · info@gravas.lv',
-		].join('\n'),
+		tags: { kind: 'invoice', card: card.number },
 	});
 	if (!result.ok) {
 		await svc.logEvent(id, 'email_failed', admin.email, result.error ?? 'Nezināma kļūda');
@@ -75,18 +68,12 @@ export async function sendCardAction(id: string): Promise<{ message: string }> {
 	if (!detail) return { message: 'Karte nav atrasta' };
 	const { card } = detail;
 	const pdf = await renderGiftCardPdf(card);
+	const mail = giftCardEmail(card);
 	const result = await sendMail({
 		to: card.buyerEmail,
+		...mail,
 		attachments: [{ filename: giftCardFilename(card), content: pdf, contentType: 'application/pdf' }],
-		subject: `Jūsu Gravas dāvanu karte Nr. ${card.number}`,
-		text: [
-			`Labdien, ${card.buyerName}!`,
-			'',
-			`Paldies par pirkumu. Pielikumā dāvanu karte Nr. ${card.number}: ${card.cardTitle}${card.cardSubtitle ? `, ${card.cardSubtitle}` : ''}.`,
-			`Derīga līdz ${formatDate(card.validUntil)}. Rezervācija pa tālruni +371 26647133 vai info@gravas.lv.`,
-			'',
-			'Uz tikšanos Gravās!',
-		].join('\n'),
+		tags: { kind: 'giftcard', card: card.number },
 	});
 	if (!result.ok) {
 		await svc.logEvent(id, 'email_failed', admin.email, result.error ?? 'Nezināma kļūda');

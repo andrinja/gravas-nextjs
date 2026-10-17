@@ -14,6 +14,9 @@ const EVENT_LABELS: Record<EventType, string> = {
 	updated: 'Dati laboti',
 	invoice_sent: 'Rēķins nosūtīts',
 	invoice_opened: 'Rēķins atvērts',
+	email_delivered: 'E-pasts piegādāts',
+	email_opened: 'E-pasts atvērts',
+	email_bounced: 'E-pasts nav piegādāts',
 	marked_paid: 'Atzīmēts kā apmaksāts',
 	marked_unpaid: 'Apmaksa atsaukta',
 	card_sent: 'Dāvanu karte nosūtīta',
@@ -22,7 +25,7 @@ const EVENT_LABELS: Record<EventType, string> = {
 	note: 'Piezīme',
 	email_failed: 'E-pasta kļūda',
 };
-const EVENT_TONE: Partial<Record<EventType, string>> = { marked_paid: 'gold', email_failed: 'red', requested: 'muted', note: 'muted' };
+const EVENT_TONE: Partial<Record<EventType, string>> = { marked_paid: 'gold', email_failed: 'red', email_bounced: 'red', requested: 'muted', note: 'muted', email_delivered: 'muted', email_opened: 'muted' };
 
 export default async function CardPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ created?: string }> }) {
 	const { id } = await params;
